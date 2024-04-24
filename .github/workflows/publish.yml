@@ -68,7 +68,7 @@ jobs:
       
       # publish artifacts
       - name: Publish NuGets
-        uses: dansiegel/publish-nuget@master
+        uses: dansiegel/publish-nuget@master # https://github.com/marketplace/actions/publish-nuget-packages
         with:
           filename: 'Artifacts/*.nupkg'
           feedUrl: ${{ vars.PRIVATE_NUGET_API_SOURCE }}
