@@ -93,7 +93,7 @@ This library provides developers with powerful tools and utilities for creating,
 
 ## License
 
-Copyright � St�phane ANDRE.
+Copyright © Stéphane ANDRE.
 
 My .NET Utilities is provided as-is under the MIT license. For more information see [LICENSE](./LICENSE).
 
