@@ -11,8 +11,6 @@ jobs:
   # GitVersion
   gitversion:
     runs-on: windows-latest
-    outputs:
-      SemVer: ${{ steps.gitversion.outputs.SemVer }}
 
     steps:
 

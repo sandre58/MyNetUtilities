@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Description>An essential tool for integrating robust and secure Windows authentication features into your .NET applications.</Description>
     <PackageTags>My;Utilities;Authentication;Windows</PackageTags>
-    <VersionPrefix>1.0.0</VersionPrefix>
+    <VersionPrefix>1.0.1</VersionPrefix>
   </PropertyGroup>
 
   <ItemGroup>
