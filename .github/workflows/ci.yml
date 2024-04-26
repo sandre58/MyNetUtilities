@@ -1,7 +1,7 @@
 # Copyright (c) Stéphane ANDRE.
 # Licensed under the MIT license.
 
-# This continuous integration pipeline is triggered anytime a user pushes code to the repo.
+# This continuous integration pipeline is triggered anytime a user pushes code to main branch.
 # This pipeline builds the solution and runs unit tests
 
 name: Build
@@ -23,6 +23,7 @@ jobs:
     runs-on: windows-latest
     outputs:
       SemVer: ${{ steps.gitversion.outputs.SemVer }}
+      Suffix: ${{ steps.gitversion.outputs.PreReleaseTag }}
 
     steps:
 
@@ -53,7 +54,7 @@ jobs:
     needs: [ gitversion ]
     with:
       name: Build all projects
-      build-args: '/p:Version=${{ needs.gitversion.outputs.SemVer }}'
+      build-args: '/p:GitVersion=${{ needs.gitversion.outputs.SemVer }} /p:VersionSuffix=${{ needs.gitversion.outputs.Suffix }}'
       dotnet-test-logger: GitHubActions --no-build --no-restore
       solution-path: .\src\MyNetUtilities.sln
       nugetFeedUrl: ${{ vars.PRIVATE_NUGET_API_SOURCE }}

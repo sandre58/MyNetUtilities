@@ -1,0 +1,111 @@
+# Copyright (c) Stéphane ANDRE.
+# Licensed under the MIT license.
+
+# This continuous integration pipeline is triggered anytime a user pushes code to main branch.
+# This pipeline create a release
+
+name: Create Release for specific package
+
+on:
+  workflow_dispatch:
+    inputs:
+      packageName:
+        type: choice
+        description: Name of the package
+        options: 
+        - MyNet.Utilities.Authentication.Windows
+        - MyNet.Utilities.Generator.Extensions
+        - MyNet.Utilities.Geography.Extensions
+        - MyNet.Utilities.IO.FileHistory.Registry
+        - MyNet.Utilities.IO.Registry
+        - MyNet.Utilities.Localization.Extensions
+        - MyNet.Utilities.Logging.NLog
+        - MyNet.Utilities.Mail.MailKit
+      packageVersion: 
+        description: New version of the package
+        default: 1.0.0
+
+jobs:
+
+  # Build and test
+  build:
+    uses: avantipoint/workflow-templates/.github/workflows/dotnet-build.yml@master # https://github.com/AvantiPoint/workflow-templates/blob/master/.github/workflows/dotnet-build.yml
+    needs: [ gitversion ]
+    with:
+      dotnet-test-logger: GitHubActions --no-build --no-restore
+      build-args: '/p:Version=${{ inputs.packageVersion }}'
+      name: Build
+      solution-path: .\src\{{ inputs.packageName }}\{{ inputs.packageName }}.csproj
+      
+  release:
+    runs-on: ubuntu-latest
+    needs: [ build ]
+    env:
+      DOTNET_SYSTEM_CONSOLE_ALLOW_ANSI_COLOR_REDIRECTION: true
+      DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+      DOTNET_NOLOGO: true
+      DOTNET_CLI_TELEMETRY_OPTOUT: true
+    permissions:
+      contents: write
+    outputs:
+      version-name: ${{ steps.process-version.outputs.version-name }}
+      release-display-name: ${{ steps.process-version.outputs.release-display-name }}
+      is-preview: ${{ steps.process-version.outputs.is-preview }}
+
+    steps:
+      
+      # Checkout
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      # # Update CHANGELOG with all conventional commit from previous tag
+      # - name: Update CHANGELOG
+      #   continue-on-error: true
+      #   id: changelog
+      #   uses: requarks/changelog-action@v1.10.1 # https://github.com/marketplace/actions/changelog-from-conventional-commits
+      #   with:
+      #     token: ${{ github.token }}
+      #     tag: ${{ github.ref_name }}
+
+      # # Commit changes in CHANGELOG and skip CI
+      # - name: Commit CHANGELOG.md
+      #   continue-on-error: true
+      #   uses: stefanzweifel/git-auto-commit-action@v4 # https://github.com/marketplace/actions/git-auto-commit
+      #   with:
+      #     branch: main
+      #     commit_message: 'docs: update CHANGELOG.md for ${{ github.ref_name }} [skip ci]'
+      #     file_pattern: CHANGELOG.md
+
+      # Download artifacts
+      - uses: actions/download-artifact@v3
+        with:
+          name: NuGet
+          path: Artifacts/
+      
+      # Get package version
+      - name: Process Package Version
+        shell: bash
+        id: process-version
+        working-directory: Artifacts/
+        run: |
+          echo "Downloading package version script..."
+          curl -sS -o process-version.pl https://raw.githubusercontent.com/avantipoint/workflow-templates/master/build/process-version.pl
+          echo "Finished downloading package version script."
+          echo "Processing package version..."
+          perl process-version.pl ${{ inputs.packageName }}
+      
+      # Create release
+      - uses: ncipollo/release-action@main # https://github.com/marketplace/actions/create-release
+        name: Create Release
+        with:
+          artifacts: "Artifacts/*.nupkg,Artifacts/*.snupkg"
+          artifactErrorsFailBuild: true
+          draft: true
+          generateReleaseNotes: false
+          token: ${{ github.token }}
+          name: ${{ inputs.packageName }} "${{ steps.process-version.outputs.release-display-name }}"
+          prerelease: ${{ steps.process-version.outputs.is-preview }}
+          tag: ${{ inputs.packageName }}-v${{needs.gitversion.outputs.SemVer}}
+          #body: ${{ steps.changelog.outputs.changes }}

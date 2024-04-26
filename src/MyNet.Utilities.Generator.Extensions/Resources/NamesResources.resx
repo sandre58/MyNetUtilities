@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="MaleFirstNames" xml:space="preserve">
+    <value>Alain;Alan;Alphonse;Aristide;Armand;Benjamin;Bernard;Charles;Christian;Christophe;Claude;Colin;Damien;Daniel;David;Dominique;Éric;Eugène;Félix;François;Georges;Gérard;Guillaume;Henri;Hervé;Jacques;Jean;Jérémy;Joël;Julien;Luc;Marc;Marcel;Matthieu;Maurice;Michel;Michaël;Nicolas;Noël;Norbert;Olivier;Patrick;Philippe;Quentin;Raoul;Renaud;René;Richard;Robert;Roger;Sébastien;Stéphane;Thibaut;Thierry;Vincent;Xavier;Yves;Yvan;Léo;Gabriel;Raphaël;Arthur;Louis;Jules;Adam;Maël;Lucas;Hugo;Noah;Liam;Gabin;Sacha;Paul;Nathan;Aaron;Mohamed;Ethan;Eden;Tom;Léon;Noé;Tiago;Théo;Isaac;Marius;Victor;Ayden;Martin;Naël;Mathis;Axel;Robin;Timéo;Enzo;Marceau;Eliott;Nino;Valentin;Nolan;Malo;Milo;Antoine;Samuel;Augustin;Amir;Lyam;Rayan;Yanis;Ibrahim;Gaspard;Sohan;Clément;Mathéo;Baptiste;Simon;Maxence;Imran;Kaïs;Côme;Soan;Evan;Maxime;Camille;Alexandre;Owen;Ismaël;Lenny;Pablo;Léandre;Naïm;Ilyan;Thomas;Joseph;Oscar;Elio;Malone;Noa;Diego;Noam;Livio;Charlie;Charly;Basile;Milan;Ilyes;Ali;Anas;Logan;Mathys;Alessio;William;Timothée;Auguste;Adem;Ayoub;Wassim;Marin;Youssef</value>
+  </data>
+  <data name="LastNames" xml:space="preserve">
+    <value>Martin;Bernard;Thomas;Petit;Robert;Richard;Durand;Dubois;Moreau;Laurent;Simon;Michel;Lefebvre;Leroy;Roux;David;Bertrand;Morel;Fournier;Girard;Bonnet;Dupont;Lambert;Fontaine;Rousseau;Vincent;Muller;Lefevre;Faure;Andre;Mercier;Blanc;Guerin;Boyer;Garnier;Chevalier;Francois;Legrand;Gauthier;Garcia;Perrin;Robin;Clement;Morin;Nicolas;Henry;Roussel;Mathieu;Gautier;Masson;Marchand;Duval;Denis;Dumont;Marie;Lemaire;Noel;Meyer;Dufour;Meunier;Brun;Blanchard;Giraud;Joly;Riviere;Lucas;Brunet;Gaillard;Barbier;Arnaud;Martinez;Gerard;Roche;Renard;Schmitt;Roy;Leroux;Colin;Vidal;Caron;Picard;Roger;Fabre;Aubert;Lemoine;Renaud;Dumas;Lacroix;Olivier;Philippe;Bourgeois;Pierre;Benoit;Rey;Leclerc;Payet;Rolland;Leclercq;Guillaume;Lecomte;Lopez;Jean;Dupuy;Guillot;Hubert;Berger;Carpentier;Sanchez;Dupuis;Moulin;Louis;Deschamps;Huet;Vasseur;Perez;Boucher;Fleury;Royer;Klein;Jacquet;Adam;Paris;Poirier;Marty;Aubry;Guyot;Carre;Charles;Renault;Charpentier;Menard;Maillard;Baron;Bertin;Bailly;Herve;Schneider;Fernandez;Le Gall;Collet;Leger;Bouvier;Julien;Prevost;Millet;Perrot;Daniel;Le Roux;Cousin;Germain;Breton;Besson;Langlois;Remy;Le Goff;Pelletier;Leveque;Perrier;Leblanc;Barre;Lebrun;Marchal;Weber;Mallet;Hamon;Boulanger;Jacob;Monnier;Michaud;Rodriguez;Guichard;Gillet;Etienne;Grondin;Poulain;Tessier;Chevallier;Collin;Chauvin;Da Silva;Bouchet;Gay;Lemaitre;Benard;Marechal;Humbert;Reynaud;Antoine;Hoarau;Perret;Barthelemy;Cordier;Pichon;Lejeune;Gilbert;Lamy;Delaunay;Pasquier;Carlier;Laporte</value>
+  </data>
+  <data name="Prefixes" xml:space="preserve">
+    <value>M.;Mme.;Mlle.;Dr.</value>
+  </data>
+  <data name="Suffixes" xml:space="preserve">
+    <value>Jr.;Sr.</value>
+  </data>
+  <data name="FemaleFirstNames" xml:space="preserve">
+    <value>Jade;Louise;Emma;Alice;Ambre;Lina;Rose;Chloé;Mia;Léa;Anna;Mila;Julia;Romy;Lou;Inès;Léna;Agathe;Juliette;Inaya;Nina;Zoé;Jeanne;Léonie;Iris;Eva;Charlie;Lola;Adèle;Victoire;Manon;Luna;Camille;Romane;Lucie;Margaux;Olivia;Victoria;Alix;Louna;Mya;Sofia;Charlotte;Sarah;Giulia;Lya;Margot;Nour;Lyana;Capucine;Clémence;Théa;Elena;Alba;Emy;Clara;Lana;Aya;Lyna;Yasmine;Gabrielle;Alya;Alicia;Roxane;Zélie;Lise;Lily;Léana;Livia;Mathilde;Maya;Valentine;Anaïs;Apolline;Lila;Thaïs;Maëlys;Assia;Ava;Héloïse;Joy;Alma;Lilou;Maria;Constance;Elise;Maëlle;Célia;Marie;Ella;Amélia;Elsa;Lisa;Noémie;Salomé;Emmy;Céleste;Albane;Soline;Nora;Adeline;Agnès;Alexandra;Amanda;Ariane;Aude;Audrey;Augustine;Aurélie;Barbara;Béatrice;Bérangère;Bérénice;Bernadette;Brigitte;Brunehilde;Caroline;Catherine;Cécile;Céline;Christine;Clarisse;Cunégonde;Cybèle;Cynthia;Delphine;Diane;Dominique;Éléonore;Élisabeth;Emmanuelle;Florence;Françoise;Gwenaëlle;Gwendoline;Hélène;Isabelle;Jennifer;Jessica;Johanna;Joséphine;Judith;Julie;Justine;Karine;Laëtitia;Laura;Laure;Laurence;Lorraine;Lauréline;Leslie;Lucile;Madeleine;Maëva;Magalie;Maïlys;Marine</value>
+  </data>
+</root>

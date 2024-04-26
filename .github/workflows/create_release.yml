@@ -1,8 +1,8 @@
 # Copyright (c) Stéphane ANDRE.
 # Licensed under the MIT license.
 
-# This continuous integration pipeline is triggered anytime a user pushes code to the repo.
-# This pipeline create a release
+# This continuous integration pipeline is triggered anytime a user pushes a tag. Could be trigger by user action.
+# This pipeline builds solution, update CHANGELOG.md and creates a draft release
 
 name: Create Release
 
@@ -19,6 +19,7 @@ jobs:
     runs-on: windows-latest
     outputs:
       SemVer: ${{ steps.gitversion.outputs.SemVer }}
+      Suffix: ${{ steps.gitversion.outputs.PreReleaseTag }}
 
     steps:
 
@@ -49,7 +50,7 @@ jobs:
     needs: [ gitversion ]
     with:
       dotnet-test-logger: GitHubActions --no-build --no-restore
-      build-args: '/p:Version=${{needs.gitversion.outputs.SemVer}}'
+      build-args: '/p:GitVersion=${{ needs.gitversion.outputs.SemVer }} /p:VersionSuffix=${{ needs.gitversion.outputs.Suffix }}'
       name: Build
       solution-path: .\src\MyNetUtilities.sln
       
@@ -65,7 +66,6 @@ jobs:
     permissions:
       contents: write
     outputs:
-      version-name: ${{ steps.process-version.outputs.version-name }}
       release-display-name: ${{ steps.process-version.outputs.release-display-name }}
       is-preview: ${{ steps.process-version.outputs.is-preview }}
 

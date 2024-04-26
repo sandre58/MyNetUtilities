@@ -3,7 +3,12 @@
   <PropertyGroup>
     <Description>A powerful collection of utility classes and extension methods designed to extend the functionality of the .NET Framework.</Description>
     <PackageTags>My;Utilities;Toolkit;Extensions;Authentication;Caching;Comparaison;DateTime;Deffering;Encryption;Exceptions;Geography;Google;IO;Localization;Logging;Mail;Messaging;Progress;Suspending;Threading</PackageTags>
+    <Version>$(GitVersion)</Version>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="MyNet.Utilities.Encryption.Aes.csproj" />
+  </ItemGroup>
 
   <ItemGroup>
     <Compile Update="Resources\InternalResources.Designer.cs">

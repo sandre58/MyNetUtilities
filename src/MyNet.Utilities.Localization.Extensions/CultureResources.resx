@@ -1,0 +1,1741 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="aa_DJ" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\aa-dj.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="aa_ER" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\aa-er.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="aa_ET" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\aa-et.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="af_NA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\af-na.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="af_ZA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\af-za.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="agq_CM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\agq-cm.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ak_GH" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ak-gh.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="am_ET" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\am-et.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="arn_CL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\arn-cl.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ar_AE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ar-ae.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ar_BH" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ar-bh.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ar_DJ" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ar-dj.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ar_DZ" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ar-dz.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ar_EG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ar-eg.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ar_ER" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ar-er.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ar_IQ" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ar-iq.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ar_JO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ar-jo.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ar_KM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ar-km.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ar_KW" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ar-kw.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ar_LB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ar-lb.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ar_LY" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ar-ly.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ar_MA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ar-ma.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ar_MR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ar-mr.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ar_OM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ar-om.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ar_QA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ar-qa.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ar_SA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ar-sa.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ar_SD" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ar-sd.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ar_SS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ar-ss.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ar_SY" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ar-sy.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ar_TD" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ar-td.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ar_TN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ar-tn.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ar_YE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ar-ye.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="asa_TZ" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\asa-tz.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ast_ES" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ast-es.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="as_IN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\as-in.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="az_cyrl_az" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\az-cyrl-az.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="az_latn_az" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\az-latn-az.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bas_CM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\bas-cm.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ba_RU" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ba-ru.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bem_ZM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\bem-zm.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bez_TZ" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\bez-tz.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="be_BY" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\be-by.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bg_BG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\bg-bg.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bin_NG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\bin-ng.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bm_Latn_ML" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\bm-latn-ml.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bn_BD" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\bn-bd.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bn_IN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\bn-in.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bo_CN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\bo-cn.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bo_IN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\bo-in.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="brx_IN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\brx-in.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="br_FR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\br-fr.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bs_cyrl_ba" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\bs-cyrl-ba.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bs_latn_ba" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\bs-latn-ba.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="byn_ER" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\byn-er.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ca_AD" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ca-ad.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ca_ES" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ca-es.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ca_ES_valencia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ca-es-valencia.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ca_FR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ca-fr.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ca_IT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ca-it.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cgg_UG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\cgg-ug.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="chr_Cher" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\chr-cher.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="co_FR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\co-fr.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cs_CZ" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\cs-cz.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cy_GB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\cy-gb.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="dav_KE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\dav-ke.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="da_DK" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\da-dk.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="da_GL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\da-gl.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="de_AT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\de-at.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="de_BE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\de-be.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="de_CH" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\de-ch.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="de_DE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\de-de.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="de_LI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\de-li.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="de_LU" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\de-lu.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="dje_NE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\dje-ne.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="dsb_DE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\dsb-de.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="dua_CM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\dua-cm.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="dv_MV" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\dv-mv.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="dyo_SN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\dyo-sn.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="dz_BT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\dz-bt.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ebu_KE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ebu-ke.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ee_GH" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ee-gh.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ee_TG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ee-tg.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="el_CY" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\el-cy.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="el_GR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\el-gr.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_001" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-001.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_029" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-029.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_150" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-150.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_AG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-ag.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_AI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-ai.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_AS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-as.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_AU" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-au.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_BB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-bb.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_BE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-be.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_BM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-bm.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_BS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-bs.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_BW" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-bw.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_BZ" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-bz.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_CA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-ca.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_CC" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-cc.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_CK" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-ck.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_CM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-cm.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_CR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-cr.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_CX" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-cx.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_DM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-dm.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_ER" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-er.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_FK" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-fk.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_FM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-fm.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_GB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-gb.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_GD" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-gd.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_GG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-gg.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_GH" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-gh.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_GI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-gi.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_GM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-gm.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_GU" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-gu.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_GY" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-gy.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_ID" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-id.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_IE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-ie.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_IM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-im.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_IN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-in.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_IO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-io.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_JE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-je.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_JM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-jm.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_KE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-ke.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_KI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-ki.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_KN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-kn.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_KY" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-ky.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_LC" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-lc.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_LS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-ls.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_MG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-mg.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_MH" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-mh.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_MO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-mo.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_MP" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-mp.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_MS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-ms.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_MT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-mt.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_MU" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-mu.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_MW" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-mw.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_MY" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-my.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_NA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-na.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_NF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-nf.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_NG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-ng.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_NR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-nr.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_NU" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-nu.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_NZ" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-nz.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-pg.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_PH" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-ph.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_PK" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-pk.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_PN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-pn.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_PR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-pr.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_PW" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-pw.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_RW" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-rw.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_SB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-sb.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_SC" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-sc.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_SD" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-sd.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_SG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-sg.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_SH" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-sh.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_SL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-sl.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_SS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-ss.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_SX" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-sx.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_SZ" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-sz.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_TC" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-tc.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_TK" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-tk.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_TO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-to.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_TT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-tt.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_TV" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-tv.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_TZ" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-tz.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_UG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-ug.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_UM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-um.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_US" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-us.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_VC" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-vc.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_VG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-vg.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_VI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-vi.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_VU" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-vu.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_WS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-ws.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_x_bi_SDL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-x-bi-sdl.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_x_fj_SDL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-x-fj-sdl.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_ZA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-za.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_ZM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-zm.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="en_ZW" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\en-zw.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="eo_001" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\eo-001.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="es_419" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\es-419.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="es_AR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\es-ar.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="es_BO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\es-bo.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="es_CL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\es-cl.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="es_CO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\es-co.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="es_CR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\es-cr.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="es_CU" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\es-cu.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="es_DO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\es-do.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="es_EC" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\es-ec.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="es_ES" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\es-es.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="es_GQ" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\es-gq.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="es_GT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\es-gt.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="es_HN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\es-hn.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="es_MX" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\es-mx.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="es_NI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\es-ni.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="es_PA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\es-pa.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="es_PE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\es-pe.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="es_PH" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\es-ph.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="es_PR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\es-pr.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="es_PY" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\es-py.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="es_SV" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\es-sv.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="es_US" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\es-us.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="es_UY" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\es-uy.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="es_VE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\es-ve.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="es_x_mo_SDL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\es-x-mo-sdl.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="et_EE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\et-ee.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="eu_ES" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\eu-es.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ewo_CM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ewo-cm.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fa_IR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\fa-ir.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ff_CM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ff-cm.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ff_GN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ff-gn.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ff_Latn_SN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ff-latn-sn.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ff_MR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ff-mr.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ff_NG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ff-ng.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fil_PH" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\fil-ph.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fi_FI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\fi-fi.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fo_FO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\fo-fo.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fr_029" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\fr-029.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fr_BE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\fr-be.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fr_BF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\fr-bf.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fr_BI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\fr-bi.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fr_BJ" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\fr-bj.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fr_BL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\fr-bl.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fr_CA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\fr-ca.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fr_CD" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\fr-cd.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fr_CF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\fr-cf.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fr_CG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\fr-cg.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fr_CH" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\fr-ch.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fr_CI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\fr-ci.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fr_CM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\fr-cm.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fr_DJ" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\fr-dj.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fr_DZ" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\fr-dz.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fr_FR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\fr-fr.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fr_GA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\fr-ga.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fr_GF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\fr-gf.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fr_GN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\fr-gn.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fr_GP" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\fr-gp.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fr_GQ" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\fr-gq.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fr_HT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\fr-ht.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fr_KM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\fr-km.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fr_LU" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\fr-lu.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fr_MA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\fr-ma.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fr_MC" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\fr-mc.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fr_MF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\fr-mf.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fr_MG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\fr-mg.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fr_ML" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\fr-ml.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fr_MQ" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\fr-mq.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fr_MR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\fr-mr.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fr_MU" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\fr-mu.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fr_NC" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\fr-nc.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fr_NE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\fr-ne.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fr_PF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\fr-pf.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fr_PM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\fr-pm.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fr_RE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\fr-re.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fr_RW" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\fr-rw.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fr_SC" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\fr-sc.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fr_SN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\fr-sn.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fr_SY" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\fr-sy.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fr_TD" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\fr-td.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fr_TG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\fr-tg.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fr_TN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\fr-tn.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fr_VU" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\fr-vu.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fr_WF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\fr-wf.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fr_YT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\fr-yt.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fur_IT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\fur-it.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fy_NL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\fy-nl.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ga_IE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ga-ie.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="gd_GB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\gd-gb.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="gl_ES" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\gl-es.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="gn_PY" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\gn-py.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="gsw_CH" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\gsw-ch.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="gsw_FR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\gsw-fr.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="gsw_LI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\gsw-li.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="guz_KE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\guz-ke.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="gu_IN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\gu-in.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="gv_IM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\gv-im.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="haw_US" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\haw-us.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="haw_x_na_SDL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\haw-x-na-sdl.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="haw_x_sm_SDL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\haw-x-sm-sdl.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ha_Latn_GH" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ha-latn-gh.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ha_Latn_NE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ha-latn-ne.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ha_Latn_NG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ha-latn-ng.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="he_IL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\he-il.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hi_IN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\hi-in.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hi_x_bh_SDL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\hi-x-bh-sdl.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_BA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\hr-ba.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_HR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\hr-hr.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hsb_DE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\hsb-de.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hu_HU" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\hu-hu.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hy_AM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\hy-am.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ia_001" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ia-001.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ia_FR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ia-fr.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ibb_NG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ibb-ng.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="id_ID" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\id-id.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ii_CN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ii-cn.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="is_IS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\is-is.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="it_CH" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\it-ch.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="it_IT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\it-it.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="it_SM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\it-sm.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="iu_Cans_CA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\iu-cans-ca.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="iu_Latn_CA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\iu-latn-ca.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ja_JP" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ja-jp.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="jgo_CM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\jgo-cm.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="jmc_TZ" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\jmc-tz.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="jv" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\jv.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="jv_Latn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\jv-latn.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="kab_DZ" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\kab-dz.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="kam_KE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\kam-ke.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ka_GE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ka-ge.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="kde_TZ" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\kde-tz.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="kea_CV" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\kea-cv.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="khq_ML" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\khq-ml.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ki_KE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ki-ke.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="kkj_CM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\kkj-cm.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="kk_KZ" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\kk-kz.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="kln_KE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\kln-ke.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="kl_GL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\kl-gl.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="km_KH" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\km-kh.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="kn_IN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\kn-in.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="kok_IN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\kok-in.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ko_KR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ko-kr.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="kr_NG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\kr-ng.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ksb_TZ" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ksb-tz.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ksf_CM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ksf-cm.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ksh_DE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ksh-de.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ks_Arab" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ks-arab.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ks_Deva_IN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ks-deva-in.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ku_Arab_IQ" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ku-arab-iq.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="kw_GB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\kw-gb.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ky_KG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ky-kg.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lag_TZ" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\lag-tz.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lb_LU" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\lb-lu.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lg_UG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\lg-ug.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lkt_US" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\lkt-us.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ln_AO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ln-ao.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ln_CD" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ln-cd.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ln_CF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ln-cf.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ln_CG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ln-cg.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lo_LA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\lo-la.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lt_LT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\lt-lt.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="luo_KE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\luo-ke.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="luy_KE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\luy-ke.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lu_CD" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\lu-cd.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lv_LV" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\lv-lv.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="mas_KE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\mas-ke.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="mas_TZ" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\mas-tz.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="mer_KE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\mer-ke.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="mfe_MU" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\mfe-mu.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="mg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\mg.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="mgh_MZ" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\mgh-mz.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="mgo_CM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\mgo-cm.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="mg_MG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\mg-mg.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="mi_NZ" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\mi-nz.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="mk" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\mk.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="mk_mk" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\mk-mk.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ml_IN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ml-in.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ml_x_su_SDL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ml-x-su-sdl.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="mni_IN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\mni-in.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="mn_Cyrl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\mn-cyrl.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="mn_MN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\mn-mn.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="mn_Mong" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\mn-mong.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="mn_Mong_CN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\mn-mong-cn.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="mn_Mong_MN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\mn-mong-mn.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="moh_CA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\moh-ca.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="mr_IN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\mr-in.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ms_BN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ms-bn.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ms_MY" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ms-my.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ms_SG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ms-sg.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="mt_MT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\mt-mt.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="mua_CM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\mua-cm.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="my" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\my.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="my_MM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\my-mm.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="naq_NA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\naq-na.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="nb_NO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\nb-no.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="nb_SJ" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\nb-sj.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="nd_ZW" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\nd-zw.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ne_IN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ne-in.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ne_NP" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ne-np.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="nl_AW" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\nl-aw.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="nl_BE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\nl-be.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="nl_BQ" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\nl-bq.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="nl_CW" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\nl-cw.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="nl_NL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\nl-nl.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="nl_SR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\nl-sr.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="nl_SX" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\nl-sx.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="nmg_CM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\nmg-cm.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="nnh_CM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\nnh-cm.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="nn_NO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\nn-no.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="no_flag" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\no-flag.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="nqo_GN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\nqo-gn.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="nr_ZA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\nr-za.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="nso_ZA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\nso-za.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="nus_SD" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\nus-sd.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="nyn_UG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\nyn-ug.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="oc_FR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\oc-fr.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="om" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\om.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="om_ET" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\om-et.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="om_KE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\om-ke.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="or_IN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\or-in.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="os_GE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\os-ge.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="os_RU" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\os-ru.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="pa_Arab_PK" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\pa-arab-pk.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="pa_IN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\pa-in.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="pl_PL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\pl-pl.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="prs_AF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\prs-af.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ps_AF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ps-af.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="pt_AO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\pt-ao.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="pt_BR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\pt-br.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="pt_CV" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\pt-cv.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="pt_GW" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\pt-gw.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="pt_MO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\pt-mo.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="pt_MZ" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\pt-mz.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="pt_PT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\pt-pt.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="pt_ST" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\pt-st.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="pt_TL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\pt-tl.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="quc_Latn_GT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\quc-latn-gt.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="qut_GT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\qut-gt.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="quz_BO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\quz-bo.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="quz_EC" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\quz-ec.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="quz_PE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\quz-pe.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="rm_CH" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\rm-ch.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="rn_BI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\rn-bi.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="rof_TZ" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\rof-tz.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ro_MD" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ro-md.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ro_RO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ro-ro.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ru_BY" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ru-by.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ru_KG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ru-kg.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ru_KZ" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ru-kz.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ru_MD" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ru-md.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ru_RU" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ru-ru.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ru_UA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ru-ua.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="rwk_TZ" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\rwk-tz.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="rw_RW" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\rw-rw.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="sah_RU" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\sah-ru.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="saq_KE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\saq-ke.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="sa_IN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\sa-in.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="sbp_TZ" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\sbp-tz.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="sd_Arab_PK" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\sd-arab-pk.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="sd_Deva_IN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\sd-deva-in.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="seh_MZ" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\seh-mz.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ses_ML" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ses-ml.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="se_FI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\se-fi.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="se_NO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\se-no.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="se_SE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\se-se.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="sg_CF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\sg-cf.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="shi_Latn_MA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\shi-latn-ma.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="shi_Tfng_MA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\shi-tfng-ma.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="si_LK" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\si-lk.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="sk_SK" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\sk-sk.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="sl_SI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\sl-si.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="sma_NO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\sma-no.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="sma_SE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\sma-se.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="smj_NO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\smj-no.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="smj_SE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\smj-se.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="smn_FI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\smn-fi.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="sms_FI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\sms-fi.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="sn_Latn_ZW" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\sn-latn-zw.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="so" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\so.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="so_DJ" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\so-dj.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="so_ET" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\so-et.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="so_KE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\so-ke.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="so_SO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\so-so.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="sq_AL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\sq-al.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="sq_MK" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\sq-mk.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="sq_XK" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\sq-xk.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="sr_Cyrl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\sr-cyrl.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="sr_Cyrl_BA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\sr-cyrl-ba.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="sr_Cyrl_CS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\sr-cyrl-cs.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="sr_Cyrl_ME" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\sr-cyrl-me.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="sr_Cyrl_RS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\sr-cyrl-rs.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="sr_Latn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\sr-latn.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="sr_Latn_BA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\sr-latn-ba.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="sr_Latn_CS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\sr-latn-cs.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="sr_Latn_ME" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\sr-latn-me.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="sr_Latn_RS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\sr-latn-rs.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ssy_ER" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ssy-er.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ss_SZ" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ss-sz.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ss_ZA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ss-za.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="st" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\st.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="st_LS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\st-ls.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="st_ZA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\st-za.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="sv_AX" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\sv-ax.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="sv_FI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\sv-fi.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="sv_SE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\sv-se.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="swc_CD" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\swc-cd.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="sw_CD" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\sw-cd.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="sw_KE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\sw-ke.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="sw_TZ" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\sw-tz.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="sw_UG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\sw-ug.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="syr_SY" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\syr-sy.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ta_IN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ta-in.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ta_LK" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ta-lk.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ta_MY" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ta-my.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ta_SG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ta-sg.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="teo_KE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\teo-ke.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="teo_UG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\teo-ug.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="te_IN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\te-in.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tg_Cyrl_TJ" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\tg-cyrl-tj.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="th_TH" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\th-th.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tig_ER" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\tig-er.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ti_ER" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ti-er.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ti_ET" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ti-et.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tk_TM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\tk-tm.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tl_x_SDL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\tl-x-sdl.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tn_BW" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\tn-bw.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tn_ZA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\tn-za.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="to_TO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\to-to.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tr_CY" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\tr-cy.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tr_TR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\tr-tr.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ts_ZA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ts-za.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="twq_NE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\twq-ne.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tzm_Arab_MA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\tzm-arab-ma.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tzm_Latn_DZ" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\tzm-latn-dz.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tzm_Latn_MA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\tzm-latn-ma.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tzm_Tfng_MA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\tzm-tfng-ma.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ug_CN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ug-cn.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="uk_UA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\uk-ua.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ur_IN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ur-in.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ur_PK" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ur-pk.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="uz_Arab_AF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\uz-arab-af.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="uz_Cyrl_UZ" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\uz-cyrl-uz.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="uz_Latn_UZ" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\uz-latn-uz.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="vai_Latn_LR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\vai-latn-lr.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="vai_Vaii_LR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\vai-vaii-lr.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ve_ZA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ve-za.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="vi_VN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\vi-vn.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="vun_TZ" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\vun-tz.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="wae_CH" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\wae-ch.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="wal_ET" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\wal-et.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="wo_SN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\wo-sn.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="xh_ZA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\xh-za.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="xog_UG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\xog-ug.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="x_es_XL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\x-es-xl.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="yav_CM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\yav-cm.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="yo_BJ" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\yo-bj.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="yo_NG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\yo-ng.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="zgh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\zgh.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="zgh_Tfng" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\zgh-tfng.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="zgh_Tfng_MA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\zgh-tfng-ma.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="zh_SG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\zh-sg.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="zu_ZA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\zu-za.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>
