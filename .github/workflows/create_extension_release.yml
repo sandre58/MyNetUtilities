@@ -48,7 +48,7 @@ jobs:
         id: computeParameters
         run: |
           if ('${{ steps.tagName.outputs.package }}' -eq '' || '${{ steps.tagName.outputs.version }}' -eq '') {
-            echo "packageName=${{ input.package }}" >> $Env:GITHUB_OUTPUT
+            echo "packageName=${{ inputs.packageName }}" >> $Env:GITHUB_OUTPUT
             if ('${{ inputs.packageVersion }}' -eq '') {
                 echo "build_args=" >> $Env:GITHUB_OUTPUT
             } else {
