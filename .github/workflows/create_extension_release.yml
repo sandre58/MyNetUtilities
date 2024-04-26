@@ -33,7 +33,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       buildArgs: ${{ steps.computeParameters.outputs.build_args }}
-      packageName: ${{ steps.tagName.outputs.packageName }}
+      packageName: ${{ steps.computeParameters.outputs.packageName }}
 
     steps:
 
