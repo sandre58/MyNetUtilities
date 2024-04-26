@@ -44,10 +44,11 @@ jobs:
   
   # Build and test
   build:
+    needs: [ build-args ]
     uses: avantipoint/workflow-templates/.github/workflows/dotnet-build.yml@master # https://github.com/AvantiPoint/workflow-templates/blob/master/.github/workflows/dotnet-build.yml
     with:
       dotnet-test-logger: GitHubActions --no-build --no-restore
-      build-args: ${{ steps.build-args.outputs.buildArgs }}
+      build-args: ${{ needs.build-args.outputs.buildArgs }}
       name: Build
       solution-path: .\src\${{ inputs.packageName }}\${{ inputs.packageName }}.csproj
       
