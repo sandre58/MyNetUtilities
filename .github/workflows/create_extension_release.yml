@@ -122,7 +122,7 @@ jobs:
           draft: true
           generateReleaseNotes: false
           token: ${{ github.token }}
-          name: ${{ inputs.packageName }} "${{ steps.process-version.outputs.release-display-name }}"
+          name: ${{ inputs.packageName }} ${{ steps.process-version.outputs.release-display-name }}
           prerelease: ${{ steps.process-version.outputs.is-preview }}
-          tag: ${{ inputs.packageName }}-v${{needs.gitversion.outputs.SemVer}}
+          tag: ${{ inputs.packageName }}-v${{ steps.process-version.outputs.version-name }}
           #body: ${{ steps.changelog.outputs.changes }}
