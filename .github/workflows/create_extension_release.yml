@@ -35,7 +35,7 @@ jobs:
 
       # Get package version
       - name: Defini Build arguments
-        shell: bash
+        shell: pwsh
         id: build-args
         run: |
           if ('${{ inputs.packageVersion }}' -eq '') {
