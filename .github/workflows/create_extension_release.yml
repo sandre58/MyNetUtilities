@@ -38,7 +38,9 @@ jobs:
         shell: bash
         id: build-args
         run: |
-          if (${{ inputs.packageVersion }} != '') {
+          if ('${{ inputs.packageVersion }}' -eq '') {
+            echo "build_args=''" >> $GITHUB_OUTPUT
+          } else {
             echo "build_args='\p:Version=${{ inputs.packageVersion}}'" >> $GITHUB_OUTPUT
           }
   
