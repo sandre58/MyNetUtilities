@@ -92,23 +92,23 @@ jobs:
         with:
           fetch-depth: 0
 
-      # # Update CHANGELOG with all conventional commit from previous tag
-      # - name: Update CHANGELOG
-      #   continue-on-error: true
-      #   id: changelog
-      #   uses: requarks/changelog-action@v1.10.1 # https://github.com/marketplace/actions/changelog-from-conventional-commits
-      #   with:
-      #     token: ${{ github.token }}
-      #     tag: ${{ github.ref_name }}
+      # Update CHANGELOG with all conventional commit from previous tag
+      - name: Update CHANGELOG
+        continue-on-error: true
+        id: changelog
+        uses: requarks/changelog-action@v1.10.1 # https://github.com/marketplace/actions/changelog-from-conventional-commits
+        with:
+          token: ${{ github.token }}
+          tag: ${{ github.ref_name }}
 
-      # # Commit changes in CHANGELOG and skip CI
-      # - name: Commit CHANGELOG.md
-      #   continue-on-error: true
-      #   uses: stefanzweifel/git-auto-commit-action@v4 # https://github.com/marketplace/actions/git-auto-commit
-      #   with:
-      #     branch: main
-      #     commit_message: 'docs: update CHANGELOG.md for ${{ github.ref_name }} [skip ci]'
-      #     file_pattern: CHANGELOG.md
+      # Commit changes in CHANGELOG and skip CI
+      - name: Commit CHANGELOG.md
+        continue-on-error: true
+        uses: stefanzweifel/git-auto-commit-action@v4 # https://github.com/marketplace/actions/git-auto-commit
+        with:
+          branch: main
+          commit_message: 'docs: update CHANGELOG.md for ${{ github.ref_name }} [skip ci]'
+          file_pattern: CHANGELOG.md
 
       # Download artifacts
       - uses: actions/download-artifact@v3
@@ -140,4 +140,4 @@ jobs:
           name: ${{ needs.computeParameters.outputs.packageName }} ${{ steps.process-version.outputs.release-display-name }}
           prerelease: ${{ steps.process-version.outputs.is-preview }}
           tag: ${{ needs.computeParameters.outputs.packageName }}-v${{ steps.process-version.outputs.version-name }}
-          #body: ${{ steps.changelog.outputs.changes }}
+          body: ${{ steps.changelog.outputs.changes }}
