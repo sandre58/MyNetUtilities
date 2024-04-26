@@ -33,7 +33,7 @@ jobs:
       dotnet-test-logger: GitHubActions --no-build --no-restore
       build-args: '/p:Version=${{ inputs.packageVersion }}'
       name: Build
-      solution-path: .\src\{{ inputs.packageName }}\{{ inputs.packageName }}.csproj
+      solution-path: .\src\${{ inputs.packageName }}\${{ inputs.packageName }}.csproj
       
   release:
     runs-on: ubuntu-latest
