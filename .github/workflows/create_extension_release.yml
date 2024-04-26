@@ -6,7 +6,10 @@
 
 name: Create Release for specific package
 
-on:
+on:  
+  push:
+    tags:
+    - '*-v*.*.*'
   workflow_dispatch:
     inputs:
       packageName:
@@ -26,37 +29,48 @@ on:
 
 jobs:
 
-  build-args:
+  computeParameters:
     runs-on: ubuntu-latest
     outputs:
-      buildArgs: ${{ steps.build-args.outputs.build_args }}
+      buildArgs: ${{ steps.computeParameters.outputs.build_args }}
+      packageName: ${{ steps.tagName.outputs.build_args }}
 
     steps:
 
-      # Get package version
-      - name: Defini Build arguments
+      - uses: olegtarasov/get-tag@v2.1.3 # https://github.com/marketplace/actions/get-tag-name
+        id: tagName
+        with:
+          tagRegex: "(?<package>.*)-(?<version>.*)" 
+
+      # Compute parameters
+      - name: Define Build parameters
         shell: pwsh
-        id: build-args
+        id: computeParameters
         run: |
-          if ('${{ inputs.packageVersion }}' -eq '') {
-            echo "build_args=" >> $Env:GITHUB_OUTPUT
+          if ('${{ steps.tagName.outputs.package }}' -eq '' || '${{ steps.tagName.outputs.version }}' -eq '') {
+            if ('${{ inputs.packageVersion }}' -eq '') {
+                echo "build_args=" >> $Env:GITHUB_OUTPUT
+            } else {
+                echo "build_args=/p:Version=${{ inputs.packageVersion}}" >> $Env:GITHUB_OUTPUT
+            }
           } else {
+            echo "packageName=${{ steps.tagName.outputs.package }}" >> $Env:GITHUB_OUTPUT
             echo "build_args=/p:Version=${{ inputs.packageVersion}}" >> $Env:GITHUB_OUTPUT
           }
   
   # Build and test
   build:
-    needs: [ build-args ]
+    needs: [ computeParameters ]
     uses: avantipoint/workflow-templates/.github/workflows/dotnet-build.yml@master # https://github.com/AvantiPoint/workflow-templates/blob/master/.github/workflows/dotnet-build.yml
     with:
       dotnet-test-logger: GitHubActions --no-build --no-restore
-      build-args: ${{ needs.build-args.outputs.buildArgs }}
+      build-args: ${{ needs.computeParameters.outputs.buildArgs }}
       name: Build
-      solution-path: .\src\${{ inputs.packageName }}\${{ inputs.packageName }}.csproj
+      solution-path: .\src\${{ needs.computeParameters.outputs.packageName }}\${{ needs.computeParameters.outputs.packageName }}.csproj
       
   release:
     runs-on: ubuntu-latest
-    needs: [ build ]
+    needs: [ computeParameters, build ]
     env:
       DOTNET_SYSTEM_CONSOLE_ALLOW_ANSI_COLOR_REDIRECTION: true
       DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
@@ -111,7 +125,7 @@ jobs:
           curl -sS -o process-version.pl https://raw.githubusercontent.com/avantipoint/workflow-templates/master/build/process-version.pl
           echo "Finished downloading package version script."
           echo "Processing package version..."
-          perl process-version.pl ${{ inputs.packageName }}
+          perl process-version.pl ${{ needs.computeParameters.outputs.packageName }}
       
       # Create release
       - uses: ncipollo/release-action@main # https://github.com/marketplace/actions/create-release
@@ -122,7 +136,7 @@ jobs:
           draft: true
           generateReleaseNotes: false
           token: ${{ github.token }}
-          name: ${{ inputs.packageName }} ${{ steps.process-version.outputs.release-display-name }}
+          name: ${{ needs.computeParameters.outputs.packageName }} ${{ steps.process-version.outputs.release-display-name }}
           prerelease: ${{ steps.process-version.outputs.is-preview }}
-          tag: ${{ inputs.packageName }}-v${{ steps.process-version.outputs.version-name }}
+          tag: ${{ needs.computeParameters.outputs.packageName }}-v${{ steps.process-version.outputs.version-name }}
           #body: ${{ steps.changelog.outputs.changes }}
