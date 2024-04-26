@@ -22,15 +22,13 @@ on:
         - MyNet.Utilities.Logging.NLog
         - MyNet.Utilities.Mail.MailKit
       packageVersion: 
-        description: New version of the package
-        default: 1.0.0
+        description: New version of the package. If empty, use version in .csproj.
 
 jobs:
 
   # Build and test
   build:
     uses: avantipoint/workflow-templates/.github/workflows/dotnet-build.yml@master # https://github.com/AvantiPoint/workflow-templates/blob/master/.github/workflows/dotnet-build.yml
-    needs: [ gitversion ]
     with:
       dotnet-test-logger: GitHubActions --no-build --no-restore
       build-args: '/p:Version=${{ inputs.packageVersion }}'
