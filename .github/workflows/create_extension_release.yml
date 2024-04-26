@@ -41,7 +41,7 @@ jobs:
           if ('${{ inputs.packageVersion }}' -eq '') {
             echo "build_args=" >> $Env:GITHUB_OUTPUT
           } else {
-            echo "build_args=\p:Version=${{ inputs.packageVersion}}" >> $Env:GITHUB_OUTPUT
+            echo "build_args=/p:Version=${{ inputs.packageVersion}}" >> $Env:GITHUB_OUTPUT
           }
   
   # Build and test
