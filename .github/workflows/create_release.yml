@@ -16,10 +16,11 @@ jobs:
 
   # GitVersion
   gitversion:
+    timeout-minutes: 5
     runs-on: windows-latest
     outputs:
-      SemVer: ${{ steps.gitversion.outputs.SemVer }}
-      Suffix: ${{ steps.gitversion.outputs.PreReleaseLabel }}
+      full_version: ${{ steps.gitversion.outputs.SemVer }}
+      suffix_label: ${{ steps.gitversion.outputs.PreReleaseLabel }}
 
     steps:
 
@@ -50,10 +51,11 @@ jobs:
     needs: [ gitversion ]
     with:
       dotnet-test-logger: GitHubActions --no-build --no-restore
-      build-args: '/p:GitVersion=${{ needs.gitversion.outputs.SemVer }} /p:VersionSuffix=${{ needs.gitversion.outputs.Suffix }}'
+      build-args: '/p:GitVersion=${{ needs.gitversion.outputs.full_version }} /p:VersionSuffix=${{ needs.gitversion.outputs.suffix_label }}'
       name: Build
       solution-path: .\src\MyNetUtilities.sln
       
+# Create release
   release:
     runs-on: ubuntu-latest
     needs: [ gitversion, build ]
@@ -62,12 +64,9 @@ jobs:
       DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
       DOTNET_NOLOGO: true
       DOTNET_CLI_TELEMETRY_OPTOUT: true
-      packageName: MyNet.Utilities
+      package_name: MyNet.Utilities
     permissions:
       contents: write
-    outputs:
-      release-display-name: ${{ steps.process-version.outputs.release-display-name }}
-      is-preview: ${{ steps.process-version.outputs.is-preview }}
 
     steps:
       
@@ -104,14 +103,14 @@ jobs:
       # Get package version
       - name: Process Package Version
         shell: bash
-        id: process-version
+        id: process_version
         working-directory: Artifacts/
         run: |
           echo "Downloading package version script..."
           curl -sS -o process-version.pl https://raw.githubusercontent.com/avantipoint/workflow-templates/master/build/process-version.pl
           echo "Finished downloading package version script."
           echo "Processing package version..."
-          perl process-version.pl ${{ env.packageName }}
+          perl process-version.pl ${{ env.package_name }}
       
       # Create release
       - uses: ncipollo/release-action@main # https://github.com/marketplace/actions/create-release
@@ -122,7 +121,7 @@ jobs:
           draft: true
           generateReleaseNotes: false
           token: ${{ github.token }}
-          name: "${{ steps.process-version.outputs.release-display-name }}"
-          prerelease: ${{ steps.process-version.outputs.is-preview }}
-          tag: v${{needs.gitversion.outputs.SemVer}}
+          name: "${{ steps.process_version.outputs.release-display-name }}"
+          prerelease: ${{ steps.process_version.outputs.is-preview }}
+          tag: v${{needs.gitversion.outputs.full_version}}
           body: ${{ steps.changelog.outputs.changes }}

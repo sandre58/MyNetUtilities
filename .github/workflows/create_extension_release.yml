@@ -12,7 +12,7 @@ on:
     - '*-v*.*.*'
   workflow_dispatch:
     inputs:
-      packageName:
+      package_name:
         type: choice
         description: Name of the package
         options: 
@@ -24,54 +24,57 @@ on:
         - MyNet.Utilities.Localization.Extensions
         - MyNet.Utilities.Logging.NLog
         - MyNet.Utilities.Mail.MailKit
-      packageVersion: 
+      package_version: 
         description: New version of the package. If empty, use version in .csproj.
 
 jobs:
 
-  computeParameters:
+  # Compute parameters
+  compute_parameters:
     runs-on: ubuntu-latest
     outputs:
-      buildArgs: ${{ steps.computeParameters.outputs.build_args }}
-      packageName: ${{ steps.computeParameters.outputs.packageName }}
+      build_args: ${{ steps.compute_parameters.outputs.build_args }}
+      package_name: ${{ steps.compute_parameters.outputs.package_name }}
 
     steps:
 
+      # Find package name and version from tag
       - uses: olegtarasov/get-tag@v2.1.3 # https://github.com/marketplace/actions/get-tag-name
-        id: tagName
+        id: tag_name
         with:
           tagRegex: "(?<package>.*)-v(?<version>.*)" 
 
-      # Compute parameters
+      # Return package name and version
       - name: Define Build parameters
         shell: pwsh
-        id: computeParameters
+        id: compute_parameters
         run: |
-          if ('${{ steps.tagName.outputs.package }}' -eq '' || '${{ steps.tagName.outputs.version }}' -eq '') {
-            echo "packageName=${{ inputs.packageName }}" >> $Env:GITHUB_OUTPUT
-            if ('${{ inputs.packageVersion }}' -eq '') {
+          if ('${{ steps.tag_name.outputs.package }}' -eq '' || '${{ steps.tag_name.outputs.version }}' -eq '') {
+            echo "package_name=${{ inputs.package_name }}" >> $Env:GITHUB_OUTPUT
+            if ('${{ inputs.package_version }}' -eq '') {
                 echo "build_args=" >> $Env:GITHUB_OUTPUT
             } else {
-                echo "build_args=/p:Version=${{ inputs.packageVersion}}" >> $Env:GITHUB_OUTPUT
+                echo "build_args=/p:Version=${{ inputs.package_version}}" >> $Env:GITHUB_OUTPUT
             }
           } else {
-            echo "packageName=${{ steps.tagName.outputs.package }}" >> $Env:GITHUB_OUTPUT
-            echo "build_args=/p:Version=${{ steps.tagName.outputs.version}}" >> $Env:GITHUB_OUTPUT
+            echo "package_name=${{ steps.tag_name.outputs.package }}" >> $Env:GITHUB_OUTPUT
+            echo "build_args=/p:Version=${{ steps.tag_name.outputs.version}}" >> $Env:GITHUB_OUTPUT
           }
   
-  # Build and test
+  # Build project
   build:
-    needs: [ computeParameters ]
+    needs: [ compute_parameters ]
     uses: avantipoint/workflow-templates/.github/workflows/dotnet-build.yml@master # https://github.com/AvantiPoint/workflow-templates/blob/master/.github/workflows/dotnet-build.yml
     with:
       dotnet-test-logger: GitHubActions --no-build --no-restore
-      build-args: ${{ needs.computeParameters.outputs.buildArgs }}
+      build-args: ${{ needs.compute_parameters.outputs.buildArgs }}
       name: Build
-      solution-path: .\src\${{ needs.computeParameters.outputs.packageName }}\${{ needs.computeParameters.outputs.packageName }}.csproj
-      
+      solution-path: .\src\${{ needs.compute_parameters.outputs.package_name }}\${{ needs.compute_parameters.outputs.package_name }}.csproj
+  
+  # Create release
   release:
     runs-on: ubuntu-latest
-    needs: [ computeParameters, build ]
+    needs: [ compute_parameters, build ]
     env:
       DOTNET_SYSTEM_CONSOLE_ALLOW_ANSI_COLOR_REDIRECTION: true
       DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
@@ -119,14 +122,14 @@ jobs:
       # Get package version
       - name: Process Package Version
         shell: bash
-        id: process-version
+        id: process_version
         working-directory: Artifacts/
         run: |
           echo "Downloading package version script..."
           curl -sS -o process-version.pl https://raw.githubusercontent.com/avantipoint/workflow-templates/master/build/process-version.pl
           echo "Finished downloading package version script."
           echo "Processing package version..."
-          perl process-version.pl ${{ needs.computeParameters.outputs.packageName }}
+          perl process-version.pl ${{ needs.compute_parameters.outputs.package_name }}
       
       # Create release
       - uses: ncipollo/release-action@main # https://github.com/marketplace/actions/create-release
@@ -137,7 +140,7 @@ jobs:
           draft: true
           generateReleaseNotes: false
           token: ${{ github.token }}
-          name: ${{ needs.computeParameters.outputs.packageName }} ${{ steps.process-version.outputs.release-display-name }}
-          prerelease: ${{ steps.process-version.outputs.is-preview }}
-          tag: ${{ needs.computeParameters.outputs.packageName }}-v${{ steps.process-version.outputs.version-name }}
+          name: ${{ needs.compute_parameters.outputs.package_name }} ${{ steps.process_version.outputs.release-display-name }}
+          prerelease: ${{ steps.process_version.outputs.is-preview }}
+          tag: ${{ needs.compute_parameters.outputs.package_name }}-v${{ steps.process_version.outputs.version-name }}
           body: ${{ steps.changelog.outputs.changes }}

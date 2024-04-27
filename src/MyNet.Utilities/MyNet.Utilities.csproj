@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="MyNet.Utilities.Encryption.Aes.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Compile Update="Resources\InternalResources.Designer.cs">
       <DependentUpon>InternalResources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
