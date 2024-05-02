@@ -5,7 +5,7 @@ namespace MyNet.Utilities.IO.FileExtensions
 {
     public static class FileExtensionInfoProvider
     {
-        public static FileExtensionInfo AllFiles { get; } = new(nameof(AllFiles), new[] { "*" });
+        public static FileExtensionInfo AllFiles { get; } = new(nameof(AllFiles), new[] { ".*" });
 
         public static FileExtensionInfo Csv { get; } = new(BuildTitleKey(nameof(Csv)), new[] { ".csv" });
 

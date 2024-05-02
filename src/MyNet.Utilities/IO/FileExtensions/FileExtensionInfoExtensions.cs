@@ -5,32 +5,32 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using MyNet.Utilities.Extensions;
 
 namespace MyNet.Utilities.IO.FileExtensions
 {
     public static class FileExtensionInfoExtensions
     {
-        public static (string Name, string Extensions) GetFileFilter(this FileExtensionInfo fileTypeExtension, Func<string, string?>? translateKey = null)
+        public static (string Title, string Extensions) GetFileFilter(this FileExtensionInfo fileTypeExtension, Func<string, string?>? translateKey = null)
         {
             var extensionFilters = fileTypeExtension.Extensions.Select(x => $"*{x}").Aggregate((x, y) => $"{x};{y}");
+            var title = $"{translateKey?.Invoke(fileTypeExtension.Key) ?? fileTypeExtension.Key.Translate()}";
 
-            return ($"{translateKey?.Invoke(fileTypeExtension.Key) ?? fileTypeExtension.Key}", extensionFilters);
+            if (!string.IsNullOrEmpty(extensionFilters) && extensionFilters != "*.*")
+                title += $" ({extensionFilters})";
+
+            return (title, extensionFilters);
         }
 
-        public static IDictionary<string, string> GetFileFilters(this FileExtensionInfo fileTypeExtension, Func<string, string?>? translateKey = null)
+        public static string? GetFileFilters(this FileExtensionInfo fileTypeExtension, Func<string, string?>? translateKey = null)
             => GetFileFilters([fileTypeExtension], translateKey);
 
-        public static IDictionary<string, string> GetFileFilters(this IEnumerable<FileExtensionInfo> fileTypeExtensions, Func<string, string?>? translateKey = null)
-        {
-            var result = new Dictionary<string, string>();
-            foreach (var fileTypeExtension in fileTypeExtensions)
+        public static string? GetFileFilters(this IEnumerable<FileExtensionInfo> fileTypeExtensions, Func<string, string?>? translateKey = null)
+            => string.Join("|", fileTypeExtensions.SelectMany(x =>
             {
-                var (name, extensions) = fileTypeExtension.GetFileFilter(translateKey);
-                result.Add(name, extensions);
-            }
-
-            return result;
-        }
+                var fileFilter = x.GetFileFilter(translateKey);
+                return new[] { fileFilter.Title, fileFilter.Extensions };
+            }).ToList());
 
         public static IEnumerable<string> GetExtensionNames(this FileExtensionInfo fileTypeExtension) => fileTypeExtension.Extensions.Select(x => x.ToLowerInvariant());
 

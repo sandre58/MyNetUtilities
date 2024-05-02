@@ -47,11 +47,11 @@ namespace MyNet.Utilities.IO.FileExtensions
             return AddMerge(key, fistPosition, extensions);
         }
 
-        public IDictionary<string, string> GenerateFilters(Func<string, string?>? translateKey = null) => _extensions.GetFileFilters(translateKey);
+        public string? GenerateFilters(Func<string, string?>? translateKey = null) => _extensions.GetFileFilters(translateKey);
 
         public int IndexOfExtension(string extensionName) =>
             _extensions.Select((x, y) => (index: y, item: x))
-                             .FirstOrDefault(x => x.item.GetExtensionNames().Contains(extensionName.ToLowerInvariant()))
-                             .index;
+                       .FirstOrDefault(x => x.item.GetExtensionNames().Contains(extensionName.ToLowerInvariant()))
+                       .index;
     }
 }
