@@ -1,5 +1,10 @@
 # Changelog
 
+## [v2.2.0] - 2024-05-18
+### :sparkles: New Features
+- [`a3cae1e`](https://github.com/sandre58/MyNetUtilities/commit/a3cae1eb8198f5908d832fad3c95573e9481923a) - Add an items provider with predicate *(commit by [@sandre58](https://github.com/sandre58))*
+
+
 ## [v2.1.0] - 2024-05-16
 ### :sparkles: New Features
 - [`47d23e5`](https://github.com/sandre58/MyNetUtilities/commit/47d23e5efdc47ab532dc0c8e733ecdf61140edc0) - Add plugins management *(commit by [@sandre58](https://github.com/sandre58))*
@@ -25,3 +30,4 @@
 
 [v2.0.0]: https://github.com/sandre58/MyNetUtilities/compare/v1.0.1...v2.0.0
 [v2.1.0]: https://github.com/sandre58/MyNetUtilities/compare/v2.0.0...v2.1.0
+[v2.2.0]: https://github.com/sandre58/MyNetUtilities/compare/v2.1.0...v2.2.0
