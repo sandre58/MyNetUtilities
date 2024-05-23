@@ -12,6 +12,9 @@ namespace MyNet.Utilities.Providers
         private readonly Func<T, bool> _predicate;
         private readonly IItemsProvider<T> _itemsProvider;
 
+        public PredicateItemsProvider(IEnumerable<T> items, Func<T, bool> predicate)
+            : this(new ItemsProvider<T>(items), predicate) { }
+
         public PredicateItemsProvider(IItemsProvider<T> provider, Func<T, bool> predicate)
         {
             _itemsProvider = provider;

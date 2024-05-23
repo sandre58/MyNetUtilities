@@ -3,7 +3,7 @@
 
 using System.Collections.Generic;
 
-namespace MyNet.Utilities
+namespace MyNet.Utilities.Providers
 {
     public interface IItemsProvider<out T>
     {

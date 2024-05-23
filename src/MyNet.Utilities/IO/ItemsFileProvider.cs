@@ -4,23 +4,17 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
+using MyNet.Utilities.Providers;
 
 namespace MyNet.Utilities.IO
 {
     public abstract class ItemsFileProvider<T> : IItemsProvider<T>
     {
-        private readonly Func<T, bool> _predicate;
-
         public string? Filename { get; private set; }
 
         public IEnumerable<Exception> Exceptions { get; private set; } = [];
 
-        protected ItemsFileProvider(string? filename = null, Func<T, bool>? predicate = null)
-        {
-            SetFilename(filename.OrEmpty());
-            _predicate = predicate ?? new Func<T, bool>(x => true);
-        }
+        protected ItemsFileProvider(string? filename = null) => SetFilename(filename.OrEmpty());
 
         public void SetFilename(string filename) => Filename = filename;
 
@@ -36,7 +30,7 @@ namespace MyNet.Utilities.IO
             var (items, exceptions) = LoadItems(Filename);
             Exceptions = exceptions;
 
-            return items.Where(_predicate);
+            return items;
         }
 
         protected abstract (IEnumerable<T> items, IEnumerable<Exception> exceptions) LoadItems(string filename);

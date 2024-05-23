@@ -5,14 +5,8 @@ namespace MyNet.Utilities
 {
     public interface IModifiable
     {
-        /// <summary>
-        /// Reset IsModified value.
-        /// </summary>
         void ResetIsModified();
 
-        /// <summary>
-        /// Gets if the object is modified.
-        /// </summary>
         bool IsModified();
     }
 }
