@@ -1,5 +1,10 @@
 # Changelog
 
+## [v3.0.1] - 2024-05-24
+### :bug: Bug Fixes
+- [`a200308`](https://github.com/sandre58/MyNetUtilities/commit/a2003089fab6727fb6b72813c985f3dd38b9d5a2) - change visibility of IConverter *(commit by [@sandre58](https://github.com/sandre58))*
+
+
 ## [v3.0.0] - 2024-05-23
 ### :boom: BREAKING CHANGES
 - due to [`956b143`](https://github.com/sandre58/MyNetUtilities/commit/956b143e74a4f6faa2f55143f94d49fe3909d0b9) - add IConverter *(commit by [@sandre58](https://github.com/sandre58))*:
@@ -43,3 +48,4 @@
 [v2.1.0]: https://github.com/sandre58/MyNetUtilities/compare/v2.0.0...v2.1.0
 [v2.2.0]: https://github.com/sandre58/MyNetUtilities/compare/v2.1.0...v2.2.0
 [v3.0.0]: https://github.com/sandre58/MyNetUtilities/compare/v2.2.0...v3.0.0
+[v3.0.1]: https://github.com/sandre58/MyNetUtilities/compare/v3.0.0...v3.0.1
