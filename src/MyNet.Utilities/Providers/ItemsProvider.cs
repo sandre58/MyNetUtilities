@@ -11,6 +11,6 @@ namespace MyNet.Utilities.Providers
 
         public ItemsProvider(IEnumerable<T> items) => _items = items;
 
-        public IEnumerable<T> ProvideItems() => _items;
+        public virtual IEnumerable<T> ProvideItems() => _items;
     }
 }

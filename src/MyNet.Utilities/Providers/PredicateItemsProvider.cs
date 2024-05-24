@@ -21,6 +21,6 @@ namespace MyNet.Utilities.Providers
             _predicate = predicate;
         }
 
-        public IEnumerable<T> ProvideItems() => _itemsProvider.ProvideItems().Where(_predicate);
+        public virtual IEnumerable<T> ProvideItems() => _itemsProvider.ProvideItems().Where(_predicate);
     }
 }
