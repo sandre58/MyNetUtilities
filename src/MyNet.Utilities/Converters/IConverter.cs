@@ -3,7 +3,7 @@
 
 namespace MyNet.Utilities.Converters
 {
-    internal interface IConverter<TFrom, TTo>
+    public interface IConverter<TFrom, TTo>
     {
         TTo Convert(TFrom item);
 
