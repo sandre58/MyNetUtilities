@@ -1,5 +1,13 @@
 # Changelog
 
+## [v3.1.0] - 2024-06-13
+### :sparkles: New Features
+- [`f6c9d74`](https://github.com/sandre58/MyNetUtilities/commit/f6c9d74e9424edd82cee303e125f4c41352575d7) - add collections *(commit by [@sandre58](https://github.com/sandre58))*
+
+### :bug: Bug Fixes
+- [`0c7a263`](https://github.com/sandre58/MyNetUtilities/commit/0c7a2638ba801bfce0ab38cf12e33b796155f7ad) - add virtual indicator for ProvideItems method *(commit by [@sandre58](https://github.com/sandre58))*
+
+
 ## [v3.0.1] - 2024-05-24
 ### :bug: Bug Fixes
 - [`a200308`](https://github.com/sandre58/MyNetUtilities/commit/a2003089fab6727fb6b72813c985f3dd38b9d5a2) - change visibility of IConverter *(commit by [@sandre58](https://github.com/sandre58))*
@@ -49,3 +57,4 @@
 [v2.2.0]: https://github.com/sandre58/MyNetUtilities/compare/v2.1.0...v2.2.0
 [v3.0.0]: https://github.com/sandre58/MyNetUtilities/compare/v2.2.0...v3.0.0
 [v3.0.1]: https://github.com/sandre58/MyNetUtilities/compare/v3.0.0...v3.0.1
+[v3.1.0]: https://github.com/sandre58/MyNetUtilities/compare/v3.0.1...v3.1.0
