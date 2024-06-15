@@ -230,6 +230,8 @@ namespace MyNet.Utilities.Messaging
         /// <param name="message">The message to send to registered recipients.</param>
         public virtual void Send<TMessage>(TMessage message) => SendToTargetOrType(message, null, null);
 
+        public virtual void Send<TMessage>() => SendToTargetOrType(Activator.CreateInstance<TMessage>(), null, null);
+
         /// <summary>
         /// Sends a message to registered recipients. The message will
         /// reach only recipients that registered for this message type

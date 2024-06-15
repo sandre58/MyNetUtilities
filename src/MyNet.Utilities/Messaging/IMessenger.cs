@@ -143,6 +143,8 @@ namespace MyNet.Utilities.Messaging
         /// <param name="message">The message to send to registered recipients.</param>
         void Send<TMessage>(TMessage message);
 
+        void Send<TMessage>();
+
         /// <summary>
         /// Sends a message to registered recipients. The message will
         /// reach only recipients that registered for this message type
