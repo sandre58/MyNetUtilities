@@ -20,6 +20,22 @@ namespace MyNet.Utilities.DateTimes
 
         public bool IsCurrent() => Contains(DateTime.Today);
 
+        public Period ToUniversalTime() => new(Start.ToUniversalTime(), End.ToUniversalTime());
+
+        public Period ToLocalTime() => new(Start.ToLocalTime(), End.ToLocalTime());
+
+        public Period AddAfter(TimeSpan offset) => new(Start, End.AddFluentTimeSpan(offset));
+
+        public Period AddBefore(TimeSpan offset) => new(Start.AddFluentTimeSpan(offset), End);
+
+        public Period SubstractBefore(TimeSpan offset) => new(Start, End.SubtractFluentTimeSpan(offset));
+
+        public Period SubstractAfter(TimeSpan offset) => new(Start.SubtractFluentTimeSpan(offset), End);
+
+        public Period ShiftLater(TimeSpan offset) => new(Start.AddFluentTimeSpan(offset), End.AddFluentTimeSpan(offset));
+
+        public Period ShiftEarlier(TimeSpan offset) => new(Start.SubtractFluentTimeSpan(offset), End.SubtractFluentTimeSpan(offset));
+
         public ImmutablePeriod AsImmutable() => new(Start, End);
     }
 
