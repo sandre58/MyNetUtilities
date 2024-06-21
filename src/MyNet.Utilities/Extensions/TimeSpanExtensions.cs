@@ -2,6 +2,7 @@
 // See the LICENSE file in the project root for more information.
 
 using System;
+using System.Collections.Generic;
 using MyNet.Utilities.DateTimes;
 using MyNet.Utilities.Units;
 
@@ -172,5 +173,27 @@ namespace MyNet.Utilities
             TimeUnit.Year => new TimeSpan((int)Math.Round(value * DaysInAYear), 0, 0, 0, 0),
             _ => new TimeSpan(),
         };
+
+        public static (int value, TimeUnit unit) Simplify(this TimeSpan time)
+        {
+            var dictionary = new Dictionary<TimeUnit, (Func<TimeSpan, bool> checkValue, Func<TimeSpan, double> getTotal)>
+            {
+                { TimeUnit.Second, (new Func<TimeSpan, bool>(x => x.Seconds != 0), new Func<TimeSpan, double>(x => x.TotalSeconds)) },
+                { TimeUnit.Minute, (new Func<TimeSpan, bool>(x => x.Minutes != 0), new Func<TimeSpan, double>(x => x.TotalMinutes)) },
+                { TimeUnit.Hour, (new Func<TimeSpan, bool>(x => x.Hours != 0), new Func<TimeSpan, double>(x => x.TotalHours)) },
+                { TimeUnit.Year, (new Func<TimeSpan, bool>(x => x.Days > 0 && x.Days % (int)DaysInAYear == 0), new Func<TimeSpan, double>(x => x.TotalDays / (int)DaysInAYear)) },
+                { TimeUnit.Month, (new Func<TimeSpan, bool>(x => x.Days > 0 &&  x.Days % (int)DaysInAMonth == 0), new Func<TimeSpan, double>(x => x.TotalDays / (int)DaysInAMonth)) },
+                { TimeUnit.Week, (new Func<TimeSpan, bool>(x => x.Days > 0 &&  x.Days % DaysInAWeek == 0), new Func<TimeSpan, double>(x => x.TotalDays / DaysInAWeek)) },
+                { TimeUnit.Day, (new Func<TimeSpan, bool>(x => x.Days != 0), new Func<TimeSpan, double>(x => x.TotalDays)) },
+            };
+
+            foreach (var (unit, value) in dictionary)
+            {
+                if (value.checkValue.Invoke(time))
+                    return ((int)value.getTotal.Invoke(time), unit);
+            }
+
+            return (0, TimeUnit.Millisecond);
+        }
     }
 }
