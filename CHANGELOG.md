@@ -1,5 +1,12 @@
 # Changelog
 
+## [v3.2.0] - 2024-06-21
+### :sparkles: New Features
+- [`d8805da`](https://github.com/sandre58/MyNetUtilities/commit/d8805dacdfd2a5071621bf6f04d77f1d31fc3f53) - add new Send method in Messenger *(commit by [@sandre58](https://github.com/sandre58))*
+- [`dac6243`](https://github.com/sandre58/MyNetUtilities/commit/dac624387a402b7db2f243effc721af1d48be27e) - add new methods for Period and update packages *(commit by [@sandre58](https://github.com/sandre58))*
+- [`5c60b2b`](https://github.com/sandre58/MyNetUtilities/commit/5c60b2bde052cf1c9d1c6440300c05f83d47ff43) - add extension to simplify timespan *(commit by [@sandre58](https://github.com/sandre58))*
+
+
 ## [v3.1.0] - 2024-06-13
 ### :sparkles: New Features
 - [`f6c9d74`](https://github.com/sandre58/MyNetUtilities/commit/f6c9d74e9424edd82cee303e125f4c41352575d7) - add collections *(commit by [@sandre58](https://github.com/sandre58))*
@@ -58,3 +65,4 @@
 [v3.0.0]: https://github.com/sandre58/MyNetUtilities/compare/v2.2.0...v3.0.0
 [v3.0.1]: https://github.com/sandre58/MyNetUtilities/compare/v3.0.0...v3.0.1
 [v3.1.0]: https://github.com/sandre58/MyNetUtilities/compare/v3.0.1...v3.1.0
+[v3.2.0]: https://github.com/sandre58/MyNetUtilities/compare/v3.1.0...v3.2.0
