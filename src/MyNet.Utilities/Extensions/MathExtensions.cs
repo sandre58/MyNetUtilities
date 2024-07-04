@@ -4,6 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using MyNet.Utilities.Helpers;
 
 namespace MyNet.Utilities
 {
@@ -15,12 +16,20 @@ namespace MyNet.Utilities
         public static bool NearlyEqual(this double value1, double value2, double epsilon = double.Epsilon) => Math.Abs(value1 - value2) < epsilon;
 
         public static bool NearlyEqual(this double? value1, double? value2, double epsilon = double.Epsilon) => !value1.HasValue && !value2.HasValue
-|| value1.HasValue && value2.HasValue && value1.Value.NearlyEqual(value2.Value, epsilon);
+            || value1.HasValue && value2.HasValue && value1.Value.NearlyEqual(value2.Value, epsilon);
 
         public static bool NearlyEqual(this float value1, float value2, float epsilon = float.Epsilon) => Math.Abs(value1 - value2) < epsilon;
 
         public static bool NearlyEqual(this float? value1, float? value2, float epsilon = float.Epsilon) => !value1.HasValue && !value2.HasValue
-|| value1.HasValue && value2.HasValue && value1.Value.NearlyEqual(value2.Value, epsilon);
+            || value1.HasValue && value2.HasValue && value1.Value.NearlyEqual(value2.Value, epsilon);
+
+        public static bool IsEven(this int value) => value % 2 == 0;
+
+        public static bool IsOdd(this int value) => value % 2 == 1;
+
+        public static void Iteration(this int value, Action<int> action) => EnumerableHelper.Iteration(value, action);
+
+        public static IEnumerable<int> Range(this int value, int min = 1, int step = 1) => EnumerableHelper.Range(min, value, 1);
 
         public static double ExtractDouble(this object val)
         {
