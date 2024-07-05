@@ -1,5 +1,11 @@
 # Changelog
 
+## [v3.3.0] - 2024-07-05
+### :sparkles: New Features
+- [`69e0b6e`](https://github.com/sandre58/MyNetUtilities/commit/69e0b6e29de7fb08a247b75d1c9a68e6a8b3eeb5) - add new extensions for Integer *(commit by [@sandre58](https://github.com/sandre58))*
+- [`91bf01a`](https://github.com/sandre58/MyNetUtilities/commit/91bf01aeb3bd005f1fc36af6fd3e03365c8720f1) - Add method contains in Interval *(commit by [@sandre58](https://github.com/sandre58))*
+
+
 ## [v3.2.0] - 2024-06-21
 ### :sparkles: New Features
 - [`d8805da`](https://github.com/sandre58/MyNetUtilities/commit/d8805dacdfd2a5071621bf6f04d77f1d31fc3f53) - add new Send method in Messenger *(commit by [@sandre58](https://github.com/sandre58))*
@@ -66,3 +72,4 @@
 [v3.0.1]: https://github.com/sandre58/MyNetUtilities/compare/v3.0.0...v3.0.1
 [v3.1.0]: https://github.com/sandre58/MyNetUtilities/compare/v3.0.1...v3.1.0
 [v3.2.0]: https://github.com/sandre58/MyNetUtilities/compare/v3.1.0...v3.2.0
+[v3.3.0]: https://github.com/sandre58/MyNetUtilities/compare/v3.2.0...v3.3.0
