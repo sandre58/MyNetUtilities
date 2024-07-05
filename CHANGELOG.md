@@ -1,5 +1,10 @@
 # Changelog
 
+## [v3.4.0] - 2024-07-05
+### :sparkles: New Features
+- [`7c26c2a`](https://github.com/sandre58/MyNetUtilities/commit/7c26c2a88954561b89e3b0cb3be5f11619fd0433) - add extensions to convert Timespan to Local or Universal time *(commit by [@sandre58](https://github.com/sandre58))*
+
+
 ## [v3.3.0] - 2024-07-05
 ### :sparkles: New Features
 - [`69e0b6e`](https://github.com/sandre58/MyNetUtilities/commit/69e0b6e29de7fb08a247b75d1c9a68e6a8b3eeb5) - add new extensions for Integer *(commit by [@sandre58](https://github.com/sandre58))*
@@ -73,3 +78,4 @@
 [v3.1.0]: https://github.com/sandre58/MyNetUtilities/compare/v3.0.1...v3.1.0
 [v3.2.0]: https://github.com/sandre58/MyNetUtilities/compare/v3.1.0...v3.2.0
 [v3.3.0]: https://github.com/sandre58/MyNetUtilities/compare/v3.2.0...v3.3.0
+[v3.4.0]: https://github.com/sandre58/MyNetUtilities/compare/v3.3.0...v3.4.0
