@@ -17,9 +17,9 @@ namespace MyNet.Utilities
         public const double DaysInAYear = 365.2425; // see https://en.wikipedia.org/wiki/Gregorian_calendar
         public const double DaysInAMonth = DaysInAYear / 12;
 
-        public static TimeSpan ToUniversalTime(this TimeSpan timespan) => DateTime.Now.Date.Add(timespan).ToUniversalTime().TimeOfDay;
+        public static TimeSpan ToUniversalTime(this TimeSpan timespan, DateTime? targetDate = null) => (targetDate?.ToLocalTime() ?? DateTime.Now).Date.Add(timespan).ToUniversalTime().TimeOfDay;
 
-        public static TimeSpan ToLocalTime(this TimeSpan timespan) => DateTime.UtcNow.Date.Add(timespan).ToLocalTime().TimeOfDay;
+        public static TimeSpan ToLocalTime(this TimeSpan timespan, DateTime? targetDate = null) => (targetDate?.ToUniversalTime() ?? DateTime.UtcNow).Date.Add(timespan).ToLocalTime().TimeOfDay;
 
         /// <summary>
         /// Adds the given <see cref="FluentTimeSpan"/> from a <see cref="TimeSpan"/> and returns resulting <see cref="FluentTimeSpan"/>.
