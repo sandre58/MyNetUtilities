@@ -24,6 +24,8 @@ namespace MyNet.Utilities.Sequences
 
         public bool Contains(T value) => value.CompareTo(Start) >= 0 && value.CompareTo(End) <= 0;
 
+        public bool Contains(Interval<T> interval) => interval.Start.CompareTo(Start) >= 0 && interval.End.CompareTo(End) <= 0;
+
         public bool Intersect(Interval<T> interval) => Start.CompareTo(interval.End) < 0 && interval.Start.CompareTo(End) < 0;
 
         public override bool Equals(object? obj) => obj is Interval<T> vm && Start.Equals(vm.Start) && End.Equals(vm.End);
