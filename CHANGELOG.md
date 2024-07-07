@@ -1,5 +1,13 @@
 # Changelog
 
+## [v3.5.0] - 2024-07-07
+### :sparkles: New Features
+- [`836bf2e`](https://github.com/sandre58/MyNetUtilities/commit/836bf2e781bb0fc8d2ea5b39a80414e7f4071dcd) - add TimePeriod *(commit by [@sandre58](https://github.com/sandre58))*
+
+### :bug: Bug Fixes
+- [`1ef6995`](https://github.com/sandre58/MyNetUtilities/commit/1ef69951ffb92e22b64a830e2fbc3094db5f24a1) - fix conversion to local and universal date time *(commit by [@sandre58](https://github.com/sandre58))*
+
+
 ## [v3.4.0] - 2024-07-05
 ### :sparkles: New Features
 - [`7c26c2a`](https://github.com/sandre58/MyNetUtilities/commit/7c26c2a88954561b89e3b0cb3be5f11619fd0433) - add extensions to convert Timespan to Local or Universal time *(commit by [@sandre58](https://github.com/sandre58))*
@@ -79,3 +87,4 @@
 [v3.2.0]: https://github.com/sandre58/MyNetUtilities/compare/v3.1.0...v3.2.0
 [v3.3.0]: https://github.com/sandre58/MyNetUtilities/compare/v3.2.0...v3.3.0
 [v3.4.0]: https://github.com/sandre58/MyNetUtilities/compare/v3.3.0...v3.4.0
+[v3.5.0]: https://github.com/sandre58/MyNetUtilities/compare/v3.4.0...v3.5.0
