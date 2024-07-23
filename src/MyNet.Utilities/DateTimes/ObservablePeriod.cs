@@ -30,5 +30,7 @@ namespace MyNet.Utilities.DateTimes
             if (oldEnd != End)
                 RaisePropertyChanged(nameof(End));
         }
+
+        protected override Period CreateInstance(DateTime start, DateTime end) => new ObservablePeriod(start, end);
     }
 }

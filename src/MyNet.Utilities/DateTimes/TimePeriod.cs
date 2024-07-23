@@ -6,9 +6,9 @@ using MyNet.Utilities.Sequences;
 
 namespace MyNet.Utilities.DateTimes
 {
-    public class TimePeriod : Interval<TimeSpan>
+    public class TimePeriod : Interval<TimeSpan, TimePeriod>
     {
-        public TimePeriod(TimeSpan start, TimeSpan end, DateTimeKind kind) : base(start, end) => Kind = kind;
+        public TimePeriod(TimeSpan start, TimeSpan end, DateTimeKind kind = DateTimeKind.Local) : base(start, end) => Kind = kind;
 
         public DateTimeKind Kind { get; }
 
@@ -39,5 +39,7 @@ namespace MyNet.Utilities.DateTimes
         public TimePeriod ShiftLater(TimeSpan offset) => new(Start.AddFluentTimeSpan(offset), End.AddFluentTimeSpan(offset), Kind);
 
         public TimePeriod ShiftEarlier(TimeSpan offset) => new(Start.SubtractFluentTimeSpan(offset), End.SubtractFluentTimeSpan(offset), Kind);
+
+        protected override TimePeriod CreateInstance(TimeSpan start, TimeSpan end) => new(start, end);
     }
 }

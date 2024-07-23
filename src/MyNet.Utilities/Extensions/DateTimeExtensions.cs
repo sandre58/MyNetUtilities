@@ -20,6 +20,8 @@ namespace MyNet.Utilities
 
         public static Period ToPeriod(this DateTime dateTime, FluentTimeSpan timeSpan) => new(dateTime, dateTime.AddFluentTimeSpan(timeSpan));
 
+        public static Period ToPeriod(this DateTime dateTime, DateTime otherDateTime) => new(DateTimeHelper.Min(dateTime, otherDateTime), DateTimeHelper.Max(dateTime, otherDateTime));
+
         public static DateTime Add(this DateTime date, int value, TimeUnit timeUnitToGet) => date.AddFluentTimeSpan(value.ToTimeSpan(timeUnitToGet));
 
         /// <summary>

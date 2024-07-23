@@ -4,11 +4,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using MyNet.Utilities.Helpers;
 using MyNet.Utilities.Sequences;
 
 namespace MyNet.Utilities.DateTimes
 {
-    public class Period : Interval<DateTime>
+    public class Period : Interval<DateTime, Period>
     {
         public Period(DateTime start, DateTime end) : base(start, end) { }
 
@@ -17,6 +18,11 @@ namespace MyNet.Utilities.DateTimes
         public IEnumerable<DateTime> ToDates() =>
             Enumerable.Range(0, End.Date.Subtract(Start.Date).Days + 1)
                       .Select(offset => Start.Date.AddDays(offset));
+
+        public IEnumerable<Period> ByDays() =>
+            Enumerable.Range(0, End.Date.Subtract(Start.Date).Days + 1)
+                      .Select(offset => Start.Date.AddDays(offset))
+                      .Select(x => new Period(DateTimeHelper.Max(x.BeginningOfDay(), Start), DateTimeHelper.Min(x.EndOfDay(), End)));
 
         public bool IsCurrent() => Contains(DateTime.Today);
 
@@ -36,7 +42,12 @@ namespace MyNet.Utilities.DateTimes
 
         public Period ShiftEarlier(TimeSpan offset) => new(Start.SubtractFluentTimeSpan(offset), End.SubtractFluentTimeSpan(offset));
 
+        public IEnumerable<Period> Intersect(TimePeriod interval)
+            => ByDays().Select(x => x.ToUniversalTime().Intersect(new Period(x.Start.ToUtcDateTime(interval.Start), x.Start.ToUtcDateTime(interval.End)))).NotNull();
+
         public ImmutablePeriod AsImmutable() => new(Start, End);
+
+        protected override Period CreateInstance(DateTime start, DateTime end) => new(start, end);
     }
 
     public class ImmutablePeriod : Period
@@ -44,6 +55,8 @@ namespace MyNet.Utilities.DateTimes
         public ImmutablePeriod(DateTime start, DateTime end) : base(start, end) { }
 
         public override void SetInterval(DateTime start, DateTime end) => throw new InvalidOperationException("This period is immutable.");
+
+        protected override Period CreateInstance(DateTime start, DateTime end) => new ImmutablePeriod(start, end);
     }
 
     public class PeriodWithOptionalEnd : IntervalWithOptionalEnd<DateTime>

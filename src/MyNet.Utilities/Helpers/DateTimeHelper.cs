@@ -19,7 +19,17 @@ namespace MyNet.Utilities.Helpers
             ? date2
             : date1;
 
-        public static IEnumerable<DateTime> Range(DateTime min, DateTime max, int step, TimeUnit unit)
+        public static TimeSpan Max(TimeSpan time1, TimeSpan time2) =>
+            time1 > time2
+            ? time1
+            : time2;
+
+        public static TimeSpan Min(TimeSpan time1, TimeSpan time2) =>
+            time1 > time2
+            ? time2
+            : time1;
+
+        public static IEnumerable<DateTime> Range(DateTime min, DateTime max, int step = 1, TimeUnit unit = TimeUnit.Day)
         {
             Func<DateTime, DateTime> increment = null!;
 
