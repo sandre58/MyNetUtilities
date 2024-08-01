@@ -1,5 +1,10 @@
 # Changelog
 
+## [v4.0.2] - 2024-08-01
+### :bug: Bug Fixes
+- [`419449f`](https://github.com/sandre58/MyNetUtilities/commit/419449f7b128c85bdd55df2d04c28aeb5983973b) - fix SuspendNotifications *(commit by [@sandre58](https://github.com/sandre58))*
+
+
 ## [v4.0.1] - 2024-08-01
 ### :bug: Bug Fixes
 - [`3c14a20`](https://github.com/sandre58/MyNetUtilities/commit/3c14a20f7461cc7ac26a739d4c6da7dea8c55eea) - change fired notification after suspend notifications *(commit by [@sandre58](https://github.com/sandre58))*
@@ -106,3 +111,4 @@
 [v3.5.0]: https://github.com/sandre58/MyNetUtilities/compare/v3.4.0...v3.5.0
 [v4.0.0]: https://github.com/sandre58/MyNetUtilities/compare/v3.5.0...v4.0.0
 [v4.0.1]: https://github.com/sandre58/MyNetUtilities/compare/v4.0.0...v4.0.1
+[v4.0.2]: https://github.com/sandre58/MyNetUtilities/compare/v4.0.1...v4.0.2
