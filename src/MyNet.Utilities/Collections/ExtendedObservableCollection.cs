@@ -141,7 +141,7 @@ public class ExtendedObservableCollection<T> : ObservableCollection<T>
                 _suspendCount = false;
                 _suspendNotifications = false;
                 OnPropertyChanged(new PropertyChangedEventArgs("Count"));
-                OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Replace));
+                OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Remove, null));
             }).Defer();
     }
 
