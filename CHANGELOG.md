@@ -1,5 +1,16 @@
 # Changelog
 
+## [v4.0.0] - 2024-07-23
+### :boom: BREAKING CHANGES
+- due to [`73d10fe`](https://github.com/sandre58/MyNetUtilities/commit/73d10fe1a71c13efafa219c2877ca2dd9534c57c) - add new methods for intervals *(commit by [@sandre58](https://github.com/sandre58))*:
+
+  Intersect method renamed in IntersectWith
+
+
+### :sparkles: New Features
+- [`73d10fe`](https://github.com/sandre58/MyNetUtilities/commit/73d10fe1a71c13efafa219c2877ca2dd9534c57c) - **intervals**: add new methods for intervals *(commit by [@sandre58](https://github.com/sandre58))*
+
+
 ## [v3.5.0] - 2024-07-07
 ### :sparkles: New Features
 - [`836bf2e`](https://github.com/sandre58/MyNetUtilities/commit/836bf2e781bb0fc8d2ea5b39a80414e7f4071dcd) - add TimePeriod *(commit by [@sandre58](https://github.com/sandre58))*
@@ -88,3 +99,4 @@
 [v3.3.0]: https://github.com/sandre58/MyNetUtilities/compare/v3.2.0...v3.3.0
 [v3.4.0]: https://github.com/sandre58/MyNetUtilities/compare/v3.3.0...v3.4.0
 [v3.5.0]: https://github.com/sandre58/MyNetUtilities/compare/v3.4.0...v3.5.0
+[v4.0.0]: https://github.com/sandre58/MyNetUtilities/compare/v3.5.0...v4.0.0
