@@ -1,5 +1,10 @@
 # Changelog
 
+## [v4.0.1] - 2024-08-01
+### :bug: Bug Fixes
+- [`3c14a20`](https://github.com/sandre58/MyNetUtilities/commit/3c14a20f7461cc7ac26a739d4c6da7dea8c55eea) - change fired notification after suspend notifications *(commit by [@sandre58](https://github.com/sandre58))*
+
+
 ## [v4.0.0] - 2024-07-23
 ### :boom: BREAKING CHANGES
 - due to [`73d10fe`](https://github.com/sandre58/MyNetUtilities/commit/73d10fe1a71c13efafa219c2877ca2dd9534c57c) - add new methods for intervals *(commit by [@sandre58](https://github.com/sandre58))*:
@@ -100,3 +105,4 @@
 [v3.4.0]: https://github.com/sandre58/MyNetUtilities/compare/v3.3.0...v3.4.0
 [v3.5.0]: https://github.com/sandre58/MyNetUtilities/compare/v3.4.0...v3.5.0
 [v4.0.0]: https://github.com/sandre58/MyNetUtilities/compare/v3.5.0...v4.0.0
+[v4.0.1]: https://github.com/sandre58/MyNetUtilities/compare/v4.0.0...v4.0.1
