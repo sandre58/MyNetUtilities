@@ -127,7 +127,7 @@ public class ExtendedObservableCollection<T> : ObservableCollection<T>
     }
 
     /// <summary>
-    /// Suspends notifications. When disposed, a reset notification is fired.
+    /// Suspends notifications. When disposed, a replace notification is fired.
     /// </summary>
     /// <returns>A disposable when disposed will reset notifications.</returns>
     public IDisposable SuspendNotifications()
@@ -141,7 +141,7 @@ public class ExtendedObservableCollection<T> : ObservableCollection<T>
                 _suspendCount = false;
                 _suspendNotifications = false;
                 OnPropertyChanged(new PropertyChangedEventArgs("Count"));
-                OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
+                OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Replace));
             }).Defer();
     }
 
