@@ -3,14 +3,17 @@
 
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Globalization;
+using MyNet.Utilities.Localization;
 using MyNet.Utilities.Logging;
 
-namespace MyNet.Utilities.Localization
+namespace MyNet.Utilities.Globalization
 {
-    public class CultureInfoService
+    public class GlobalizationService
     {
         public event EventHandler? CultureChanged;
+        public event EventHandler? CalendarChanged;
 
         public List<CultureInfo> SupportedCultures { get; } =
         [
@@ -18,9 +21,15 @@ namespace MyNet.Utilities.Localization
             Cultures.French
         ];
 
-        public static CultureInfoService Current { get; } = new CultureInfoService();
+        public ReadOnlyCollection<TimeZoneInfo> SupportedTimeZones { get; } = TimeZoneInfo.GetSystemTimeZones();
 
-        protected CultureInfoService() { }
+        public CalendarService Calendar { get; private set; }
+
+        public LocalizationService Localization { get; private set; } = new(CultureInfo.CurrentCulture);
+
+        public static GlobalizationService Current { get; } = new GlobalizationService();
+
+        private GlobalizationService() => Calendar = new CalendarService(TimeZoneInfo.Local);
 
         public void SetCulture(string cultureCode) => SetCulture(CultureInfo.GetCultureInfo(cultureCode));
 
@@ -33,8 +42,19 @@ namespace MyNet.Utilities.Localization
             CultureInfo.DefaultThreadCurrentUICulture = culture;
             CultureInfo.CurrentCulture = culture;
             CultureInfo.CurrentUICulture = culture;
+            Localization = new LocalizationService(culture);
 
             CultureChanged?.Invoke(this, EventArgs.Empty);
+        }
+
+        public void SetTimeZoneInfo(TimeZoneInfo timeZoneinfo)
+        {
+            if (Calendar.TimeZone == timeZoneinfo) return;
+
+            LogManager.Debug($"Time zone Changed : {Calendar.TimeZone} => {timeZoneinfo}");
+            Calendar = new CalendarService(timeZoneinfo);
+
+            CalendarChanged?.Invoke(this, EventArgs.Empty);
         }
     }
 }

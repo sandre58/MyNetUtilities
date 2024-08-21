@@ -14,9 +14,11 @@ namespace MyNet.Utilities
     /// </summary>
     public static class DateTimeExtensions
     {
-        public static DateTime ToLocalDateTime(this DateTime date, TimeSpan time) => date.ToLocalTime().BeginningOfDay().Add(time);
+        public static DateTime ToTimeZone(this DateTime dateTime, TimeZoneInfo timeZoneInfo) => TimeZoneInfo.ConvertTime(dateTime, timeZoneInfo);
 
-        public static DateTime ToUtcDateTime(this DateTime date, TimeSpan time) => date.ToLocalTime().BeginningOfDay().Add(time).ToUniversalTime();
+        public static DateTime ToLocal(this DateTime date, TimeSpan? time = null) => time.HasValue ? date.ToLocalTime().BeginningOfDay().Add(time.Value) : date.ToLocalTime();
+
+        public static DateTime ToUtc(this DateTime date, TimeSpan? time = null) => time.HasValue ? date.ToLocalTime().BeginningOfDay().Add(time.Value).ToUniversalTime() : date.ToUniversalTime();
 
         public static Period ToPeriod(this DateTime dateTime, FluentTimeSpan timeSpan) => new(dateTime, dateTime.AddFluentTimeSpan(timeSpan));
 

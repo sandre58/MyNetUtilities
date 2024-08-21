@@ -4,8 +4,8 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using MyNet.Utilities.Extensions;
 using MyNet.Utilities.Generator.Extensions.Resources;
-using MyNet.Utilities.Localization;
 
 namespace MyNet.Utilities.Generator.Extensions
 {
@@ -33,15 +33,13 @@ namespace MyNet.Utilities.Generator.Extensions
             => string.Join(" ", FormatMap[(genderType, format)].Invoke(culture));
 
         public static string FirstName(GenderType genderType = GenderType.Male, CultureInfo? culture = null)
-            => GetTranslationService(culture).Translate(genderType == GenderType.Male ? NamesResources.MaleFirstNames : NamesResources.FemaleFirstNames)?.Random() ?? string.Empty;
+            => (genderType == GenderType.Male ? NamesResources.MaleFirstNames : NamesResources.FemaleFirstNames).Translate(culture).Random();
 
         public static string LastName(CultureInfo? culture = null)
-            => GetTranslationService(culture).Translate(nameof(NamesResources.LastNames))?.Random() ?? string.Empty;
+            => nameof(NamesResources.LastNames).Translate(culture).Random();
 
-        public static string Prefix(CultureInfo? culture = null) => GetTranslationService(culture).Translate(nameof(NamesResources.Suffixes))?.Random() ?? string.Empty;
+        public static string Prefix(CultureInfo? culture = null) => nameof(NamesResources.Suffixes).Translate(culture).Random();
 
-        public static string Suffix(CultureInfo? culture = null) => GetTranslationService(culture).Translate(nameof(NamesResources.Prefixes))?.Random() ?? string.Empty;
-
-        private static TranslationService GetTranslationService(CultureInfo? culture = null) => TranslationService.Get(culture ?? CultureInfo.CurrentCulture);
+        public static string Suffix(CultureInfo? culture = null) => nameof(NamesResources.Prefixes).Translate(culture).Random();
     }
 }

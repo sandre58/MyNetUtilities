@@ -4,9 +4,9 @@
 using System;
 using System.Globalization;
 using System.Linq;
+using MyNet.Utilities.Extensions;
 using MyNet.Utilities.Generator.Extensions.Resources;
 using MyNet.Utilities.Geography;
-using MyNet.Utilities.Localization;
 
 namespace MyNet.Utilities.Generator.Extensions
 {
@@ -22,19 +22,17 @@ namespace MyNet.Utilities.Generator.Extensions
         }
 
         public static string City(CultureInfo? culture = null)
-            => GetTranslationService(culture).Translate(nameof(AddressResources.Cities))?.Random() ?? string.Empty;
+            => nameof(AddressResources.Cities).Translate(culture).Random();
 
         public static string StreetName(CultureInfo? culture = null)
             => string.Join(" ", NameGenerator.FirstName(RandomGenerator.Enum<GenderType>(), culture: culture), NameGenerator.LastName(culture));
 
         public static string StreetPrefix(CultureInfo? culture = null)
-            => GetTranslationService(culture).Translate(nameof(AddressResources.StreetPrefixes))?.Random() ?? string.Empty;
+            => nameof(AddressResources.StreetPrefixes).Translate(culture).Random();
 
         public static string Street(CultureInfo? culture = null)
-            => GetTranslationService(culture).Translate(nameof(AddressResources.StreetFormat))?.FormatWith(RandomGenerator.Int(1, 200), StreetPrefix(culture), StreetName(culture)) ?? string.Empty;
+            => nameof(AddressResources.StreetFormat).Translate(culture).FormatWith(RandomGenerator.Int(1, 200), StreetPrefix(culture), StreetName(culture));
 
         public static string PostalCode() => string.Join(string.Empty, Enumerable.Range(0, 5).Select(_ => RandomGenerator.Int(0, 9)));
-
-        private static TranslationService GetTranslationService(CultureInfo? culture = null) => TranslationService.Get(culture ?? CultureInfo.CurrentCulture);
     }
 }
