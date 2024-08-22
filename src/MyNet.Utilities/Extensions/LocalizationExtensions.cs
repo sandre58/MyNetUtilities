@@ -20,13 +20,13 @@ namespace MyNet.Utilities.Extensions
 
         public static string TranslateAbbreviated(this string key, string filename, CultureInfo? cultureInfo = null) => key.ToAbbreviationKey().Translate(filename);
 
-        public static string? Translate(this CultureInfo culture, string key) => TranslationService.Get(culture).Translate(key);
+        public static string Translate(this CultureInfo culture, string key) => TranslationService.Get(culture).Translate(key);
 
-        public static string? Translate(this CultureInfo culture, string key, string filename) => TranslationService.Get(culture).Translate(key, filename);
+        public static string Translate(this CultureInfo culture, string key, string filename) => TranslationService.Get(culture).Translate(key, filename);
 
-        public static string? TranslateAbbreviated(this CultureInfo culture, string key) => culture.Translate(key.ToAbbreviationKey());
+        public static string TranslateAbbreviated(this CultureInfo culture, string key) => culture.Translate(key.ToAbbreviationKey());
 
-        public static string? TranslateAbbreviated(this CultureInfo culture, string key, string filename) => culture.Translate(key.ToAbbreviationKey(), filename);
+        public static string TranslateAbbreviated(this CultureInfo culture, string key, string filename) => culture.Translate(key.ToAbbreviationKey(), filename);
 
         public static T? GetProvider<T>(this CultureInfo culture) => LocalizationService.Get<T>(culture);
     }
