@@ -5,7 +5,7 @@ using System;
 using System.Globalization;
 using System.Reflection;
 using System.Threading;
-using MyNet.Utilities.Globalization;
+using MyNet.Utilities.Localization;
 using Xunit.Sdk;
 
 namespace MyNet.Utilities.UnitTests

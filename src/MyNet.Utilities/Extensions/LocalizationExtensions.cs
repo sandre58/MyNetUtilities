@@ -9,14 +9,26 @@ namespace MyNet.Utilities.Extensions
 {
     public static class LocalizationExtensions
     {
-        public static string Translate(this string key, CultureInfo? cultureInfo = null) => (cultureInfo is not null ? TranslationService.Get(cultureInfo) : TranslationService.Current)[key];
+        public const string AbbreviationSuffix = "Abbr";
 
-        public static string Translate(this string key, string filename, CultureInfo? cultureInfo = null) => (cultureInfo is not null ? TranslationService.Get(cultureInfo) : TranslationService.Current)[key, filename];
+        public static string ToAbbreviationKey(this string key) => $"{key}{AbbreviationSuffix}";
+
+        public static string Translate(this string key, CultureInfo? cultureInfo = null) => TranslationService.GetOrCurrent(cultureInfo)[key];
+
+        public static string Translate(this string key, string filename, CultureInfo? cultureInfo = null) => TranslationService.GetOrCurrent(cultureInfo)[key, filename];
+
+        public static string TranslateAbbreviated(this string key, CultureInfo? cultureInfo = null) => key.ToAbbreviationKey().Translate(cultureInfo);
+
+        public static string TranslateAbbreviated(this string key, string filename, CultureInfo? cultureInfo = null) => key.ToAbbreviationKey().Translate(filename);
 
         public static string? Translate(this CultureInfo culture, string key) => TranslationService.Get(culture).Translate(key);
 
         public static string? Translate(this CultureInfo culture, string key, string filename) => TranslationService.Get(culture).Translate(key, filename);
 
-        public static T? GetProvider<T>(this CultureInfo culture) => LocalizationService.GetProvider<T>(culture);
+        public static string? TranslateAbbreviated(this CultureInfo culture, string key) => culture.Translate(key.ToAbbreviationKey());
+
+        public static string? TranslateAbbreviated(this CultureInfo culture, string key, string filename) => culture.Translate(key.ToAbbreviationKey(), filename);
+
+        public static T? GetProvider<T>(this CultureInfo culture) => LocalizationService.Get<T>(culture);
     }
 }

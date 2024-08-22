@@ -17,7 +17,9 @@ namespace MyNet.Utilities.Localization
 
         public CultureInfo Culture { get; }
 
-        public static TranslationService Current => Get(CultureInfo.CurrentUICulture);
+        public static TranslationService Current => Get(CultureInfo.CurrentCulture);
+
+        public static TranslationService GetOrCurrent(CultureInfo? cultureInfo = null) => cultureInfo is not null ? Get(cultureInfo) : Current;
 
         public static TranslationService Get(CultureInfo culture)
         {
@@ -36,7 +38,7 @@ namespace MyNet.Utilities.Localization
 
         public string Translate(string key)
         {
-            var result = Resources.Select(r => r.Value.GetString(key, Culture)).NotNull().LastOrDefault();
+            var result = Resources.Select(r => r.Value.GetString(key, Culture)).ToList().NotNull().LastOrDefault();
             return !string.IsNullOrEmpty(result) ? result : key;
         }
 
