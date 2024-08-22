@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Globalization;
 using MyNet.Utilities.Extensions;
-using MyNet.Utilities.Globalization;
 using MyNet.Utilities.Logging;
 
 namespace MyNet.Utilities.Localization

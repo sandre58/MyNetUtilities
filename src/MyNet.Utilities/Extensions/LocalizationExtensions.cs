@@ -2,7 +2,6 @@
 // See the LICENSE file in the project root for more information.
 
 using System.Globalization;
-using MyNet.Utilities.Globalization;
 using MyNet.Utilities.Localization;
 
 namespace MyNet.Utilities.Extensions

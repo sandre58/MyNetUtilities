@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 
-namespace MyNet.Utilities.Globalization
+namespace MyNet.Utilities.Localization
 {
     public static class LocalizationService
     {
