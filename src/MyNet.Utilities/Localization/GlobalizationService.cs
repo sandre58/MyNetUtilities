@@ -50,6 +50,10 @@ namespace MyNet.Utilities.Localization
 
         public CultureInfo Culture => _culture;
 
+        public DateTime Date => DateTime.UtcNow.ToTimeZone(_timeZone);
+
+        public virtual DateTime UtcDate => DateTime.UtcNow;
+
         public void SetCulture(string cultureCode) => SetCulture(CultureInfo.GetCultureInfo(cultureCode));
 
         public void SetCulture(CultureInfo culture)
