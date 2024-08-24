@@ -77,9 +77,13 @@ namespace MyNet.Utilities.Localization
             TimeZoneChanged?.Invoke(this, EventArgs.Empty);
         }
 
-        public DateTime ConvertFromUtc(DateTime utcDateTime) => TimeZoneInfo.ConvertTimeFromUtc(utcDateTime.ToUniversalTime(), _timeZone);
+        public DateTime Convert(DateTime dateTime) => TimeZoneInfo.ConvertTimeFromUtc(dateTime.ToUniversalTime(), _timeZone);
 
-        public DateTime ConvertToUtc(DateTime utcDateTime) => TimeZoneInfo.ConvertTimeToUtc(utcDateTime, _timeZone);
+        public DateTime ConvertToUtc(DateTime dateTime) => TimeZoneInfo.ConvertTimeToUtc(dateTime, _timeZone);
+
+        public DateTime ConvertFromTimeZone(DateTime dateTime, TimeZoneInfo sourceTimeZone) => TimeZoneInfo.ConvertTime(dateTime, sourceTimeZone, _timeZone);
+
+        public DateTime ConvertToTimeZone(DateTime dateTime, TimeZoneInfo destinationTimeZone) => TimeZoneInfo.ConvertTime(dateTime, _timeZone, destinationTimeZone);
 
         public TProvider? GetProvider<TProvider>() => LocalizationService.Get<TProvider>(_culture);
 
