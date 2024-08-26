@@ -77,13 +77,32 @@ namespace MyNet.Utilities.Localization
             TimeZoneChanged?.Invoke(this, EventArgs.Empty);
         }
 
-        public DateTime Convert(DateTime dateTime) => TimeZoneInfo.ConvertTimeFromUtc(dateTime.ToUniversalTime(), _timeZone);
+        public DateTime Convert(DateTime dateTime) => dateTime.Kind switch
+        {
+            DateTimeKind.Local => TimeZoneInfo.ConvertTime(dateTime, TimeZoneInfo.Local, _timeZone),
+            _ => TimeZoneInfo.ConvertTimeFromUtc(dateTime.ToUniversalTime(), _timeZone),
+        };
 
-        public DateTime ConvertToUtc(DateTime dateTime) => dateTime.Kind == DateTimeKind.Local ? dateTime.ToUniversalTime() : TimeZoneInfo.ConvertTimeToUtc(dateTime, _timeZone);
+        public DateTime ConvertToUtc(DateTime dateTime) => dateTime.Kind switch
+        {
+            DateTimeKind.Unspecified => TimeZoneInfo.ConvertTimeToUtc(dateTime, _timeZone),
+            DateTimeKind.Local => dateTime.ToUniversalTime(),
+            _ => dateTime,
+        };
 
-        public DateTime ConvertFromTimeZone(DateTime dateTime, TimeZoneInfo sourceTimeZone) => TimeZoneInfo.ConvertTime(dateTime, sourceTimeZone, _timeZone);
+        public DateTime ConvertFromTimeZone(DateTime dateTime, TimeZoneInfo sourceTimeZone) => dateTime.Kind switch
+        {
+            DateTimeKind.Utc => TimeZoneInfo.ConvertTime(dateTime, TimeZoneInfo.Utc, _timeZone),
+            DateTimeKind.Local => TimeZoneInfo.ConvertTime(dateTime, TimeZoneInfo.Local, _timeZone),
+            _ => TimeZoneInfo.ConvertTime(dateTime, sourceTimeZone, _timeZone),
+        };
 
-        public DateTime ConvertToTimeZone(DateTime dateTime, TimeZoneInfo destinationTimeZone) => TimeZoneInfo.ConvertTime(dateTime, _timeZone, destinationTimeZone);
+        public DateTime ConvertToTimeZone(DateTime dateTime, TimeZoneInfo destinationTimeZone) => dateTime.Kind switch
+        {
+            DateTimeKind.Utc => TimeZoneInfo.ConvertTime(Convert(dateTime), _timeZone, TimeZoneInfo.Utc),
+            DateTimeKind.Local => TimeZoneInfo.ConvertTime(Convert(dateTime), _timeZone, TimeZoneInfo.Local),
+            _ => TimeZoneInfo.ConvertTime(dateTime, _timeZone, destinationTimeZone),
+        };
 
         public TProvider? GetProvider<TProvider>() => LocalizationService.Get<TProvider>(_culture);
 
