@@ -79,7 +79,7 @@ namespace MyNet.Utilities.Localization
 
         public DateTime Convert(DateTime dateTime) => TimeZoneInfo.ConvertTimeFromUtc(dateTime.ToUniversalTime(), _timeZone);
 
-        public DateTime ConvertToUtc(DateTime dateTime) => TimeZoneInfo.ConvertTimeToUtc(dateTime, _timeZone);
+        public DateTime ConvertToUtc(DateTime dateTime) => dateTime.Kind == DateTimeKind.Local ? dateTime.ToUniversalTime() : TimeZoneInfo.ConvertTimeToUtc(dateTime, _timeZone);
 
         public DateTime ConvertFromTimeZone(DateTime dateTime, TimeZoneInfo sourceTimeZone) => TimeZoneInfo.ConvertTime(dateTime, sourceTimeZone, _timeZone);
 
