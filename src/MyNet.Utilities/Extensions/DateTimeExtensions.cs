@@ -5,6 +5,7 @@ using System;
 using System.Globalization;
 using MyNet.Utilities.DateTimes;
 using MyNet.Utilities.Helpers;
+using MyNet.Utilities.Localization;
 using MyNet.Utilities.Units;
 
 namespace MyNet.Utilities
@@ -640,6 +641,13 @@ namespace MyNet.Utilities
 
             return firstDayOfNextMonth.SetDay(day);
         }
+
+        public static bool IsToday(this DateTime current) => current.Kind switch
+        {
+            DateTimeKind.Utc => current.SameDay(DateTime.UtcNow),
+            DateTimeKind.Local => current.SameDay(DateTime.Now),
+            _ => current.SameDay(GlobalizationService.Current.Date),
+        };
 
         public static bool SameMilliSecond(this DateTime current, DateTime date) => SameSecond(current, date) && current.Millisecond == date.Millisecond;
 

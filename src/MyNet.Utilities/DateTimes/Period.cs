@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using MyNet.Utilities.Helpers;
+using MyNet.Utilities.Localization;
 using MyNet.Utilities.Sequences;
 
 namespace MyNet.Utilities.DateTimes
@@ -24,7 +25,12 @@ namespace MyNet.Utilities.DateTimes
                       .Select(offset => Start.Date.AddDays(offset))
                       .Select(x => new Period(DateTimeHelper.Max(x.BeginningOfDay(), Start), DateTimeHelper.Min(x.EndOfDay(), End)));
 
-        public bool IsCurrent() => Contains(DateTime.Today);
+        public bool IsCurrent() => Start.Kind switch
+        {
+            DateTimeKind.Utc => Contains(DateTime.UtcNow),
+            DateTimeKind.Local => Contains(DateTime.Now),
+            _ => Contains(GlobalizationService.Current.Date),
+        };
 
         public Period ToUniversalTime() => new(Start.ToUniversalTime(), End.ToUniversalTime());
 
