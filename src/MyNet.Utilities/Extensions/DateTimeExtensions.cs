@@ -290,6 +290,11 @@ namespace MyNet.Utilities
         /// <summary>
         /// Returns the original <see cref="DateTime"/> with Hour part changed to supplied hour parameter.
         /// </summary>
+        public static DateTime SetTime(this DateTime originalDate, TimeOnly time) => new(originalDate.Year, originalDate.Month, originalDate.Day, time.Hour, time.Minute, time.Second, time.Minute, originalDate.Kind);
+
+        /// <summary>
+        /// Returns the original <see cref="DateTime"/> with Hour part changed to supplied hour parameter.
+        /// </summary>
         public static DateTime SetTime(this DateTime originalDate, TimeSpan time) => new(originalDate.Year, originalDate.Month, originalDate.Day, time.Hours, time.Minutes, time.Seconds, time.Milliseconds, originalDate.Kind);
 
         /// <summary>

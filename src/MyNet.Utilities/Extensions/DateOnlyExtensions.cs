@@ -196,7 +196,7 @@ namespace MyNet.Utilities
         /// <param name="hour">The hour to set time to.</param>
         /// <param name="minute">The minute to set time to.</param>
         /// <returns><see cref="DateTime"/> with hour and minute set to given values.</returns>
-        public static DateTime At(this DateOnly current, TimeOnly date) => new(current, date);
+        public static DateTime At(this DateOnly current, TimeOnly time) => current.ToDateTime(time);
 
         /// <summary>
         /// Returns the given <see cref="DateTime"/> with hour and minutes set At given values.
