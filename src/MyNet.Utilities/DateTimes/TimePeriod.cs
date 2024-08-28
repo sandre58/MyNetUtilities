@@ -12,6 +12,8 @@ namespace MyNet.Utilities.DateTimes
 
         public TimeSpan Duration => End - Start;
 
+        public bool IsCurrent() => Contains(DateTime.UtcNow.ToTime());
+
         public ImmutableTimePeriod AsImmutable() => new(Start, End);
 
         protected override TimePeriod CreateInstance(TimeOnly start, TimeOnly end) => new(start, end);
