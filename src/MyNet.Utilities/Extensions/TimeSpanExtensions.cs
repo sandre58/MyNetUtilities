@@ -19,6 +19,8 @@ namespace MyNet.Utilities
 
         public static TimeOnly ToTime(this TimeSpan time) => TimeOnly.FromTimeSpan(time);
 
+        public static TimeOnly ToTime(this FluentTimeSpan time) => TimeOnly.FromTimeSpan(time);
+
         /// <summary>
         /// Adds the given <see cref="FluentTimeSpan"/> from a <see cref="TimeSpan"/> and returns resulting <see cref="FluentTimeSpan"/>.
         /// </summary>
