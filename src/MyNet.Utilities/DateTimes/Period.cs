@@ -48,9 +48,6 @@ namespace MyNet.Utilities.DateTimes
 
         public Period ShiftEarlier(TimeSpan offset) => new(Start.SubtractFluentTimeSpan(offset), End.SubtractFluentTimeSpan(offset));
 
-        public IEnumerable<Period> Intersect(TimePeriod interval)
-            => ByDays().Select(x => x.ToUniversalTime().Intersect(new Period(x.Start.ToUtc(interval.Start), x.Start.ToUtc(interval.End)))).NotNull();
-
         public ImmutablePeriod AsImmutable() => new(Start, End);
 
         protected override Period CreateInstance(DateTime start, DateTime end) => new(start, end);
