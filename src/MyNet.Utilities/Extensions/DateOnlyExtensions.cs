@@ -156,7 +156,6 @@ namespace MyNet.Utilities
         /// </returns>
         public static bool IsBefore(this DateOnly current, DateOnly toCompareWith) => current < toCompareWith;
 
-
         /// <summary>
         /// Determines whether the specified <see cref="DateTime"/> is before then current value.
         /// </summary>
@@ -227,6 +226,10 @@ namespace MyNet.Utilities
         /// <param name="milliseconds">The milliseconds to set time to.</param>
         /// <returns><see cref="DateTime"/> with hour and minutes and seconds set to given values.</returns>
         public static DateTime At(this DateOnly current, int hour, int minute, int second, int milliseconds) => current.At(new TimeOnly(hour, minute, second, milliseconds));
+
+        public static DateTime BeginningOfDay(this DateOnly current) => current.At(TimeOnly.MinValue);
+
+        public static DateTime EndOfDay(this DateOnly current) => current.At(TimeOnly.MaxValue);
 
         /// <summary>
         /// Sets the day of the <see cref="DateTime"/> to the first day in that calendar quarter.
