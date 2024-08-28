@@ -32,9 +32,9 @@ namespace MyNet.Utilities.DateTimes
             _ => Contains(GlobalizationService.Current.Date),
         };
 
-        public Period ToUniversalTime() => new(Start.ToUniversalTime(), End.ToUniversalTime());
+        public Period ToUtc() => new(Start.ToUniversalTime(), End.ToUniversalTime());
 
-        public Period ToLocalTime() => new(Start.ToLocalTime(), End.ToLocalTime());
+        public Period ToLocal() => new(Start.ToLocalTime(), End.ToLocalTime());
 
         public Period AddAfter(TimeSpan offset) => new(Start, End.AddFluentTimeSpan(offset));
 

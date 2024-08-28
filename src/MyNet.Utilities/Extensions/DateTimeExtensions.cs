@@ -17,19 +17,19 @@ namespace MyNet.Utilities
     {
         public static DateTime ToTimeZone(this DateTime dateTime, TimeZoneInfo timeZoneInfo) => TimeZoneInfo.ConvertTime(dateTime, timeZoneInfo);
 
-        public static DateTime ToLocal(this DateTime date, TimeSpan? time = null) => time.HasValue ? date.ToLocalTime().BeginningOfDay().Add(time.Value) : date.ToLocalTime();
+        public static DateTime ToLocalTime(this DateTime date, TimeSpan time) => date.ToLocalTime().BeginningOfDay().Add(time);
 
-        public static DateTime ToUtc(this DateTime date, TimeSpan? time = null) => time.HasValue ? date.ToLocalTime().BeginningOfDay().Add(time.Value).ToUniversalTime() : date.ToUniversalTime();
+        public static DateTime ToUniversalTime(this DateTime date, TimeSpan time) => date.ToLocalTime().BeginningOfDay().Add(time).ToUniversalTime();
 
-        public static DateTime ToCurrent(this DateTime dateTime) => TimeZoneInfo.ConvertTime(dateTime, GlobalizationService.Current.TimeZone);
-
-        public static Period ToPeriod(this DateTime dateTime, FluentTimeSpan timeSpan) => new(dateTime, dateTime.AddFluentTimeSpan(timeSpan));
-
-        public static Period ToPeriod(this DateTime dateTime, DateTime otherDateTime) => new(DateTimeHelper.Min(dateTime, otherDateTime), DateTimeHelper.Max(dateTime, otherDateTime));
+        public static DateTime ToCurrentTime(this DateTime dateTime) => TimeZoneInfo.ConvertTime(dateTime, GlobalizationService.Current.TimeZone);
 
         public static DateOnly ToDate(this DateTime dateTime) => DateOnly.FromDateTime(dateTime);
 
         public static TimeOnly ToTime(this DateTime dateTime) => TimeOnly.FromDateTime(dateTime);
+
+        public static Period ToPeriod(this DateTime dateTime, FluentTimeSpan timeSpan) => new(dateTime, dateTime.AddFluentTimeSpan(timeSpan));
+
+        public static Period ToPeriod(this DateTime dateTime, DateTime otherDateTime) => new(DateTimeHelper.Min(dateTime, otherDateTime), DateTimeHelper.Max(dateTime, otherDateTime));
 
         public static DateTime Add(this DateTime date, int value, TimeUnit timeUnitToGet) => date.AddFluentTimeSpan(value.ToTimeSpan(timeUnitToGet));
 
