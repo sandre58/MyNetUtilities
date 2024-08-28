@@ -495,14 +495,14 @@ namespace MyNet.Utilities
         /// </summary>
         /// <param name="dateTime">The date to be checked.</param>
         /// <returns><c>true</c> if <paramref name="dateTime"/> is in the future; otherwise <c>false</c>.</returns>
-        public static bool IsInFuture(this DateTime dateTime) => dateTime > DateTime.Now;
+        public static bool IsInFuture(this DateTime dateTime) => dateTime.ToUniversalTime() > DateTime.UtcNow;
 
         /// <summary>
         /// Determine if a <see cref="DateTime"/> is in the past.
         /// </summary>
         /// <param name="dateTime">The date to be checked.</param>
         /// <returns><c>true</c> if <paramref name="dateTime"/> is in the past; otherwise <c>false</c>.</returns>
-        public static bool IsInPast(this DateTime dateTime) => dateTime < DateTime.Now;
+        public static bool IsInPast(this DateTime dateTime) => dateTime.ToUniversalTime() < DateTime.UtcNow;
 
         /// <summary>
         /// Rounds <paramref name="dateTime"/> to the nearest <see cref="RoundTo"/>.

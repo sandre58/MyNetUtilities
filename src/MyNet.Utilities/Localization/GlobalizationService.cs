@@ -29,8 +29,6 @@ namespace MyNet.Utilities.Localization
 
         public static GlobalizationService Current { get; } = new GlobalizationService(CultureInfo.CurrentCulture, TimeZoneInfo.Local, x =>
         {
-            CultureInfo.DefaultThreadCurrentCulture = x;
-            CultureInfo.DefaultThreadCurrentUICulture = x;
             CultureInfo.CurrentCulture = x;
             CultureInfo.CurrentUICulture = x;
         });
