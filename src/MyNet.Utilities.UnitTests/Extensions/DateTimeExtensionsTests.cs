@@ -162,7 +162,7 @@ namespace MyNet.Utilities.UnitTests.Extensions
         {
             var toChange = new DateTime(2008, 10, 25, 0, 0, 0, 0, DateTimeKind.Utc);
 
-            var result = toChange.SetTime(value);
+            var result = toChange.SetHour(value);
             var expected = new DateTime(2008, 10, 25, value, 0, 0, 0, DateTimeKind.Utc);
 
             Assert.Equal(expected, result);
@@ -175,7 +175,7 @@ namespace MyNet.Utilities.UnitTests.Extensions
         {
             var toChange = new DateTime(2008, 10, 25, 0, 0, 0, 0, DateTimeKind.Utc);
 
-            _ = Assert.Throws<ArgumentOutOfRangeException>(() => toChange.SetTime(value));
+            _ = Assert.Throws<ArgumentOutOfRangeException>(() => toChange.SetHour(value));
         }
 
         [Theory]
@@ -187,7 +187,7 @@ namespace MyNet.Utilities.UnitTests.Extensions
             var toChange = new DateTime(2008, 10, 25, 0, 0, 0, 0, DateTimeKind.Utc);
 
             var expected = new DateTime(2008, 10, 25, 0, value, 0, 0, DateTimeKind.Utc);
-            Assert.Equal(expected, toChange.SetTime(0, value));
+            Assert.Equal(expected, toChange.At(0, value));
         }
 
         [Theory]
@@ -196,7 +196,7 @@ namespace MyNet.Utilities.UnitTests.Extensions
         public void ChangeTimeMinuteArgChecks(int value)
         {
             var toChange = new DateTime(2008, 10, 25, 0, 0, 0, 0, DateTimeKind.Utc);
-            _ = Assert.Throws<ArgumentOutOfRangeException>(() => toChange.SetTime(0, value));
+            _ = Assert.Throws<ArgumentOutOfRangeException>(() => toChange.At(0, value));
         }
 
         [Theory]
@@ -207,7 +207,7 @@ namespace MyNet.Utilities.UnitTests.Extensions
         {
             var toChange = new DateTime(2008, 10, 25, 0, 0, 0, 0, DateTimeKind.Utc);
 
-            var changed = toChange.SetTime(0, 0, value);
+            var changed = toChange.At(0, 0, value);
 
             var expected = new DateTime(2008, 10, 25, 0, 0, value, 0, DateTimeKind.Utc);
 
@@ -221,7 +221,7 @@ namespace MyNet.Utilities.UnitTests.Extensions
         {
             var toChange = new DateTime(2008, 10, 25, 0, 0, 0, 0, DateTimeKind.Utc);
 
-            _ = Assert.Throws<ArgumentOutOfRangeException>(() => toChange.SetTime(0, 0, value));
+            _ = Assert.Throws<ArgumentOutOfRangeException>(() => toChange.At(0, 0, value));
         }
 
         [Theory]
@@ -233,7 +233,7 @@ namespace MyNet.Utilities.UnitTests.Extensions
             var toChange = new DateTime(2008, 10, 25, 0, 0, 0, 0, DateTimeKind.Utc);
 
             var expected = new DateTime(2008, 10, 25, 0, 0, 0, value, DateTimeKind.Utc);
-            Assert.Equal(expected, toChange.SetTime(0, 0, 0, value));
+            Assert.Equal(expected, toChange.At(0, 0, 0, value));
         }
 
         [Theory]
@@ -242,7 +242,7 @@ namespace MyNet.Utilities.UnitTests.Extensions
         public void ChangeTimeMillisecondArgCheck(int value)
         {
             var toChange = new DateTime(2008, 10, 25, 0, 0, 0, 0, DateTimeKind.Utc);
-            _ = Assert.Throws<ArgumentOutOfRangeException>(() => toChange.SetTime(0, 0, 0, value));
+            _ = Assert.Throws<ArgumentOutOfRangeException>(() => toChange.At(0, 0, 0, value));
         }
 
         [Fact]

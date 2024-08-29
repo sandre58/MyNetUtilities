@@ -290,32 +290,27 @@ namespace MyNet.Utilities
         /// <summary>
         /// Returns the original <see cref="DateTime"/> with Hour part changed to supplied hour parameter.
         /// </summary>
-        public static DateTime SetTime(this DateTime originalDate, TimeOnly time) => new(originalDate.Year, originalDate.Month, originalDate.Day, time.Hour, time.Minute, time.Second, time.Minute, originalDate.Kind);
+        public static DateTime At(this DateTime originalDate, TimeOnly time) => new(originalDate.Year, originalDate.Month, originalDate.Day, time.Hour, time.Minute, time.Second, time.Minute, originalDate.Kind);
 
         /// <summary>
         /// Returns the original <see cref="DateTime"/> with Hour part changed to supplied hour parameter.
         /// </summary>
-        public static DateTime SetTime(this DateTime originalDate, TimeSpan time) => new(originalDate.Year, originalDate.Month, originalDate.Day, time.Hours, time.Minutes, time.Seconds, time.Milliseconds, originalDate.Kind);
-
-        /// <summary>
-        /// Returns the original <see cref="DateTime"/> with Hour part changed to supplied hour parameter.
-        /// </summary>
-        public static DateTime SetTime(this DateTime originalDate, int hour) => new(originalDate.Year, originalDate.Month, originalDate.Day, hour, originalDate.Minute, originalDate.Second, originalDate.Millisecond, originalDate.Kind);
+        public static DateTime At(this DateTime originalDate, TimeSpan time) => new(originalDate.Year, originalDate.Month, originalDate.Day, time.Hours, time.Minutes, time.Seconds, time.Milliseconds, originalDate.Kind);
 
         /// <summary>
         /// Returns the original <see cref="DateTime"/> with Hour and Minute parts changed to supplied hour and minute parameters.
         /// </summary>
-        public static DateTime SetTime(this DateTime originalDate, int hour, int minute) => new(originalDate.Year, originalDate.Month, originalDate.Day, hour, minute, originalDate.Second, originalDate.Millisecond, originalDate.Kind);
+        public static DateTime At(this DateTime originalDate, int hour, int minute) => new(originalDate.Year, originalDate.Month, originalDate.Day, hour, minute, 0, 0, originalDate.Kind);
 
         /// <summary>
         /// Returns the original <see cref="DateTime"/> with Hour, Minute and Second parts changed to supplied hour, minute and second parameters.
         /// </summary>
-        public static DateTime SetTime(this DateTime originalDate, int hour, int minute, int second) => new(originalDate.Year, originalDate.Month, originalDate.Day, hour, minute, second, originalDate.Millisecond, originalDate.Kind);
+        public static DateTime At(this DateTime originalDate, int hour, int minute, int second) => new(originalDate.Year, originalDate.Month, originalDate.Day, hour, minute, second, 0, originalDate.Kind);
 
         /// <summary>
         /// Returns the original <see cref="DateTime"/> with Hour, Minute, Second and Millisecond parts changed to supplied hour, minute, second and millisecond parameters.
         /// </summary>
-        public static DateTime SetTime(this DateTime originalDate, int hour, int minute, int second, int millisecond) => new(originalDate.Year, originalDate.Month, originalDate.Day, hour, minute, second, millisecond, originalDate.Kind);
+        public static DateTime At(this DateTime originalDate, int hour, int minute, int second, int millisecond) => new(originalDate.Year, originalDate.Month, originalDate.Day, hour, minute, second, millisecond, originalDate.Kind);
 
         /// <summary>
         /// Returns <see cref="DateTime"/> with changed Hour part.
@@ -347,7 +342,7 @@ namespace MyNet.Utilities
         /// </summary>
         /// <param name="value">The <see cref="DateTime"/> find Noon for.</param>
         /// <returns>A <see cref="DateTime"/> value with time part set to Noon (12:00:00h).</returns>
-        public static DateTime Noon(this DateTime value) => value.SetTime(12, 0, 0, 0);
+        public static DateTime Noon(this DateTime value) => value.At(12, 0, 0, 0);
 
         /// <summary>
         /// Returns <see cref="DateTime"/> with changed Year part.
@@ -400,36 +395,6 @@ namespace MyNet.Utilities
         public static bool IsAfter(this DateTime current, DateTime toCompareWith) => current > toCompareWith;
 
         public static bool IsBetween(this DateTime current, DateTime toCompareFrom, DateTime toCompareTo) => current >= DateTimeHelper.Min(toCompareFrom, toCompareTo) && current <= DateTimeHelper.Max(toCompareTo, toCompareFrom);
-
-        /// <summary>
-        /// Returns the given <see cref="DateTime"/> with hour and minutes set At given values.
-        /// </summary>
-        /// <param name="current">The current <see cref="DateTime"/> to be changed.</param>
-        /// <param name="hour">The hour to set time to.</param>
-        /// <param name="minute">The minute to set time to.</param>
-        /// <returns><see cref="DateTime"/> with hour and minute set to given values.</returns>
-        public static DateTime At(this DateTime current, int hour, int minute) => current.SetTime(hour, minute);
-
-        /// <summary>
-        /// Returns the given <see cref="DateTime"/> with hour and minutes and seconds set At given values.
-        /// </summary>
-        /// <param name="current">The current <see cref="DateTime"/> to be changed.</param>
-        /// <param name="hour">The hour to set time to.</param>
-        /// <param name="minute">The minute to set time to.</param>
-        /// <param name="second">The second to set time to.</param>
-        /// <returns><see cref="DateTime"/> with hour and minutes and seconds set to given values.</returns>
-        public static DateTime At(this DateTime current, int hour, int minute, int second) => current.SetTime(hour, minute, second);
-
-        /// <summary>
-        /// Returns the given <see cref="DateTime"/> with hour and minutes and seconds and milliseconds set At given values.
-        /// </summary>
-        /// <param name="current">The current <see cref="DateTime"/> to be changed.</param>
-        /// <param name="hour">The hour to set time to.</param>
-        /// <param name="minute">The minute to set time to.</param>
-        /// <param name="second">The second to set time to.</param>
-        /// <param name="milliseconds">The milliseconds to set time to.</param>
-        /// <returns><see cref="DateTime"/> with hour and minutes and seconds set to given values.</returns>
-        public static DateTime At(this DateTime current, int hour, int minute, int second, int milliseconds) => current.SetTime(hour, minute, second, milliseconds);
 
         /// <summary>
         /// Sets the day of the <see cref="DateTime"/> to the first day in that calendar quarter.
