@@ -410,7 +410,7 @@ namespace MyNet.Utilities.UnitTests.Extensions
         [Fact]
         public void AtSetsHourAndMinutesProperly()
         {
-            var expected = new DateTime(2002, 12, 17, 18, 06, 01, DateTimeKind.Utc);
+            var expected = new DateTime(2002, 12, 17, 18, 06, 00, DateTimeKind.Utc);
             Assert.Equal(expected, new DateTime(2002, 12, 17, 17, 05, 01, DateTimeKind.Utc).At(18, 06));
         }
 
