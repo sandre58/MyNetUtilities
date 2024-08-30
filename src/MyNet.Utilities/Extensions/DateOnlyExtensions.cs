@@ -192,8 +192,7 @@ namespace MyNet.Utilities
         /// Returns the given <see cref="DateTime"/> with hour and minutes set At given values.
         /// </summary>
         /// <param name="current">The current <see cref="DateTime"/> to be changed.</param>
-        /// <param name="hour">The hour to set time to.</param>
-        /// <param name="minute">The minute to set time to.</param>
+        /// <param name="time">The hour to set time to.</param>
         /// <returns><see cref="DateTime"/> with hour and minute set to given values.</returns>
         public static DateTime At(this DateOnly current, TimeOnly time) => current.ToDateTime(time);
 
