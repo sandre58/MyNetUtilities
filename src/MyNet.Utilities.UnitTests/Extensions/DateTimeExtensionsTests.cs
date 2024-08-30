@@ -11,6 +11,66 @@ namespace MyNet.Utilities.UnitTests.Extensions
     {
         private const int DaysPerWeek = 7;
 
+        [Fact]
+        public void ToTimeZone_Should_Convert_Utc_To_Eastern()
+        {
+            // Arrange
+            var utcDateTime = new DateTime(2024, 8, 20, 12, 0, 0, DateTimeKind.Utc);
+            var easternTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time");
+
+            // Act
+            var easternDateTime = utcDateTime.ToTimeZone(easternTimeZone);
+
+            // Assert
+            var expectedDateTime = new DateTime(2024, 8, 20, 8, 0, 0, DateTimeKind.Unspecified);
+            Assert.Equal(expectedDateTime, easternDateTime);
+        }
+
+        [Fact]
+        public void ToTimeZone_Should_Convert_Utc_To_Pacific()
+        {
+            // Arrange
+            var utcDateTime = new DateTime(2024, 8, 20, 12, 0, 0, DateTimeKind.Utc);
+            var pacificTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time");
+
+            // Act
+            var pacificDateTime = utcDateTime.ToTimeZone(pacificTimeZone);
+
+            // Assert
+            var expectedDateTime = new DateTime(2024, 8, 20, 5, 0, 0, DateTimeKind.Unspecified);
+            Assert.Equal(expectedDateTime, pacificDateTime);
+        }
+
+        [Fact]
+        public void ToTimeZone_Should_Convert_Local_To_Utc()
+        {
+            // Arrange
+            var localDateTime = new DateTime(2024, 8, 20, 8, 0, 0, DateTimeKind.Local);
+            var utcTimeZone = TimeZoneInfo.Utc;
+
+            // Act
+            var utcDateTime = localDateTime.ToTimeZone(utcTimeZone);
+
+            // Assert
+            var expectedDateTime = TimeZoneInfo.ConvertTime(localDateTime, TimeZoneInfo.Local, utcTimeZone);
+            Assert.Equal(expectedDateTime, utcDateTime);
+        }
+
+        [Fact]
+        public void ToTimeZone_Should_Convert_Utc_To_Local()
+        {
+            // Arrange
+            var utcDateTime = new DateTime(2024, 8, 20, 12, 0, 0, DateTimeKind.Utc);
+            var localTimeZone = TimeZoneInfo.Local;
+
+            // Act
+            var localDateTime = utcDateTime.ToTimeZone(localTimeZone);
+
+            // Assert
+            var expectedDateTime = TimeZoneInfo.ConvertTime(utcDateTime, TimeZoneInfo.Utc, localTimeZone);
+            Assert.Equal(expectedDateTime, localDateTime);
+        }
+
         [Theory]
         [InlineData(1)]
         [InlineData(32)]
@@ -102,7 +162,7 @@ namespace MyNet.Utilities.UnitTests.Extensions
         {
             var toChange = new DateTime(2008, 10, 25, 0, 0, 0, 0, DateTimeKind.Utc);
 
-            var result = toChange.SetTime(value);
+            var result = toChange.SetHour(value);
             var expected = new DateTime(2008, 10, 25, value, 0, 0, 0, DateTimeKind.Utc);
 
             Assert.Equal(expected, result);
@@ -115,7 +175,7 @@ namespace MyNet.Utilities.UnitTests.Extensions
         {
             var toChange = new DateTime(2008, 10, 25, 0, 0, 0, 0, DateTimeKind.Utc);
 
-            _ = Assert.Throws<ArgumentOutOfRangeException>(() => toChange.SetTime(value));
+            _ = Assert.Throws<ArgumentOutOfRangeException>(() => toChange.SetHour(value));
         }
 
         [Theory]
@@ -127,7 +187,7 @@ namespace MyNet.Utilities.UnitTests.Extensions
             var toChange = new DateTime(2008, 10, 25, 0, 0, 0, 0, DateTimeKind.Utc);
 
             var expected = new DateTime(2008, 10, 25, 0, value, 0, 0, DateTimeKind.Utc);
-            Assert.Equal(expected, toChange.SetTime(0, value));
+            Assert.Equal(expected, toChange.At(0, value));
         }
 
         [Theory]
@@ -136,7 +196,7 @@ namespace MyNet.Utilities.UnitTests.Extensions
         public void ChangeTimeMinuteArgChecks(int value)
         {
             var toChange = new DateTime(2008, 10, 25, 0, 0, 0, 0, DateTimeKind.Utc);
-            _ = Assert.Throws<ArgumentOutOfRangeException>(() => toChange.SetTime(0, value));
+            _ = Assert.Throws<ArgumentOutOfRangeException>(() => toChange.At(0, value));
         }
 
         [Theory]
@@ -147,7 +207,7 @@ namespace MyNet.Utilities.UnitTests.Extensions
         {
             var toChange = new DateTime(2008, 10, 25, 0, 0, 0, 0, DateTimeKind.Utc);
 
-            var changed = toChange.SetTime(0, 0, value);
+            var changed = toChange.At(0, 0, value);
 
             var expected = new DateTime(2008, 10, 25, 0, 0, value, 0, DateTimeKind.Utc);
 
@@ -161,7 +221,7 @@ namespace MyNet.Utilities.UnitTests.Extensions
         {
             var toChange = new DateTime(2008, 10, 25, 0, 0, 0, 0, DateTimeKind.Utc);
 
-            _ = Assert.Throws<ArgumentOutOfRangeException>(() => toChange.SetTime(0, 0, value));
+            _ = Assert.Throws<ArgumentOutOfRangeException>(() => toChange.At(0, 0, value));
         }
 
         [Theory]
@@ -173,7 +233,7 @@ namespace MyNet.Utilities.UnitTests.Extensions
             var toChange = new DateTime(2008, 10, 25, 0, 0, 0, 0, DateTimeKind.Utc);
 
             var expected = new DateTime(2008, 10, 25, 0, 0, 0, value, DateTimeKind.Utc);
-            Assert.Equal(expected, toChange.SetTime(0, 0, 0, value));
+            Assert.Equal(expected, toChange.At(0, 0, 0, value));
         }
 
         [Theory]
@@ -182,7 +242,7 @@ namespace MyNet.Utilities.UnitTests.Extensions
         public void ChangeTimeMillisecondArgCheck(int value)
         {
             var toChange = new DateTime(2008, 10, 25, 0, 0, 0, 0, DateTimeKind.Utc);
-            _ = Assert.Throws<ArgumentOutOfRangeException>(() => toChange.SetTime(0, 0, 0, value));
+            _ = Assert.Throws<ArgumentOutOfRangeException>(() => toChange.At(0, 0, 0, value));
         }
 
         [Fact]
@@ -350,7 +410,7 @@ namespace MyNet.Utilities.UnitTests.Extensions
         [Fact]
         public void AtSetsHourAndMinutesProperly()
         {
-            var expected = new DateTime(2002, 12, 17, 18, 06, 01, DateTimeKind.Utc);
+            var expected = new DateTime(2002, 12, 17, 18, 06, 00, DateTimeKind.Utc);
             Assert.Equal(expected, new DateTime(2002, 12, 17, 17, 05, 01, DateTimeKind.Utc).At(18, 06));
         }
 

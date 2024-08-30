@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Description>Resources used by MyNet.Utilities.Localization.</Description>
     <PackageTags>My;Utilities;Localization;Countries;Resources</PackageTags>
-    <VersionPrefix>1.1.0</VersionPrefix>
+    <VersionPrefix>5.0.0</VersionPrefix>
   </PropertyGroup>
 
   <ItemGroup>

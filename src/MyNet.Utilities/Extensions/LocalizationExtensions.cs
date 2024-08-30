@@ -8,17 +8,26 @@ namespace MyNet.Utilities.Extensions
 {
     public static class LocalizationExtensions
     {
-        public static string? TranslateDatePattern(this string key)
-        {
-            var format = CultureInfo.CurrentCulture.DateTimeFormat;
-            var prop = format.GetType().GetProperty(key);
-            return prop != null ? prop.GetValue(format)?.ToString() ?? string.Empty : TranslationService.Current[key];
-        }
+        public const string AbbreviationSuffix = "Abbr";
 
-        public static string? Translate(this string key, bool abbreviation = false) => TranslationService.Current[abbreviation ? key.GetAbbreviatedResourceKey() : key];
+        public static string ToAbbreviationKey(this string key) => $"{key}{AbbreviationSuffix}";
 
-        public static string? Translate(this string key, string? filename, bool abbreviation = false) => TranslationService.Current[abbreviation ? key.GetAbbreviatedResourceKey() : key, filename];
+        public static string Translate(this string key, CultureInfo? cultureInfo = null) => TranslationService.GetOrCurrent(cultureInfo)[key];
 
-        public static string GetAbbreviatedResourceKey(this string key) => key + "Abbr";
+        public static string Translate(this string key, string filename, CultureInfo? cultureInfo = null) => TranslationService.GetOrCurrent(cultureInfo)[key, filename];
+
+        public static string TranslateAbbreviated(this string key, CultureInfo? cultureInfo = null) => key.ToAbbreviationKey().Translate(cultureInfo);
+
+        public static string TranslateAbbreviated(this string key, string filename, CultureInfo? cultureInfo = null) => key.ToAbbreviationKey().Translate(filename);
+
+        public static string Translate(this CultureInfo culture, string key) => TranslationService.Get(culture).Translate(key);
+
+        public static string Translate(this CultureInfo culture, string key, string filename) => TranslationService.Get(culture).Translate(key, filename);
+
+        public static string TranslateAbbreviated(this CultureInfo culture, string key) => culture.Translate(key.ToAbbreviationKey());
+
+        public static string TranslateAbbreviated(this CultureInfo culture, string key, string filename) => culture.Translate(key.ToAbbreviationKey(), filename);
+
+        public static T? GetProvider<T>(this CultureInfo culture) => LocalizationService.Get<T>(culture);
     }
 }

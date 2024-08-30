@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Description>A comprehensive tool for accessing detailed information about geopgraphy in .NET applications.</Description>
     <PackageTags>My;Utilities;Country;Geography</PackageTags>
-    <VersionPrefix>1.1.0</VersionPrefix>
+    <VersionPrefix>5.0.0</VersionPrefix>
   </PropertyGroup>
 
   <ItemGroup>

@@ -8,6 +8,7 @@ namespace MyNet.Utilities.Localization
     public static class Cultures
     {
         public static CultureInfo French => new("fr");
+
         public static CultureInfo English => new("en");
     }
 }

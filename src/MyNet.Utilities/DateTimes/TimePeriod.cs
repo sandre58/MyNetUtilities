@@ -6,40 +6,34 @@ using MyNet.Utilities.Sequences;
 
 namespace MyNet.Utilities.DateTimes
 {
-    public class TimePeriod : Interval<TimeSpan, TimePeriod>
+    public class TimePeriod : Interval<TimeOnly, TimePeriod>
     {
-        public TimePeriod(TimeSpan start, TimeSpan end, DateTimeKind kind = DateTimeKind.Local) : base(start, end) => Kind = kind;
-
-        public DateTimeKind Kind { get; }
+        public TimePeriod(TimeOnly start, TimeOnly end) : base(start, end) { }
 
         public TimeSpan Duration => End - Start;
 
-        public bool IsCurrent() => Contains(Kind == DateTimeKind.Local ? DateTime.Now.TimeOfDay : DateTime.UtcNow.TimeOfDay);
+        public bool IsCurrent() => Contains(DateTime.UtcNow.ToTime());
 
-        public bool Contains(DateTime date) => Contains(Kind == DateTimeKind.Local ? date.ToLocalTime().TimeOfDay : date.ToUniversalTime().TimeOfDay);
+        public ImmutableTimePeriod AsImmutable() => new(Start, End);
 
-        public TimePeriod ToUniversalTime(DateTime? targetDate = null)
-            => Kind == DateTimeKind.Local
-            ? new(Start.ToUniversalTime(targetDate), End.ToUniversalTime(targetDate), DateTimeKind.Utc)
-            : this;
+        protected override TimePeriod CreateInstance(TimeOnly start, TimeOnly end) => new(start, end);
+    }
 
-        public TimePeriod ToLocalTime(DateTime? targetDate = null)
-            => Kind == DateTimeKind.Utc
-            ? new(Start.ToLocalTime(targetDate), End.ToLocalTime(targetDate), DateTimeKind.Local)
-            : this;
+    public class ImmutableTimePeriod : TimePeriod
+    {
+        public ImmutableTimePeriod(TimeOnly start, TimeOnly end) : base(start, end) { }
 
-        public TimePeriod AddAfter(TimeSpan offset) => new(Start, End.AddFluentTimeSpan(offset), Kind);
+        public override void SetInterval(TimeOnly start, TimeOnly end) => throw new InvalidOperationException("This period is immutable.");
 
-        public TimePeriod AddBefore(TimeSpan offset) => new(Start.AddFluentTimeSpan(offset), End, Kind);
+        protected override TimePeriod CreateInstance(TimeOnly start, TimeOnly end) => new ImmutableTimePeriod(start, end);
+    }
 
-        public TimePeriod SubstractBefore(TimeSpan offset) => new(Start, End.SubtractFluentTimeSpan(offset), Kind);
+    public class TimePeriodWithOptionalEnd : IntervalWithOptionalEnd<TimeOnly>
+    {
+        public TimePeriodWithOptionalEnd(TimeOnly start, TimeOnly? end = null) : base(start, end) { }
 
-        public TimePeriod SubstractAfter(TimeSpan offset) => new(Start.SubtractFluentTimeSpan(offset), End, Kind);
+        public TimeSpan? NullableDuration => End is null ? null : End.Value - Start;
 
-        public TimePeriod ShiftLater(TimeSpan offset) => new(Start.AddFluentTimeSpan(offset), End.AddFluentTimeSpan(offset), Kind);
-
-        public TimePeriod ShiftEarlier(TimeSpan offset) => new(Start.SubtractFluentTimeSpan(offset), End.SubtractFluentTimeSpan(offset), Kind);
-
-        protected override TimePeriod CreateInstance(TimeSpan start, TimeSpan end) => new(start, end);
+        public TimeSpan Duration => End is null ? DateTime.UtcNow.ToTime() - Start : End.Value - Start;
     }
 }

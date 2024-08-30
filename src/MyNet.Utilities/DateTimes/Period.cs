@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using MyNet.Utilities.Helpers;
+using MyNet.Utilities.Localization;
 using MyNet.Utilities.Sequences;
 
 namespace MyNet.Utilities.DateTimes
@@ -24,11 +25,16 @@ namespace MyNet.Utilities.DateTimes
                       .Select(offset => Start.Date.AddDays(offset))
                       .Select(x => new Period(DateTimeHelper.Max(x.BeginningOfDay(), Start), DateTimeHelper.Min(x.EndOfDay(), End)));
 
-        public bool IsCurrent() => Contains(DateTime.Today);
+        public bool IsCurrent() => Start.Kind switch
+        {
+            DateTimeKind.Utc => Contains(DateTime.UtcNow),
+            DateTimeKind.Local => Contains(DateTime.Now),
+            _ => Contains(GlobalizationService.Current.Date),
+        };
 
-        public Period ToUniversalTime() => new(Start.ToUniversalTime(), End.ToUniversalTime());
+        public Period ToUtc() => new(Start.ToUniversalTime(), End.ToUniversalTime());
 
-        public Period ToLocalTime() => new(Start.ToLocalTime(), End.ToLocalTime());
+        public Period ToLocal() => new(Start.ToLocalTime(), End.ToLocalTime());
 
         public Period AddAfter(TimeSpan offset) => new(Start, End.AddFluentTimeSpan(offset));
 
@@ -43,7 +49,7 @@ namespace MyNet.Utilities.DateTimes
         public Period ShiftEarlier(TimeSpan offset) => new(Start.SubtractFluentTimeSpan(offset), End.SubtractFluentTimeSpan(offset));
 
         public IEnumerable<Period> Intersect(TimePeriod interval)
-            => ByDays().Select(x => x.ToUniversalTime().Intersect(new Period(x.Start.ToUtcDateTime(interval.Start), x.Start.ToUtcDateTime(interval.End)))).NotNull();
+            => ByDays().Select(x => x.Intersect(new Period(x.Start.At(interval.Start), x.Start.At(interval.End)))).NotNull();
 
         public ImmutablePeriod AsImmutable() => new(Start, End);
 

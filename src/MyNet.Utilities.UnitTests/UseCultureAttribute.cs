@@ -48,7 +48,7 @@ namespace MyNet.Utilities.UnitTests
         {
             _originalCulture = CultureInfo.CurrentCulture;
 
-            CultureInfoService.Current.SetCulture(Culture);
+            GlobalizationService.Current.SetCulture(Culture);
         }
 
         /// <summary>
@@ -60,7 +60,7 @@ namespace MyNet.Utilities.UnitTests
         {
             if (_originalCulture == null) return;
 
-            CultureInfoService.Current.SetCulture(_originalCulture);
+            GlobalizationService.Current.SetCulture(_originalCulture);
         }
     }
 }

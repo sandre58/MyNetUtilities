@@ -6,8 +6,8 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
+using MyNet.Utilities.Extensions;
 using MyNet.Utilities.Generator.Extensions.Resources;
-using MyNet.Utilities.Localization;
 
 namespace MyNet.Utilities.Generator.Extensions
 {
@@ -25,7 +25,7 @@ namespace MyNet.Utilities.Generator.Extensions
 
         public static string Email(string name, CultureInfo? culture = null) => string.Format("{0}@{1}", UserName(name), DomainName(culture));
 
-        public static string FreeEmail(CultureInfo? culture = null) => string.Format("{0}@{1}", UserName(culture), GetTranslationService(culture).Translate(nameof(InternetResources.FreeMails))?.Random());
+        public static string FreeEmail(CultureInfo? culture = null) => string.Format("{0}@{1}", UserName(culture), nameof(InternetResources.FreeMails).Translate(culture).Random());
 
         public static string UserName(CultureInfo? culture = null) => RandomGenerator.ListItem(UserNameFormats.ToList()).Invoke(culture);
 
@@ -33,7 +33,7 @@ namespace MyNet.Utilities.Generator.Extensions
 
         public static string DomainName(CultureInfo? culture = null) => string.Format("{0}.{1}", UserName(culture), DomainSuffix(culture));
 
-        public static string DomainSuffix(CultureInfo? culture = null) => GetTranslationService(culture).Translate(nameof(InternetResources.DomainSuffixes))?.Random() ?? string.Empty;
+        public static string DomainSuffix(CultureInfo? culture = null) => nameof(InternetResources.DomainSuffixes).Translate(culture).Random();
 
         public static string IPv4Address()
         {
@@ -68,8 +68,6 @@ namespace MyNet.Utilities.Generator.Extensions
         }
 
         public static string Url() => string.Format("http://{0}/{1}", DomainName(), UserName());
-
-        private static TranslationService GetTranslationService(CultureInfo? culture = null) => TranslationService.Get(culture ?? CultureInfo.CurrentCulture);
 
         [GeneratedRegex(@"[^\w]+")]
         private static partial Regex UsernameRegex();

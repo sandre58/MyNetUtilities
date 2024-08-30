@@ -29,6 +29,26 @@ namespace MyNet.Utilities.Helpers
             ? time2
             : time1;
 
+        public static DateOnly Max(DateOnly date1, DateOnly date2) =>
+            date1 > date2
+            ? date1
+            : date2;
+
+        public static DateOnly Min(DateOnly date1, DateOnly date2) =>
+            date1 > date2
+            ? date2
+            : date1;
+
+        public static TimeOnly Max(TimeOnly time1, TimeOnly time2) =>
+            time1 > time2
+            ? time1
+            : time2;
+
+        public static TimeOnly Min(TimeOnly time1, TimeOnly time2) =>
+            time1 > time2
+            ? time2
+            : time1;
+
         public static IEnumerable<DateTime> Range(DateTime min, DateTime max, int step = 1, TimeUnit unit = TimeUnit.Day)
         {
             Func<DateTime, DateTime> increment = null!;
@@ -63,6 +83,37 @@ namespace MyNet.Utilities.Helpers
                     break;
             }
 
+            for (var i = min; i <= max; i = increment.Invoke(i))
+                yield return i;
+        }
+
+        public static IEnumerable<DateOnly> Range(DateOnly min, DateOnly max, int step = 1, TimeUnit unit = TimeUnit.Day)
+        {
+            Func<DateOnly, DateOnly> increment = null!;
+
+            increment = unit switch
+            {
+                TimeUnit.Day => x => x.AddDays(step),
+                TimeUnit.Week => x => x.AddDays(step * 7),
+                TimeUnit.Month => x => x.AddMonths(step),
+                TimeUnit.Year => x => x.AddYears(step),
+                _ => x => x.AddDays(step),
+            };
+            for (var i = min; i <= max; i = increment.Invoke(i))
+                yield return i;
+        }
+
+        public static IEnumerable<TimeOnly> Range(TimeOnly min, TimeOnly max, int step = 1, TimeUnit unit = TimeUnit.Hour)
+        {
+            Func<TimeOnly, TimeOnly> increment = null!;
+
+            increment = unit switch
+            {
+                TimeUnit.Millisecond => x => x.Add(step.Milliseconds()),
+                TimeUnit.Second => x => x.Add(step.Seconds()),
+                TimeUnit.Minute => x => x.AddMinutes(step),
+                _ => x => x.AddHours(step),
+            };
             for (var i = min; i <= max; i = increment.Invoke(i))
                 yield return i;
         }
