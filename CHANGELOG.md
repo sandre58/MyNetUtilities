@@ -1,5 +1,16 @@
 # Changelog
 
+## [v5.0.0-pre] - 2024-08-30
+### :boom: BREAKING CHANGES
+- due to [`9d76899`](https://github.com/sandre58/MyNetUtilities/commit/9d76899416d605da5fc4f0423f3661e200ae5fcd) - change globalization management:
+
+  dates conversion methods
+
+
+### :sparkles: New Features
+- [`9d76899`](https://github.com/sandre58/MyNetUtilities/commit/9d76899416d605da5fc4f0423f3661e200ae5fcd) - **globalization**: change globalization management
+
+
 ## [v4.0.3] - 2024-08-01
 ### :bug: Bug Fixes
 - [`8c8030e`](https://github.com/sandre58/MyNetUtilities/commit/8c8030e6a8bad1de4e02d0f30170ec2a07b64bee) - fix collection *(commit by [@sandre58](https://github.com/sandre58))*
@@ -118,3 +129,4 @@
 [v4.0.1]: https://github.com/sandre58/MyNetUtilities/compare/v4.0.0...v4.0.1
 [v4.0.2]: https://github.com/sandre58/MyNetUtilities/compare/v4.0.1...v4.0.2
 [v4.0.3]: https://github.com/sandre58/MyNetUtilities/compare/v4.0.2...v4.0.3
+[v5.0.0-pre]: https://github.com/sandre58/MyNetUtilities/compare/v4.0.3...v5.0.0-pre
