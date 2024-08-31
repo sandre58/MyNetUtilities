@@ -2,6 +2,7 @@
 // See the LICENSE file in the project root for more information.
 
 using System;
+using MyNet.Utilities.Localization;
 
 namespace MyNet.Utilities
 {
@@ -10,6 +11,10 @@ namespace MyNet.Utilities
     /// </summary>
     public static class TimeOnlyExtensions
     {
+        public static TimeOnly ToTimeZone(this TimeOnly time, TimeZoneInfo sourceTimeZone, TimeZoneInfo destinationTimeZone) => TimeZoneInfo.ConvertTime(DateTime.UtcNow.ToTimeZone(sourceTimeZone).At(time), sourceTimeZone, destinationTimeZone).ToTime();
+
+        public static TimeOnly ToCurrentTime(this TimeOnly time, TimeZoneInfo sourceTimeZone) => time.ToTimeZone(sourceTimeZone, GlobalizationService.Current.TimeZone);
+
         /// <summary>
         /// Returns the Start of the given day (the first millisecond of the given <see cref="DateTime"/>).
         /// </summary>
