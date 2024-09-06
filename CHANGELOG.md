@@ -1,5 +1,10 @@
 # Changelog
 
+## [v5.1.0] - 2024-09-02
+### :sparkles: New Features
+- [`fb3a8c2`](https://github.com/sandre58/MyNetUtilities/commit/fb3a8c20fc2e103329370da4a2e7848cfd32635d) - add new extension method for DateOnly
+
+
 ## [v5.0.0-pre] - 2024-08-30
 ### :boom: BREAKING CHANGES
 - due to [`9d76899`](https://github.com/sandre58/MyNetUtilities/commit/9d76899416d605da5fc4f0423f3661e200ae5fcd) - change globalization management:
@@ -130,3 +135,4 @@
 [v4.0.2]: https://github.com/sandre58/MyNetUtilities/compare/v4.0.1...v4.0.2
 [v4.0.3]: https://github.com/sandre58/MyNetUtilities/compare/v4.0.2...v4.0.3
 [v5.0.0-pre]: https://github.com/sandre58/MyNetUtilities/compare/v4.0.3...v5.0.0-pre
+[v5.1.0]: https://github.com/sandre58/MyNetUtilities/compare/v5.0.0...v5.1.0
