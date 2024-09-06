@@ -20,6 +20,8 @@ namespace MyNet.Utilities.Threading
         private CancellationTokenSource? _tokenSource;
         private bool _disposedValue;
 
+        public bool IsRunning => _isRunning;
+
         private void RunSimpleTask()
         {
             _tokenSource = new CancellationTokenSource();
