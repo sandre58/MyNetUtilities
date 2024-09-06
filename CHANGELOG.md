@@ -1,5 +1,10 @@
 # Changelog
 
+## [v5.2.0] - 2024-09-06
+### :sparkles: New Features
+- [`6808b6d`](https://github.com/sandre58/MyNetUtilities/commit/6808b6d38623415cf83a6907496eaef40145d260) - add IsRunning property in SingleTaskRunner
+
+
 ## [v5.1.0] - 2024-09-02
 ### :sparkles: New Features
 - [`fb3a8c2`](https://github.com/sandre58/MyNetUtilities/commit/fb3a8c20fc2e103329370da4a2e7848cfd32635d) - add new extension method for DateOnly
@@ -136,3 +141,4 @@
 [v4.0.3]: https://github.com/sandre58/MyNetUtilities/compare/v4.0.2...v4.0.3
 [v5.0.0-pre]: https://github.com/sandre58/MyNetUtilities/compare/v4.0.3...v5.0.0-pre
 [v5.1.0]: https://github.com/sandre58/MyNetUtilities/compare/v5.0.0...v5.1.0
+[v5.2.0]: https://github.com/sandre58/MyNetUtilities/compare/v5.1.0...v5.2.0
