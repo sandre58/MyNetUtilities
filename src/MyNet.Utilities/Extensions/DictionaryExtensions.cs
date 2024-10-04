@@ -19,7 +19,7 @@ namespace MyNet.Utilities
             return dictionary[key];
         }
 
-        public static TValue TryAdd<TKey, TValue>(this IDictionary<TKey, TValue> dictionary, TKey key, TValue newValue)
+        public static TValue GetOrAdd<TKey, TValue>(this IDictionary<TKey, TValue> dictionary, TKey key, TValue newValue)
             where TKey : notnull
         {
             if (!dictionary.ContainsKey(key)) dictionary.Add(key, newValue);
