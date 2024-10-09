@@ -27,9 +27,7 @@ namespace MyNet.Utilities.Collections
         {
             base.InvokeNotifyCollectionChanged(notifyEventHandler, e);
 
-            if (SortSelector is null
-                || e.Action == NotifyCollectionChangedAction.Remove
-                || e.Action == NotifyCollectionChangedAction.Reset)
+            if (SortSelector is null || e.Action == NotifyCollectionChangedAction.Remove)
                 return;
 
             Sort();
@@ -37,7 +35,7 @@ namespace MyNet.Utilities.Collections
 
         public void Sort()
         {
-            if (SortSelector is null) return;
+            if (SortSelector is null || Count < 2) return;
 
             ExecuteThreadSafe(() =>
             {
