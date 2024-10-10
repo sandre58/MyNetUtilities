@@ -17,7 +17,6 @@ namespace MyNet.Utilities.Collections;
 public class ExtendedObservableCollection<T> : ObservableCollection<T>
 {
     private bool _suspendCount;
-
     private bool _suspendNotifications;
 
     /// <summary>
@@ -54,9 +53,17 @@ public class ExtendedObservableCollection<T> : ObservableCollection<T>
     {
         ArgumentNullException.ThrowIfNull(collection);
 
-        foreach (var item in collection)
+        if (collection is ICollection<T> col)
         {
-            Add(item);
+            CheckReentrancy();
+            foreach (var item in col)
+                Items.Add(item);
+            RaiseCountPropertyChanged(true);
+        }
+        else
+        {
+            foreach (var item in collection)
+                Add(item);
         }
     }
 
@@ -71,9 +78,17 @@ public class ExtendedObservableCollection<T> : ObservableCollection<T>
     {
         ArgumentNullException.ThrowIfNull(collection);
 
-        foreach (var item in collection)
+        if (collection is ICollection<T> col)
         {
-            InsertItem(index++, item);
+            CheckReentrancy();
+            foreach (var item in col)
+                Items.Insert(index++, item);
+            RaiseCountPropertyChanged(true);
+        }
+        else
+        {
+            foreach (var item in collection)
+                InsertItem(index++, item);
         }
     }
 
@@ -89,9 +104,9 @@ public class ExtendedObservableCollection<T> : ObservableCollection<T>
         Clear();
 
         foreach (var item in items)
-        {
-            Add(item);
-        }
+            Items.Add(item);
+
+        RaiseCountPropertyChanged(true);
     }
 
     /// <summary>
@@ -100,10 +115,13 @@ public class ExtendedObservableCollection<T> : ObservableCollection<T>
     /// <param name="index">The zero-based starting index of the range of elements to remove.</param><param name="count">The number of elements to remove.</param><exception cref="ArgumentOutOfRangeException"><paramref name="index"/> is less than 0.-or-<paramref name="count"/> is less than 0.</exception><exception cref="ArgumentException"><paramref name="index"/> and <paramref name="count"/> do not denote a valid range of elements in the <see cref="List{T}"/>.</exception>
     public void RemoveRange(int index, int count)
     {
+        if (index < 0 || count < 0 || index + count > Count)
+            throw new ArgumentOutOfRangeException(nameof(index));
+
         for (var i = 0; i < count; i++)
-        {
-            RemoveAt(index);
-        }
+            Items.RemoveAt(index);
+
+        RaiseCountPropertyChanged(true);
     }
 
     /// <summary>
@@ -120,14 +138,12 @@ public class ExtendedObservableCollection<T> : ObservableCollection<T>
                 _suspendCount = false;
 
                 if (Count != count)
-                {
-                    OnPropertyChanged(new PropertyChangedEventArgs("Count"));
-                }
+                    RaiseCountPropertyChanged();
             }).Defer();
     }
 
     /// <summary>
-    /// Suspends notifications. When disposed, a replace notification is fired.
+    /// Suspends notifications. When disposed, a reset notification is fired.
     /// </summary>
     /// <returns>A disposable when disposed will reset notifications.</returns>
     public IDisposable SuspendNotifications()
@@ -140,8 +156,7 @@ public class ExtendedObservableCollection<T> : ObservableCollection<T>
             {
                 _suspendCount = false;
                 _suspendNotifications = false;
-                OnPropertyChanged(new PropertyChangedEventArgs("Count"));
-                OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
+                RaiseCountPropertyChanged(true);
             }).Defer();
     }
 
@@ -151,10 +166,7 @@ public class ExtendedObservableCollection<T> : ObservableCollection<T>
     /// <param name="e">The <see cref="NotifyCollectionChangedEventArgs"/> instance containing the event data.</param>
     protected override void OnCollectionChanged(NotifyCollectionChangedEventArgs e)
     {
-        if (_suspendNotifications)
-        {
-            return;
-        }
+        if (_suspendNotifications) return;
 
         base.OnCollectionChanged(e);
     }
@@ -167,11 +179,16 @@ public class ExtendedObservableCollection<T> : ObservableCollection<T>
     {
         ArgumentNullException.ThrowIfNull(e);
 
-        if (_suspendCount && e.PropertyName == "Count")
-        {
-            return;
-        }
+        if (_suspendCount && e.PropertyName == nameof(Count)) return;
 
         base.OnPropertyChanged(e);
+    }
+
+    protected virtual void RaiseCountPropertyChanged(bool sendNotification = false)
+    {
+        OnPropertyChanged(new PropertyChangedEventArgs(nameof(Count)));
+
+        if (sendNotification)
+            OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
     }
 }
