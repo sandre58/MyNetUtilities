@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MyNet.Utilities.Collections
 {
-    public class ThreadSafeObservableCollection<T> : ExtendedObservableCollection<T>
+    public class ThreadSafeObservableCollection<T> : OptimizedObservableCollection<T>
     {
         private readonly object _localLock = new();
         private readonly Action<Action>? _notifyOnUi;

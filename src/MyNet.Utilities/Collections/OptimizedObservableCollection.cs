@@ -14,32 +14,32 @@ namespace MyNet.Utilities.Collections;
 /// An override of observable collection which allows the suspension of notifications.
 /// </summary>
 /// <typeparam name="T">The type of the item.</typeparam>
-public class ExtendedObservableCollection<T> : ObservableCollection<T>
+public class OptimizedObservableCollection<T> : ObservableCollection<T>
 {
     private bool _suspendCount;
     private bool _suspendNotifications;
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="ObservableCollectionExtended{T}"/> class.
+    /// Initializes a new instance of the <see cref="OptimizedObservableCollection{T}"/> class.
     /// </summary>
-    public ExtendedObservableCollection()
+    public OptimizedObservableCollection()
     {
     }
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="ObservableCollectionExtended{T}"/> class that contains elements copied from the specified list.
+    /// Initializes a new instance of the <see cref="OptimizedObservableCollection{T}"/> class that contains elements copied from the specified list.
     /// </summary>
     /// <param name="list">The list from which the elements are copied.</param><exception cref="ArgumentNullException">The <paramref name="list"/> parameter cannot be null.</exception>
-    public ExtendedObservableCollection(List<T> list)
+    public OptimizedObservableCollection(List<T> list)
         : base(list)
     {
     }
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="ObservableCollectionExtended{T}"/> class that contains elements copied from the specified collection.
+    /// Initializes a new instance of the <see cref="OptimizedObservableCollection{T}"/> class that contains elements copied from the specified collection.
     /// </summary>
     /// <param name="collection">The collection from which the elements are copied.</param><exception cref="ArgumentNullException">The <paramref name="collection"/> parameter cannot be null.</exception>
-    public ExtendedObservableCollection(IEnumerable<T> collection)
+    public OptimizedObservableCollection(IEnumerable<T> collection)
         : base(collection)
     {
     }
@@ -68,7 +68,7 @@ public class ExtendedObservableCollection<T> : ObservableCollection<T>
     }
 
     /// <summary>
-    /// Inserts the elements of a collection into the <see cref="ObservableCollectionExtended{T}" /> at the specified index.
+    /// Inserts the elements of a collection into the <see cref="OptimizedObservableCollection{T}" /> at the specified index.
     /// </summary>
     /// <param name="collection">Inserts the items at the specified index.</param>
     /// <param name="index">The zero-based index at which the new elements should be inserted.</param>
@@ -110,7 +110,7 @@ public class ExtendedObservableCollection<T> : ObservableCollection<T>
     }
 
     /// <summary>
-    /// Removes a range of elements from the <see cref="ObservableCollectionExtended{T}"/>.
+    /// Removes a range of elements from the <see cref="OptimizedObservableCollection{T}"/>.
     /// </summary>
     /// <param name="index">The zero-based starting index of the range of elements to remove.</param><param name="count">The number of elements to remove.</param><exception cref="ArgumentOutOfRangeException"><paramref name="index"/> is less than 0.-or-<paramref name="count"/> is less than 0.</exception><exception cref="ArgumentException"><paramref name="index"/> and <paramref name="count"/> do not denote a valid range of elements in the <see cref="List{T}"/>.</exception>
     public void RemoveRange(int index, int count)
