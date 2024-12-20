@@ -1,5 +1,21 @@
 # Changelog
 
+## [v5.3.0] - 2024-12-20
+### :boom: BREAKING CHANGES
+- due to [`f172aa1`](https://github.com/sandre58/MyNetUtilities/commit/f172aa144309d44e5bc3e5e5e9980e0b02b3c297) - change method signature:
+
+  TryAdd become GetOrAdd
+
+
+### :bug: Bug Fixes
+- [`5ef22ff`](https://github.com/sandre58/MyNetUtilities/commit/5ef22ff07e259f9412d8d3b244ee61f27d6c141c) - Refactor collection change notifications and sorting
+- [`9a02fbe`](https://github.com/sandre58/MyNetUtilities/commit/9a02fbe2f21e73f821a2f6007fe617f6f8ec9b35) - Optimize ExtendedObservableCollection<T> methods
+
+### :recycle: Refactors
+- [`f172aa1`](https://github.com/sandre58/MyNetUtilities/commit/f172aa144309d44e5bc3e5e5e9980e0b02b3c297) - change method signature
+- [`0aca27a`](https://github.com/sandre58/MyNetUtilities/commit/0aca27a2f9592ec88246a220fbe26688fb00696e) - Refactor collections and introduce OptimizedObservableCollection
+
+
 ## [v5.2.0] - 2024-09-06
 ### :sparkles: New Features
 - [`6808b6d`](https://github.com/sandre58/MyNetUtilities/commit/6808b6d38623415cf83a6907496eaef40145d260) - add IsRunning property in SingleTaskRunner
@@ -142,3 +158,4 @@
 [v5.0.0-pre]: https://github.com/sandre58/MyNetUtilities/compare/v4.0.3...v5.0.0-pre
 [v5.1.0]: https://github.com/sandre58/MyNetUtilities/compare/v5.0.0...v5.1.0
 [v5.2.0]: https://github.com/sandre58/MyNetUtilities/compare/v5.1.0...v5.2.0
+[v5.3.0]: https://github.com/sandre58/MyNetUtilities/compare/v5.2.0...v5.3.0
