@@ -1,5 +1,17 @@
 # Changelog
 
+## [v6.0.0] - 2024-12-21
+### :boom: BREAKING CHANGES
+- due to [`ad23b21`](https://github.com/sandre58/MyNetUtilities/commit/ad23b21ab61a4f3485197f20f539e78c1faeaee6) - Support .NET 9.0, simplify syntax, and improve locking:
+
+  Support .NET 9.0. Refined method signatures and logic in  
+  various files.
+
+
+### :sparkles: New Features
+- [`ad23b21`](https://github.com/sandre58/MyNetUtilities/commit/ad23b21ab61a4f3485197f20f539e78c1faeaee6) - Support .NET 9.0, simplify syntax, and improve locking
+
+
 ## [v5.3.0] - 2024-12-20
 ### :boom: BREAKING CHANGES
 - due to [`f172aa1`](https://github.com/sandre58/MyNetUtilities/commit/f172aa144309d44e5bc3e5e5e9980e0b02b3c297) - change method signature:
@@ -159,3 +171,4 @@
 [v5.1.0]: https://github.com/sandre58/MyNetUtilities/compare/v5.0.0...v5.1.0
 [v5.2.0]: https://github.com/sandre58/MyNetUtilities/compare/v5.1.0...v5.2.0
 [v5.3.0]: https://github.com/sandre58/MyNetUtilities/compare/v5.2.0...v5.3.0
+[v6.0.0]: https://github.com/sandre58/MyNetUtilities/compare/v5.3.0...v6.0.0
