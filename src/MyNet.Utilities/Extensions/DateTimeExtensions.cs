@@ -8,7 +8,9 @@ using MyNet.Utilities.Helpers;
 using MyNet.Utilities.Localization;
 using MyNet.Utilities.Units;
 
+#pragma warning disable IDE0130 // Namespace does not match folder structure
 namespace MyNet.Utilities
+#pragma warning restore IDE0130 // Namespace does not match folder structure
 {
     /// <summary>
     /// <see cref="DateTime"/> extensions related to spatial or temporal relations

@@ -5,14 +5,24 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 
+#if NET9_0_OR_GREATER
+using System.Threading;
+#endif
+
 namespace MyNet.Utilities.Localization
 {
     public static class LocalizationService
     {
         private static readonly Dictionary<CultureInfo, IDictionary<Type, object>> CultureProviders = [];
         private static readonly Dictionary<Type, object> DefaultProviders = [];
+
+#if NET9_0_OR_GREATER
+        private static readonly Lock LockCultureProviders = new();
+        private static readonly Lock LockDefaultProviders = new();
+#else
         private static readonly object LockCultureProviders = new();
         private static readonly object LockDefaultProviders = new();
+#endif
 
         /// <summary>
         /// Registrer a provider for a specific culture.

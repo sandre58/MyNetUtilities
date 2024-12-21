@@ -5,6 +5,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
+
+#if NET9_0_OR_GREATER
+using System.Threading;
+#endif
+
 namespace MyNet.Utilities.Messaging
 {
     /// <summary>
@@ -12,13 +17,20 @@ namespace MyNet.Utilities.Messaging
     /// </summary>
     public class Messenger : IMessenger
     {
+#if NET9_0_OR_GREATER
+        private static readonly Lock CreationLock = new();
+        private readonly Lock _recipientsOfSubclassesActionLock = new();
+        private readonly Lock _recipientsStrictActionLock = new();
+        private readonly Lock _registerLock = new();
+#else
         private static readonly object CreationLock = new();
-        private static IMessenger? _defaultInstance;
-        private readonly object _registerLock = new();
-        private Dictionary<Type, List<WeakActionAndToken>>? _recipientsOfSubclassesAction;
-        private Dictionary<Type, List<WeakActionAndToken>>? _recipientsStrictAction;
         private readonly object _recipientsOfSubclassesActionLock = new();
         private readonly object _recipientsStrictActionLock = new();
+        private readonly object _registerLock = new();
+#endif
+        private static IMessenger? _defaultInstance;
+        private Dictionary<Type, List<WeakActionAndToken>>? _recipientsOfSubclassesAction;
+        private Dictionary<Type, List<WeakActionAndToken>>? _recipientsStrictAction;
 
         /// <summary>
         /// Gets the Messenger's default instance, allowing

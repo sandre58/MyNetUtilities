@@ -40,7 +40,11 @@ namespace MyNet.Utilities.Caching
         /// <summary>
         /// The synchronization object.
         /// </summary>
+#if NET9_0_OR_GREATER
+        private readonly Lock _syncObj = new();
+#else
         private readonly object _syncObj = new();
+#endif
 
         /// <summary>
         /// The async locks.

@@ -14,37 +14,37 @@ namespace MyNet.Utilities.Helpers
             ? date1
             : date2;
 
-        public static DateTime Min(DateTime date1, DateTime date2) =>
-            date1 > date2
-            ? date2
-            : date1;
-
-        public static TimeSpan Max(TimeSpan time1, TimeSpan time2) =>
-            time1 > time2
-            ? time1
-            : time2;
-
-        public static TimeSpan Min(TimeSpan time1, TimeSpan time2) =>
-            time1 > time2
-            ? time2
-            : time1;
-
         public static DateOnly Max(DateOnly date1, DateOnly date2) =>
             date1 > date2
             ? date1
             : date2;
-
-        public static DateOnly Min(DateOnly date1, DateOnly date2) =>
-            date1 > date2
-            ? date2
-            : date1;
 
         public static TimeOnly Max(TimeOnly time1, TimeOnly time2) =>
             time1 > time2
             ? time1
             : time2;
 
+        public static TimeSpan Max(TimeSpan time1, TimeSpan time2) =>
+            time1 > time2
+            ? time1
+            : time2;
+
+        public static DateTime Min(DateTime date1, DateTime date2) =>
+            date1 > date2
+            ? date2
+            : date1;
+
+        public static DateOnly Min(DateOnly date1, DateOnly date2) =>
+            date1 > date2
+            ? date2
+            : date1;
+
         public static TimeOnly Min(TimeOnly time1, TimeOnly time2) =>
+            time1 > time2
+            ? time2
+            : time1;
+
+        public static TimeSpan Min(TimeSpan time1, TimeSpan time2) =>
             time1 > time2
             ? time2
             : time1;
@@ -118,6 +118,6 @@ namespace MyNet.Utilities.Helpers
                 yield return i;
         }
 
-        public static int NumberOfDaysInWeek() => Enum.GetValues(typeof(DayOfWeek)).Length;
+        public static int NumberOfDaysInWeek() => Enum.GetValues<DayOfWeek>().Length;
     }
 }

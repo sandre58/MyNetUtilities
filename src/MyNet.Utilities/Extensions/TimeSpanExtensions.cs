@@ -6,7 +6,9 @@ using System.Collections.Generic;
 using MyNet.Utilities.DateTimes;
 using MyNet.Utilities.Units;
 
+#pragma warning disable IDE0130 // Namespace does not match folder structure
 namespace MyNet.Utilities
+#pragma warning restore IDE0130 // Namespace does not match folder structure
 {
     /// <summary>
     /// Static class containing Fluent <see cref="TimeSpan"/> extension methods.

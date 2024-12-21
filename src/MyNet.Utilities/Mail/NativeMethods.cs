@@ -51,7 +51,7 @@ namespace MyNet.Utilities.Mail
                 name = address
             };
 
-            var size = Marshal.SizeOf(typeof(MapiRecipDesc));
+            var size = Marshal.SizeOf<MapiRecipDesc>();
             var intPtr = Marshal.AllocHGlobal(size);
 
             Marshal.StructureToPtr(recipient, intPtr, false);
@@ -61,7 +61,7 @@ namespace MyNet.Utilities.Mail
 
         private static IntPtr GetAttachment(string fileName)
         {
-            var size = Marshal.SizeOf(typeof(MapiFileDesc));
+            var size = Marshal.SizeOf<MapiFileDesc>();
             var intPtr = Marshal.AllocHGlobal(size);
 
             var mapiFileDesc = new MapiFileDesc

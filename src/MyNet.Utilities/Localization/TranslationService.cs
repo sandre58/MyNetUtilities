@@ -6,14 +6,24 @@ using System.Globalization;
 using System.Linq;
 using System.Resources;
 
+#if NET9_0_OR_GREATER
+using System.Threading;
+#endif
+
 namespace MyNet.Utilities.Localization
 {
     public class TranslationService
     {
         private static readonly Dictionary<CultureInfo, TranslationService> RegisteredServices = [];
         private static readonly Dictionary<string, ResourceManager> Resources = [];
+
+#if NET9_0_OR_GREATER
+        private static readonly Lock LockCulture = new();
+        private static readonly Lock LockResources = new();
+#else
         private static readonly object LockCulture = new();
         private static readonly object LockResources = new();
+#endif
 
         public CultureInfo Culture { get; }
 
@@ -38,7 +48,7 @@ namespace MyNet.Utilities.Localization
 
         public string Translate(string key)
         {
-            var result = Resources.Select(r => r.Value.GetString(key, Culture)).ToList().NotNull().LastOrDefault();
+            var result = Resources.Select(r => r.Value.GetString(key, Culture)).NotNull().LastOrDefault();
             return !string.IsNullOrEmpty(result) ? result : key;
         }
 

@@ -4,7 +4,10 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
+
+#if NET9_0_OR_GREATER
+using System.Threading;
+#endif
 
 namespace MyNet.Utilities.Logging
 {
@@ -12,10 +15,15 @@ namespace MyNet.Utilities.Logging
     {
         private static readonly Stack<PerformanceLogger> OperationGroups = new();
 
+#if NET9_0_OR_GREATER
+        private static readonly Lock TimeLocker = new();
+        private static readonly Lock CurrentObject = new();
+#else
         private static readonly object TimeLocker = new();
         private static readonly object CurrentObject = new();
+#endif
 
-        private static readonly IDictionary<TraceLevel, Action<string>> GroupLogAction = new Dictionary<TraceLevel, Action<string>>
+        private static readonly Dictionary<TraceLevel, Action<string>> GroupLogAction = new()
         {
             [TraceLevel.Trace] = x => LogManager.Trace(x),
             [TraceLevel.Debug] = x => LogManager.Debug(x),

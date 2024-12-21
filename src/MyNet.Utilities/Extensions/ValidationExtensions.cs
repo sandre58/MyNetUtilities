@@ -52,7 +52,7 @@ namespace MyNet.Utilities.Extensions
         public static string IsEmailAddressOrThrow(this string value, [CallerMemberName] string propertyName = null!)
             => value.IsEmailAddress() ? value : throw new InvalidEmailAddressException(propertyName);
 
-        public static bool IsPhoneNumber(this string value, [CallerMemberName] string propertyName = null!)
+        public static bool IsPhoneNumber(this string value)
         {
             var regex = PhoneRegex();
 

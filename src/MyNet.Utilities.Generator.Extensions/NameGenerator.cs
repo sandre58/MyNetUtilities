@@ -13,7 +13,7 @@ namespace MyNet.Utilities.Generator.Extensions
     {
         static NameGenerator() => ResourceLocator.Initialize();
 
-        private static readonly IDictionary<(GenderType, NameFormats), Func<CultureInfo?, string[]>> FormatMap = new Dictionary<(GenderType, NameFormats), Func<CultureInfo?, string[]>>
+        private static readonly Dictionary<(GenderType, NameFormats), Func<CultureInfo?, string[]>> FormatMap = new()
         {
             { (GenderType.Male, NameFormats.Standard), x => new [] { FirstName(culture: x), LastName(x) } },
             { (GenderType.Male, NameFormats.Inverse), x => new[] { LastName(x), FirstName(culture: x) } },

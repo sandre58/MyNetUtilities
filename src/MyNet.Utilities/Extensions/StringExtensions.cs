@@ -10,7 +10,9 @@ using System.Security;
 using MyNet.Utilities.Generator;
 using MyNet.Utilities.Helpers;
 
+#pragma warning disable IDE0130 // Namespace does not match folder structure
 namespace MyNet.Utilities
+#pragma warning restore IDE0130 // Namespace does not match folder structure
 {
     public static class StringExtensions
     {
@@ -60,7 +62,7 @@ namespace MyNet.Utilities
 
         public static string GetInitials(this string value)
               => string.Concat(value
-                 .Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
+                 .Split([' '], StringSplitOptions.RemoveEmptyEntries)
                  .Where(x => x.Length >= 1)
                  .Select(x => double.TryParse(x, out var value) ? value.ToString() : char.ToUpper(x[0]).ToString()));
 

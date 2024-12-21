@@ -20,7 +20,7 @@ namespace MyNet.Utilities.Sequences
         where T : struct, IComparable
         where TClass : Interval<T, TClass>
     {
-        public Interval(T start, T end) => SetIntervalInternal(start, end);
+        protected Interval(T start, T end) => SetIntervalInternal(start, end);
 
         public T Start { get; private set; }
 

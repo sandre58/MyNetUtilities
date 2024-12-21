@@ -13,7 +13,7 @@ namespace MyNet.Utilities.Logging.NLog
     /// <summary>
     /// Class representing a Logger.
     /// </summary>
-    public sealed class Logger : LoggerBase, Microsoft.Extensions.Logging.ILogger
+    public sealed class Logger : ILogger, Microsoft.Extensions.Logging.ILogger
     {
         private readonly NLogLogger _logger;
 
@@ -39,7 +39,7 @@ namespace MyNet.Utilities.Logging.NLog
         /// <param name="message">The resource.</param>
         /// <param name="memberName">The member name.</param>
         /// <param name="sourceFilePath">The source file path.</param>
-        public override void Info(string message, [CallerMemberName] string memberName = "", [CallerFilePath] string sourceFilePath = "") => _logger.Info(message);
+        public void Info(string message, [CallerMemberName] string memberName = "", [CallerFilePath] string sourceFilePath = "") => _logger.Info(message);
 
         /// <summary>
         /// Traces the specified message.
@@ -47,7 +47,7 @@ namespace MyNet.Utilities.Logging.NLog
         /// <param name="message">The resource.</param>
         /// <param name="memberName">The member name.</param>
         /// <param name="sourceFilePath">The source file path.</param>
-        public override void Trace(string message, [CallerMemberName] string memberName = "", [CallerFilePath] string sourceFilePath = "") => _logger.Trace(message);
+        public void Trace(string message, [CallerMemberName] string memberName = "", [CallerFilePath] string sourceFilePath = "") => _logger.Trace(message);
 
         /// <summary>
         /// Debugs the specified message.
@@ -55,7 +55,7 @@ namespace MyNet.Utilities.Logging.NLog
         /// <param name="message">The resource.</param>
         /// <param name="memberName">The member name.</param>
         /// <param name="sourceFilePath">The source file path.</param>
-        public override void Debug(string message, [CallerMemberName] string memberName = "", [CallerFilePath] string sourceFilePath = "") => _logger.Debug(message);
+        public void Debug(string message, [CallerMemberName] string memberName = "", [CallerFilePath] string sourceFilePath = "") => _logger.Debug(message);
 
         /// <summary>
         /// Warnings the specified message.
@@ -63,7 +63,7 @@ namespace MyNet.Utilities.Logging.NLog
         /// <param name="message">The resource.</param>
         /// <param name="memberName">The member name.</param>
         /// <param name="sourceFilePath">The source file path.</param>
-        public override void Warning(string message, [CallerMemberName] string memberName = "", [CallerFilePath] string sourceFilePath = "") => _logger.Warn(message);
+        public void Warning(string message, [CallerMemberName] string memberName = "", [CallerFilePath] string sourceFilePath = "") => _logger.Warn(message);
 
         /// <summary>
         /// Log Application Error.
@@ -71,7 +71,7 @@ namespace MyNet.Utilities.Logging.NLog
         /// <param name="message">Non managed exception.</param>
         /// <param name="memberName">The member name.</param>
         /// <param name="sourceFilePath">The source file path.</param>
-        public override void Error(string message, [CallerMemberName] string memberName = "", [CallerFilePath] string sourceFilePath = "") => _logger.Error(message);
+        public void Error(string message, [CallerMemberName] string memberName = "", [CallerFilePath] string sourceFilePath = "") => _logger.Error(message);
 
         /// <summary>
         /// Log Application Error.
@@ -79,7 +79,7 @@ namespace MyNet.Utilities.Logging.NLog
         /// <param name="ex">Non managed exception.</param>
         /// <param name="memberName">The member name.</param>
         /// <param name="sourceFilePath">The source file path.</param>
-        public override void Error(Exception ex, [CallerMemberName] string memberName = "", [CallerFilePath] string sourceFilePath = "") => _logger.Error(ex);
+        public void Error(Exception ex, [CallerMemberName] string memberName = "", [CallerFilePath] string sourceFilePath = "") => _logger.Error(ex);
 
         /// <summary>
         /// Log Critical Error that can crash application.
@@ -87,7 +87,7 @@ namespace MyNet.Utilities.Logging.NLog
         /// <param name="ex">Critical non managed exception.</param>
         /// <param name="memberName">The member name.</param>
         /// <param name="sourceFilePath">The source file path.</param>
-        public override void Fatal(Exception ex, [CallerMemberName] string memberName = "", [CallerFilePath] string sourceFilePath = "") => _logger.Fatal(ex);
+        public void Fatal(Exception ex, [CallerMemberName] string memberName = "", [CallerFilePath] string sourceFilePath = "") => _logger.Fatal(ex);
 
         /// <summary>
         /// Log Critical Error that can crash application.
@@ -95,7 +95,7 @@ namespace MyNet.Utilities.Logging.NLog
         /// <param name="message">Critical non managed exception.</param>
         /// <param name="memberName">The member name.</param>
         /// <param name="sourceFilePath">The source file path.</param>
-        public override void Fatal(string message, [CallerMemberName] string memberName = "", [CallerFilePath] string sourceFilePath = "") => _logger.Fatal(message);
+        public void Fatal(string message, [CallerMemberName] string memberName = "", [CallerFilePath] string sourceFilePath = "") => _logger.Fatal(message);
 
         #region ILogger
 

@@ -7,11 +7,20 @@ using System.Collections.Specialized;
 using System.Linq;
 using System.Threading.Tasks;
 
+#if NET9_0_OR_GREATER
+using System.Threading;
+#endif
+
 namespace MyNet.Utilities.Collections
 {
     public class ThreadSafeObservableCollection<T> : OptimizedObservableCollection<T>
     {
+#if NET9_0_OR_GREATER
+        private readonly Lock _localLock = new();
+#else
         private readonly object _localLock = new();
+#endif
+
         private readonly Action<Action>? _notifyOnUi;
 
         public ThreadSafeObservableCollection(Action<Action>? notifyOnUi = null) => _notifyOnUi = notifyOnUi;

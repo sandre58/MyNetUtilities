@@ -10,7 +10,11 @@ namespace MyNet.Utilities.Threading
 {
     public class SingleTaskRunner(Action<CancellationToken> action, Action<bool>? onRunningChanged = null, Action? onCancelled = null, ILogger? logger = null) : IDisposable
     {
-        private readonly object _taskLocker = new();
+#if NET9_0_OR_GREATER
+        private readonly Lock _lock = new();
+#else
+        private readonly object _lock = new();
+#endif
         private readonly Action<CancellationToken> _actionToRun = action;
         private readonly Action<bool>? _onRunningChanged = onRunningChanged;
         private readonly Action? _onCancelled = onCancelled;
@@ -39,7 +43,7 @@ namespace MyNet.Utilities.Threading
 
         public void Run()
         {
-            lock (_taskLocker)
+            lock (_lock)
             {
                 if (_isRunning) return;
 
@@ -59,7 +63,7 @@ namespace MyNet.Utilities.Threading
                   }
                   finally
                   {
-                      lock (_taskLocker)
+                      lock (_lock)
                       {
                           _isRunning = false;
                           _onRunningChanged?.Invoke(_isRunning);

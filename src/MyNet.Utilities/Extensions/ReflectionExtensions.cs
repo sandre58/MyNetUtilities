@@ -8,12 +8,23 @@ using System.Linq.Expressions;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 
+#if NET9_0_OR_GREATER
+using System.Threading;
+#endif
+
+#pragma warning disable IDE0130 // Namespace does not match folder structure
 namespace MyNet.Utilities
+#pragma warning restore IDE0130 // Namespace does not match folder structure
 {
     public static class ReflectionExtensions
     {
         private static readonly Dictionary<Type, IList<PropertyInfo>> PropertiesCache = [];
+
+#if NET9_0_OR_GREATER
+        private static readonly Lock LockObject = new();
+#else
         private static readonly object LockObject = new();
+#endif
 
         public static IList<PropertyInfo> GetPublicProperties(this Type type)
         {
@@ -52,7 +63,7 @@ namespace MyNet.Utilities
 
         public static T? GetAttribute<T>(this Enum value) where T : Attribute => value?.GetType().GetField(value.ToString())?.GetCustomAttributes<T>().FirstOrDefault();
 
-        public static object? GetDeepPropertyValue(this object rootObject, string path) => GetDeepPropertyValue(rootObject, path.Split(new string[] { "." }, StringSplitOptions.RemoveEmptyEntries));
+        public static object? GetDeepPropertyValue(this object rootObject, string path) => GetDeepPropertyValue(rootObject, path.Split(["."], StringSplitOptions.RemoveEmptyEntries));
 
         public static object? GetDeepPropertyValue(this object rootObject, IList<string> propertyNames)
         {

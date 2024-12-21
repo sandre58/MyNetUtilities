@@ -13,7 +13,7 @@ namespace MyNet.Utilities.Extensions
     {
         private static readonly int DefaultBufferSize = 80 * 1024;
 
-        public static void WriteImage(this Stream stream, byte[] thumbnail, CancellationToken? token = null)
+        public static void WriteImage(this Stream stream, byte[] thumbnail)
             => stream.Write(thumbnail.AsSpan(0, thumbnail.Length));
 
         public static async Task WriteImageAsync(this Stream stream, byte[] thumbnail, CancellationToken? token = null)

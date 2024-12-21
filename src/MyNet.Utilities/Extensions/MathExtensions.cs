@@ -6,7 +6,9 @@ using System.Collections.Generic;
 using System.Linq;
 using MyNet.Utilities.Helpers;
 
+#pragma warning disable IDE0130 // Namespace does not match folder structure
 namespace MyNet.Utilities
+#pragma warning restore IDE0130 // Namespace does not match folder structure
 {
     public static class MathExtensions
     {

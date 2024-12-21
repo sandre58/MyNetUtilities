@@ -732,7 +732,7 @@ namespace MyNet.Utilities.UnitTests.Generator
             var result = RandomGenerator.Enum<GenderType>();
 
             // Assert
-            Assert.True(Enum.IsDefined(typeof(GenderType), result));
+            Assert.True(Enum.IsDefined(result));
         }
 
         [Fact]

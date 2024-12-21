@@ -16,13 +16,13 @@ namespace MyNet.Utilities.Extensions
 
         public static string Translate(this string key, string filename, CultureInfo? cultureInfo = null) => TranslationService.GetOrCurrent(cultureInfo)[key, filename];
 
-        public static string TranslateAbbreviated(this string key, CultureInfo? cultureInfo = null) => key.ToAbbreviationKey().Translate(cultureInfo);
-
-        public static string TranslateAbbreviated(this string key, string filename, CultureInfo? cultureInfo = null) => key.ToAbbreviationKey().Translate(filename);
-
         public static string Translate(this CultureInfo culture, string key) => TranslationService.Get(culture).Translate(key);
 
         public static string Translate(this CultureInfo culture, string key, string filename) => TranslationService.Get(culture).Translate(key, filename);
+
+        public static string TranslateAbbreviated(this string key, CultureInfo? cultureInfo = null) => key.ToAbbreviationKey().Translate(cultureInfo);
+
+        public static string TranslateAbbreviated(this string key, string filename, CultureInfo? cultureInfo = null) => key.ToAbbreviationKey().Translate(filename, cultureInfo);
 
         public static string TranslateAbbreviated(this CultureInfo culture, string key) => culture.Translate(key.ToAbbreviationKey());
 

@@ -5,7 +5,9 @@ using System;
 using System.Globalization;
 using MyNet.Utilities.Helpers;
 
+#pragma warning disable IDE0130 // Namespace does not match folder structure
 namespace MyNet.Utilities
+#pragma warning restore IDE0130 // Namespace does not match folder structure
 {
     /// <summary>
     /// <see cref="DateOnly"/> extensions related to spatial or temporal relations

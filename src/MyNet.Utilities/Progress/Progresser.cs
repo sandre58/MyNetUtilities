@@ -14,19 +14,19 @@ namespace MyNet.Utilities.Progress
             => New(new ProgressMessage(message, parameters));
 
         public IProgressStep<ProgressMessage> New(IEnumerable<double> subStepDefinitions, string message, params object[] parameters)
-            => New(new ProgressMessage(message, parameters));
+            => New(subStepDefinitions, new ProgressMessage(message, parameters));
 
         public IProgressStep<ProgressMessage> New(int numberOfSteps, string message, params object[] parameters)
-            => New(new ProgressMessage(message, parameters));
+            => New(numberOfSteps, new ProgressMessage(message, parameters));
 
         public IProgressStep<ProgressMessage> New(Action cancelAction, string message, params object[] parameters)
             => New(new ProgressMessage(message, parameters), cancelAction);
 
         public IProgressStep<ProgressMessage> New(Action cancelAction, IEnumerable<double> subStepDefinitions, string message, params object[] parameters)
-            => New(new ProgressMessage(message, parameters), cancelAction);
+            => New(subStepDefinitions, new ProgressMessage(message, parameters), cancelAction);
 
         public IProgressStep<ProgressMessage> New(Action cancelAction, int numberOfSteps, string message, params object[] parameters)
-            => New(new ProgressMessage(message, parameters), cancelAction);
+            => New(numberOfSteps, new ProgressMessage(message, parameters), cancelAction);
 
         public IProgressStep<ProgressMessage> Start(string message, params object[] parameters)
             => Start(new ProgressMessage(message, parameters), false);
