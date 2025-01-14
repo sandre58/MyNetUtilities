@@ -1,5 +1,10 @@
 # Changelog
 
+## [v6.0.1] - 2025-01-14
+### :sparkles: New Features
+- [`da2681e`](https://github.com/sandre58/MyNetUtilities/commit/da2681ec2e6619ca58e0865e35aafd6f97f6fbf4) - Add ContainsAny and NotContainsAny
+
+
 ## [v6.0.0] - 2024-12-21
 ### :boom: BREAKING CHANGES
 - due to [`ad23b21`](https://github.com/sandre58/MyNetUtilities/commit/ad23b21ab61a4f3485197f20f539e78c1faeaee6) - Support .NET 9.0, simplify syntax, and improve locking:
@@ -172,3 +177,4 @@
 [v5.2.0]: https://github.com/sandre58/MyNetUtilities/compare/v5.1.0...v5.2.0
 [v5.3.0]: https://github.com/sandre58/MyNetUtilities/compare/v5.2.0...v5.3.0
 [v6.0.0]: https://github.com/sandre58/MyNetUtilities/compare/v5.3.0...v6.0.0
+[v6.0.1]: https://github.com/sandre58/MyNetUtilities/compare/v6.0.0...v6.0.1
