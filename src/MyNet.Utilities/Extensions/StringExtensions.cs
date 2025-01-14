@@ -20,6 +20,10 @@ namespace MyNet.Utilities
         private const string WebUriSeparator = "&";
         private const char Separator = ';';
 
+        public static bool ContainsAny(this string? value, params string[] strings) => value is not null && strings.Any(x => value.Contains(x, StringComparison.OrdinalIgnoreCase));
+
+        public static bool NotContainsAny(this string? value, params string[] strings) => value is null || strings.All(x => !value.Contains(x, StringComparison.OrdinalIgnoreCase));
+
         public static string Random(this string source, char separator = Separator) => RandomGenerator.ListItem(source.Split(separator)).Trim();
 
         /// <summary>
