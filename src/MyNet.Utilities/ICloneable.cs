@@ -1,10 +1,12 @@
-﻿// Copyright (c) Stéphane ANDRE. All Right Reserved.
-// See the LICENSE file in the project root for more information.
+﻿// -----------------------------------------------------------------------
+// <copyright file="ICloneable.cs" company="Stéphane ANDRE">
+// Copyright (c) Stéphane ANDRE. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
-namespace MyNet.Utilities
+namespace MyNet.Utilities;
+
+public interface ICloneable<out T>
 {
-    public interface ICloneable<out T>
-    {
-        T Clone();
-    }
+    T Clone();
 }

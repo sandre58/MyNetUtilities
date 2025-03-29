@@ -1,22 +1,24 @@
-﻿// Copyright (c) Stéphane ANDRE. All Right Reserved.
-// See the LICENSE file in the project root for more information.
+﻿// -----------------------------------------------------------------------
+// <copyright file="Continent.cs" company="Stéphane ANDRE">
+// Copyright (c) Stéphane ANDRE. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
-namespace MyNet.Utilities.Geography
+namespace MyNet.Utilities.Geography;
+
+public enum Continent
 {
-    public enum Continent
-    {
-        Europe,
+    Europe,
 
-        Asia,
+    Asia,
 
-        Oceania,
+    Oceania,
 
-        Africa,
+    Africa,
 
-        Antarctica,
+    Antarctica,
 
-        NorthAmerica,
+    NorthAmerica,
 
-        SouthAmerica
-    }
+    SouthAmerica
 }

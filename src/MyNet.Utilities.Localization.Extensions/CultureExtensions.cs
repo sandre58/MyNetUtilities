@@ -1,25 +1,30 @@
-﻿// Copyright (c) Stéphane ANDRE. All Right Reserved.
-// See the LICENSE file in the project root for more information.
+﻿// -----------------------------------------------------------------------
+// <copyright file="CultureExtensions.cs" company="Stéphane ANDRE">
+// Copyright (c) Stéphane ANDRE. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
+using System;
 using System.Globalization;
 
-namespace MyNet.Utilities.Localization.Extensions
+namespace MyNet.Utilities.Localization.Extensions;
+
+public static class CultureExtensions
 {
-    public static class CultureExtensions
+    public static byte[]? GetImage(this CultureInfo culture)
     {
-        public static byte[]? GetImage(this CultureInfo culture)
-        {
-            if (string.IsNullOrEmpty(culture.Name)) return [];
+        ArgumentNullException.ThrowIfNull(culture);
 
-            var usedCulture = culture.IsNeutralCulture ? CultureInfo.CreateSpecificCulture(culture.Name) : culture;
-            var name = usedCulture.Name.Replace("-", "_");
-            CultureResources.ResourceManager.IgnoreCase = true;
-            var obj = (byte[]?)CultureResources.ResourceManager.GetObject(name, CultureInfo.InvariantCulture);
-            if (obj != null || usedCulture.Parent == null || culture.IsNeutralCulture) return obj;
+        if (string.IsNullOrEmpty(culture.Name)) return [];
 
-            obj = usedCulture.Parent.GetImage();
+        var usedCulture = culture.IsNeutralCulture ? CultureInfo.CreateSpecificCulture(culture.Name) : culture;
+        var name = usedCulture.Name.Replace("-", "_", StringComparison.Ordinal);
+        CultureResources.ResourceManager.IgnoreCase = true;
+        var obj = (byte[]?)CultureResources.ResourceManager.GetObject(name, CultureInfo.InvariantCulture);
+        if (obj != null || culture.IsNeutralCulture) return obj;
 
-            return obj ?? [];
-        }
+        obj = usedCulture.Parent.GetImage();
+
+        return obj ?? [];
     }
 }

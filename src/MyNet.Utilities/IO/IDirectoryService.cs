@@ -1,20 +1,22 @@
-﻿// Copyright (c) Stéphane ANDRE. All Right Reserved.
-// See the LICENSE file in the project root for more information.
+﻿// -----------------------------------------------------------------------
+// <copyright file="IDirectoryService.cs" company="Stéphane ANDRE">
+// Copyright (c) Stéphane ANDRE. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
-namespace MyNet.Utilities.IO
+namespace MyNet.Utilities.IO;
+
+public interface IDirectoryService
 {
-    public interface IDirectoryService
-    {
-        public string RootDirectory { get; }
+    string RootDirectory { get; }
 
-        string CreateSubDirectory(string name);
+    string CreateSubDirectory(string name);
 
-        string CreateFile(string? fileExtension = null, string? preferredFileName = null);
+    string CreateFile(string? fileExtension = null, string? preferredFileName = null);
 
-        string GetFileName(string? fileExtension = null, string? preferredFileName = null);
+    string GetFileName(string? fileExtension = null, string? preferredFileName = null);
 
-        void Clean();
+    void Clean();
 
-        void Delete();
-    }
+    void Delete();
 }

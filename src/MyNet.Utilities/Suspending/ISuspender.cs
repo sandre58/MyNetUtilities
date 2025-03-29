@@ -1,16 +1,18 @@
-﻿// Copyright (c) Stéphane ANDRE. All Right Reserved.
-// See the LICENSE file in the project root for more information.
+﻿// -----------------------------------------------------------------------
+// <copyright file="ISuspender.cs" company="Stéphane ANDRE">
+// Copyright (c) Stéphane ANDRE. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
 using System;
 
-namespace MyNet.Utilities.Suspending
+namespace MyNet.Utilities.Suspending;
+
+public interface ISuspender
 {
-    public interface ISuspender
-    {
-        bool IsSuspended { get; }
+    bool IsSuspended { get; }
 
-        IDisposable Suspend();
+    IDisposable Suspend();
 
-        IDisposable Allow();
-    }
+    IDisposable Allow();
 }

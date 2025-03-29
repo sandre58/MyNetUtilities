@@ -8,11 +8,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".config", ".config", "{5D1B
 		..\.editorconfig = ..\.editorconfig
 		Directory.build.props = Directory.build.props
 		MyNetUtilities.ruleset = MyNetUtilities.ruleset
+		.stylecop.json = .stylecop.json
+		AnalysisProperties.targets = AnalysisProperties.targets
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyNet.Utilities", "MyNet.Utilities\MyNet.Utilities.csproj", "{DA8D78E2-C629-473D-BADB-03259DFACDB3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyNet.Utilities.UnitTests", "MyNet.Utilities.UnitTests\MyNet.Utilities.UnitTests.csproj", "{EF412E75-25B5-4ADC-B2A9-15DD0B51A0FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyNet.Utilities.UnitTests", "UnitTests\MyNet.Utilities.UnitTests\MyNet.Utilities.UnitTests.csproj", "{EF412E75-25B5-4ADC-B2A9-15DD0B51A0FD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".doc", ".doc", "{EA1558C3-CFA0-44ED-954B-C773044EB6F9}"
 	ProjectSection(SolutionItems) = preProject

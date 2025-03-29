@@ -1,18 +1,19 @@
-﻿// Copyright (c) Stéphane ANDRE. All Right Reserved.
-// See the LICENSE file in the project root for more information.
+﻿// -----------------------------------------------------------------------
+// <copyright file="LoggerProvider.cs" company="Stéphane ANDRE">
+// Copyright (c) Stéphane ANDRE. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
 using Microsoft.Extensions.Logging;
 
-namespace MyNet.Utilities.Logging.NLog
+namespace MyNet.Utilities.Logging.NLog;
+
+public sealed class LoggerProvider : ILoggerProvider
 {
-    public sealed class LoggerProvider : ILoggerProvider
+    public Microsoft.Extensions.Logging.ILogger CreateLogger(string categoryName) => new Logger(categoryName);
+
+    public void Dispose()
     {
-        public Microsoft.Extensions.Logging.ILogger CreateLogger(string categoryName) => new Logger(categoryName);
-
-        public void Dispose()
-        {
-            // Method intentionally left empty.
-        }
-
+        // Method intentionally left empty.
     }
 }

@@ -1,17 +1,19 @@
-﻿// Copyright (c) Stéphane ANDRE. All Right Reserved.
-// See the LICENSE file in the project root for more information.
+﻿// -----------------------------------------------------------------------
+// <copyright file="AsyncValue.cs" company="Stéphane ANDRE">
+// Copyright (c) Stéphane ANDRE. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
 using System;
 
-namespace MyNet.Utilities
+namespace MyNet.Utilities;
+
+public class AsyncValue<T>
 {
-    public class AsyncValue<T>
-    {
-        private readonly Func<T> _provideValue;
-        private T _value = default!;
+    private readonly Func<T> _provideValue;
+    private T _value = default!;
 
-        public AsyncValue(Func<T> provideValue) => _provideValue = provideValue;
+    public AsyncValue(Func<T> provideValue) => _provideValue = provideValue;
 
-        public T Value => _value ??= _provideValue();
-    }
+    public T Value => _value ??= _provideValue();
 }

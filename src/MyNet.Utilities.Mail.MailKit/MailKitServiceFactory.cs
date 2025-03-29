@@ -1,12 +1,14 @@
-﻿// Copyright (c) Stéphane ANDRE. All Right Reserved.
-// See the LICENSE file in the project root for more information.
+﻿// -----------------------------------------------------------------------
+// <copyright file="MailKitServiceFactory.cs" company="Stéphane ANDRE">
+// Copyright (c) Stéphane ANDRE. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
 using MyNet.Utilities.Mail.Smtp;
 
-namespace MyNet.Utilities.Mail.MailKit
+namespace MyNet.Utilities.Mail.MailKit;
+
+public class MailKitServiceFactory : IMailServiceFactory
 {
-    public class MailKitServiceFactory : IMailServiceFactory
-    {
-        public IMailService Create(SmtpClientOptions options) => new MailKitService(options);
-    }
+    public IMailService Create(SmtpClientOptions options) => new MailKitService(options);
 }

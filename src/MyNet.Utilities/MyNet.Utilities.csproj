@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <Description>A powerful collection of utility classes and extension methods designed to extend the functionality of the .NET Framework.</Description>
-    <PackageTags>My;Utilities;Toolkit;Extensions;Authentication;Caching;Comparaison;DateTime;Deffering;Encryption;Exceptions;Geography;Google;IO;Localization;Logging;Mail;Messaging;Progress;Suspending;Threading</PackageTags>
+    <PackageTags>My;Utilities;Toolkit;Extensions;Authentication;Caching;Comparison;DateTime;Deffering;Encryption;Exceptions;Geography;Google;IO;Localization;Logging;Mail;Messaging;Progress;Suspending;Threading</PackageTags>
     <Version>$(GitVersion)</Version>
   </PropertyGroup>
 
@@ -19,5 +19,10 @@
       <LastGenOutput>InternalResources.Designer.cs</LastGenOutput>
       <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="Microsoft.CodeAnalysis.NetAnalyzers" Version="10.0.0-preview.25081.1" />
+    <PackageReference Update="StyleCop.Analyzers" Version="1.2.0-beta.556" />
   </ItemGroup>
 </Project>

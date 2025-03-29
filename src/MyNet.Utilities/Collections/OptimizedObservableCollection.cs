@@ -1,5 +1,8 @@
-﻿// Copyright (c) Stéphane ANDRE. All Right Reserved.
-// See the LICENSE file in the project root for more information.
+﻿// -----------------------------------------------------------------------
+// <copyright file="OptimizedObservableCollection.cs" company="Stéphane ANDRE">
+// Copyright (c) Stéphane ANDRE. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
 using System;
 using System.Collections.Generic;
@@ -30,7 +33,7 @@ public class OptimizedObservableCollection<T> : ObservableCollection<T>
     /// Initializes a new instance of the <see cref="OptimizedObservableCollection{T}"/> class that contains elements copied from the specified list.
     /// </summary>
     /// <param name="list">The list from which the elements are copied.</param><exception cref="ArgumentNullException">The <paramref name="list"/> parameter cannot be null.</exception>
-    public OptimizedObservableCollection(List<T> list)
+    public OptimizedObservableCollection(Collection<T> list)
         : base(list)
     {
     }
@@ -58,7 +61,7 @@ public class OptimizedObservableCollection<T> : ObservableCollection<T>
             CheckReentrancy();
             foreach (var item in col)
                 Items.Add(item);
-            RaiseCountPropertyChanged(true);
+            OnCountPropertyChanged(true);
         }
         else
         {
@@ -83,7 +86,7 @@ public class OptimizedObservableCollection<T> : ObservableCollection<T>
             CheckReentrancy();
             foreach (var item in col)
                 Items.Insert(index++, item);
-            RaiseCountPropertyChanged(true);
+            OnCountPropertyChanged(true);
         }
         else
         {
@@ -106,7 +109,7 @@ public class OptimizedObservableCollection<T> : ObservableCollection<T>
         foreach (var item in items)
             Items.Add(item);
 
-        RaiseCountPropertyChanged(true);
+        OnCountPropertyChanged(true);
     }
 
     /// <summary>
@@ -121,7 +124,7 @@ public class OptimizedObservableCollection<T> : ObservableCollection<T>
         for (var i = 0; i < count; i++)
             Items.RemoveAt(index);
 
-        RaiseCountPropertyChanged(true);
+        OnCountPropertyChanged(true);
     }
 
     /// <summary>
@@ -138,7 +141,7 @@ public class OptimizedObservableCollection<T> : ObservableCollection<T>
                 _suspendCount = false;
 
                 if (Count != count)
-                    RaiseCountPropertyChanged();
+                    OnCountPropertyChanged();
             }).Defer();
     }
 
@@ -156,7 +159,7 @@ public class OptimizedObservableCollection<T> : ObservableCollection<T>
             {
                 _suspendCount = false;
                 _suspendNotifications = false;
-                RaiseCountPropertyChanged(true);
+                OnCountPropertyChanged(true);
             }).Defer();
     }
 
@@ -184,7 +187,7 @@ public class OptimizedObservableCollection<T> : ObservableCollection<T>
         base.OnPropertyChanged(e);
     }
 
-    protected virtual void RaiseCountPropertyChanged(bool sendNotification = false)
+    protected virtual void OnCountPropertyChanged(bool sendNotification = false)
     {
         OnPropertyChanged(new PropertyChangedEventArgs(nameof(Count)));
 

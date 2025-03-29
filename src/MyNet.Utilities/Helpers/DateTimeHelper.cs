@@ -1,123 +1,102 @@
-﻿// Copyright (c) Stéphane ANDRE. All Right Reserved.
-// See the LICENSE file in the project root for more information.
+﻿// -----------------------------------------------------------------------
+// <copyright file="DateTimeHelper.cs" company="Stéphane ANDRE">
+// Copyright (c) Stéphane ANDRE. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
 using System;
 using System.Collections.Generic;
 using MyNet.Utilities.Units;
 
-namespace MyNet.Utilities.Helpers
+namespace MyNet.Utilities.Helpers;
+
+public static class DateTimeHelper
 {
-    public static class DateTimeHelper
+    public static DateTime Max(DateTime date1, DateTime date2) =>
+        date1 > date2
+            ? date1
+            : date2;
+
+    public static DateOnly Max(DateOnly date1, DateOnly date2) =>
+        date1 > date2
+            ? date1
+            : date2;
+
+    public static TimeOnly Max(TimeOnly time1, TimeOnly time2) =>
+        time1 > time2
+            ? time1
+            : time2;
+
+    public static TimeSpan Max(TimeSpan time1, TimeSpan time2) =>
+        time1 > time2
+            ? time1
+            : time2;
+
+    public static DateTime Min(DateTime date1, DateTime date2) =>
+        date1 > date2
+            ? date2
+            : date1;
+
+    public static DateOnly Min(DateOnly date1, DateOnly date2) =>
+        date1 > date2
+            ? date2
+            : date1;
+
+    public static TimeOnly Min(TimeOnly time1, TimeOnly time2) =>
+        time1 > time2
+            ? time2
+            : time1;
+
+    public static TimeSpan Min(TimeSpan time1, TimeSpan time2) =>
+        time1 > time2
+            ? time2
+            : time1;
+
+    public static IEnumerable<DateTime> Range(DateTime min, DateTime max, int step = 1, TimeUnit unit = TimeUnit.Day)
     {
-        public static DateTime Max(DateTime date1, DateTime date2) =>
-            date1 > date2
-            ? date1
-            : date2;
-
-        public static DateOnly Max(DateOnly date1, DateOnly date2) =>
-            date1 > date2
-            ? date1
-            : date2;
-
-        public static TimeOnly Max(TimeOnly time1, TimeOnly time2) =>
-            time1 > time2
-            ? time1
-            : time2;
-
-        public static TimeSpan Max(TimeSpan time1, TimeSpan time2) =>
-            time1 > time2
-            ? time1
-            : time2;
-
-        public static DateTime Min(DateTime date1, DateTime date2) =>
-            date1 > date2
-            ? date2
-            : date1;
-
-        public static DateOnly Min(DateOnly date1, DateOnly date2) =>
-            date1 > date2
-            ? date2
-            : date1;
-
-        public static TimeOnly Min(TimeOnly time1, TimeOnly time2) =>
-            time1 > time2
-            ? time2
-            : time1;
-
-        public static TimeSpan Min(TimeSpan time1, TimeSpan time2) =>
-            time1 > time2
-            ? time2
-            : time1;
-
-        public static IEnumerable<DateTime> Range(DateTime min, DateTime max, int step = 1, TimeUnit unit = TimeUnit.Day)
+        Func<DateTime, DateTime> increment = unit switch
         {
-            Func<DateTime, DateTime> increment = null!;
+            TimeUnit.Millisecond => x => x.AddMilliseconds(step),
+            TimeUnit.Second => x => x.AddSeconds(step),
+            TimeUnit.Minute => x => x.AddMinutes(step),
+            TimeUnit.Hour => x => x.AddHours(step),
+            TimeUnit.Day => x => x.AddDays(step),
+            TimeUnit.Week => x => x.AddDays(step * 7),
+            TimeUnit.Month => x => x.AddMonths(step),
+            TimeUnit.Year => x => x.AddYears(step),
+            _ => null!
+        };
 
-            switch (unit)
-            {
-                case TimeUnit.Millisecond:
-                    increment = x => x.AddMilliseconds(step);
-                    break;
-                case TimeUnit.Second:
-                    increment = x => x.AddSeconds(step);
-                    break;
-                case TimeUnit.Minute:
-                    increment = x => x.AddMinutes(step);
-                    break;
-                case TimeUnit.Hour:
-                    increment = x => x.AddHours(step);
-                    break;
-                case TimeUnit.Day:
-                    increment = x => x.AddDays(step);
-                    break;
-                case TimeUnit.Week:
-                    increment = x => x.AddDays(step * 7);
-                    break;
-                case TimeUnit.Month:
-                    increment = x => x.AddMonths(step);
-                    break;
-                case TimeUnit.Year:
-                    increment = x => x.AddYears(step);
-                    break;
-                default:
-                    break;
-            }
-
-            for (var i = min; i <= max; i = increment.Invoke(i))
-                yield return i;
-        }
-
-        public static IEnumerable<DateOnly> Range(DateOnly min, DateOnly max, int step = 1, TimeUnit unit = TimeUnit.Day)
-        {
-            Func<DateOnly, DateOnly> increment = null!;
-
-            increment = unit switch
-            {
-                TimeUnit.Day => x => x.AddDays(step),
-                TimeUnit.Week => x => x.AddDays(step * 7),
-                TimeUnit.Month => x => x.AddMonths(step),
-                TimeUnit.Year => x => x.AddYears(step),
-                _ => x => x.AddDays(step),
-            };
-            for (var i = min; i <= max; i = increment.Invoke(i))
-                yield return i;
-        }
-
-        public static IEnumerable<TimeOnly> Range(TimeOnly min, TimeOnly max, int step = 1, TimeUnit unit = TimeUnit.Hour)
-        {
-            Func<TimeOnly, TimeOnly> increment = null!;
-
-            increment = unit switch
-            {
-                TimeUnit.Millisecond => x => x.Add(step.Milliseconds()),
-                TimeUnit.Second => x => x.Add(step.Seconds()),
-                TimeUnit.Minute => x => x.AddMinutes(step),
-                _ => x => x.AddHours(step),
-            };
-            for (var i = min; i <= max; i = increment.Invoke(i))
-                yield return i;
-        }
-
-        public static int NumberOfDaysInWeek() => Enum.GetValues<DayOfWeek>().Length;
+        for (var i = min; i <= max; i = increment.Invoke(i))
+            yield return i;
     }
+
+    public static IEnumerable<DateOnly> Range(DateOnly min, DateOnly max, int step = 1, TimeUnit unit = TimeUnit.Day)
+    {
+        Func<DateOnly, DateOnly> increment = unit switch
+        {
+            TimeUnit.Day => x => x.AddDays(step),
+            TimeUnit.Week => x => x.AddDays(step * 7),
+            TimeUnit.Month => x => x.AddMonths(step),
+            TimeUnit.Year => x => x.AddYears(step),
+            _ => x => x.AddDays(step)
+        };
+        for (var i = min; i <= max; i = increment.Invoke(i))
+            yield return i;
+    }
+
+    public static IEnumerable<TimeOnly> Range(TimeOnly min, TimeOnly max, int step = 1, TimeUnit unit = TimeUnit.Hour)
+    {
+        Func<TimeOnly, TimeOnly> increment = unit switch
+        {
+            TimeUnit.Millisecond => x => x.Add(step.Milliseconds()),
+            TimeUnit.Second => x => x.Add(step.Seconds()),
+            TimeUnit.Minute => x => x.AddMinutes(step),
+            _ => x => x.AddHours(step)
+        };
+        for (var i = min; i <= max; i = increment.Invoke(i))
+            yield return i;
+    }
+
+    public static int NumberOfDaysInWeek() => Enum.GetValues<DayOfWeek>().Length;
 }

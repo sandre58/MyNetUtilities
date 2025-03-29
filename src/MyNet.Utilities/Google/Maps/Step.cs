@@ -1,12 +1,14 @@
-﻿// Copyright (c) Stéphane ANDRE. All Right Reserved.
-// See the LICENSE file in the project root for more information.
+﻿// -----------------------------------------------------------------------
+// <copyright file="Step.cs" company="Stéphane ANDRE">
+// Copyright (c) Stéphane ANDRE. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
-namespace MyNet.Utilities.Google.Maps
+namespace MyNet.Utilities.Google.Maps;
+
+public class Step
 {
-    public class Step
-    {
-        public string? Instruction { get; set; }
+    public string? Instruction { get; set; }
 
-        public string? Distance { get; set; }
-    }
+    public string? Distance { get; set; }
 }

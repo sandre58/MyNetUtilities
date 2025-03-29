@@ -1,12 +1,14 @@
-﻿// Copyright (c) Stéphane ANDRE. All Right Reserved.
-// See the LICENSE file in the project root for more information.
+﻿// -----------------------------------------------------------------------
+// <copyright file="IItemsProvider.cs" company="Stéphane ANDRE">
+// Copyright (c) Stéphane ANDRE. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
 using System.Collections.Generic;
 
-namespace MyNet.Utilities.Providers
+namespace MyNet.Utilities.Providers;
+
+public interface IItemsProvider<out T>
 {
-    public interface IItemsProvider<out T>
-    {
-        IEnumerable<T> ProvideItems();
-    }
+    IEnumerable<T> ProvideItems();
 }

@@ -1,12 +1,14 @@
-﻿// Copyright (c) Stéphane ANDRE. All Right Reserved.
-// See the LICENSE file in the project root for more information.
+﻿// -----------------------------------------------------------------------
+// <copyright file="IEncryptionService.cs" company="Stéphane ANDRE">
+// Copyright (c) Stéphane ANDRE. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
-namespace MyNet.Utilities.Encryption
+namespace MyNet.Utilities.Encryption;
+
+public interface IEncryptionService
 {
-    public interface IEncryptionService
-    {
-        string Encrypt(string? text);
+    string Encrypt(string? text);
 
-        string Decrypt(string? text);
-    }
+    string Decrypt(string? text);
 }

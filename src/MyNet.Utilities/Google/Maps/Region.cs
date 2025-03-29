@@ -1,11 +1,14 @@
-﻿// Copyright (c) Stéphane ANDRE. All Right Reserved.
-// See the LICENSE file in the project root for more information.
+﻿// -----------------------------------------------------------------------
+// <copyright file="Region.cs" company="Stéphane ANDRE">
+// Copyright (c) Stéphane ANDRE. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
-namespace MyNet.Utilities.Google.Maps
+namespace MyNet.Utilities.Google.Maps;
+
+public class Region
 {
-    public class Region
-    {
-        public string? Name { get; set; }
-        public string? ShortCode { get; set; }
-    }
+    public string? Name { get; set; }
+
+    public string? ShortCode { get; set; }
 }

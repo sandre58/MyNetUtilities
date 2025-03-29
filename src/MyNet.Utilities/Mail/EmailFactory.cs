@@ -1,13 +1,12 @@
-﻿// Copyright (c) Stéphane ANDRE. All Right Reserved.
-// See the LICENSE file in the project root for more information.
+﻿// -----------------------------------------------------------------------
+// <copyright file="EmailFactory.cs" company="Stéphane ANDRE">
+// Copyright (c) Stéphane ANDRE. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
-namespace MyNet.Utilities.Mail
+namespace MyNet.Utilities.Mail;
+
+public class EmailFactory(string from, string displayName = "") : IEmailFactory
 {
-    public class EmailFactory(string from, string displayName = "") : IEmailFactory
-    {
-        private readonly string _from = from;
-        private readonly string _displayName = displayName;
-
-        public IEmail Create() => Email.From(_from, _displayName);
-    }
+    public IEmail Create() => Email.From(from, displayName);
 }

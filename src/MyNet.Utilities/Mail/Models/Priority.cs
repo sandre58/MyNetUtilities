@@ -1,12 +1,16 @@
-﻿// Copyright (c) Stéphane ANDRE. All Right Reserved.
-// See the LICENSE file in the project root for more information.
+﻿// -----------------------------------------------------------------------
+// <copyright file="Priority.cs" company="Stéphane ANDRE">
+// Copyright (c) Stéphane ANDRE. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
-namespace MyNet.Utilities.Mail.Models
+namespace MyNet.Utilities.Mail.Models;
+
+public enum Priority
 {
-    public enum Priority
-    {
-        High = 1,
-        Normal = 2,
-        Low = 3
-    }
+    High,
+
+    Normal,
+
+    Low
 }

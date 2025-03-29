@@ -14,4 +14,9 @@
 		<ProjectReference Include="..\MyNet.Utilities\MyNet.Utilities.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <PackageReference Update="Microsoft.CodeAnalysis.NetAnalyzers" Version="10.0.0-preview.25081.1" />
+	  <PackageReference Update="StyleCop.Analyzers" Version="1.2.0-beta.556" />
+	</ItemGroup>
+
 </Project>

@@ -1,12 +1,14 @@
-﻿// Copyright (c) Stéphane ANDRE. All Right Reserved.
-// See the LICENSE file in the project root for more information.
+﻿// -----------------------------------------------------------------------
+// <copyright file="IMailServiceFactory.cs" company="Stéphane ANDRE">
+// Copyright (c) Stéphane ANDRE. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
 using MyNet.Utilities.Mail.Smtp;
 
-namespace MyNet.Utilities.Mail
+namespace MyNet.Utilities.Mail;
+
+public interface IMailServiceFactory
 {
-    public interface IMailServiceFactory
-    {
-        IMailService Create(SmtpClientOptions options);
-    }
+    IMailService Create(SmtpClientOptions options);
 }

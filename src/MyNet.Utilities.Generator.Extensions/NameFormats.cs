@@ -1,15 +1,17 @@
-﻿// Copyright (c) Stéphane ANDRE. All Right Reserved.
-// See the LICENSE file in the project root for more information.
+﻿// -----------------------------------------------------------------------
+// <copyright file="NameFormats.cs" company="Stéphane ANDRE">
+// Copyright (c) Stéphane ANDRE. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
-namespace MyNet.Utilities.Generator.Extensions
+namespace MyNet.Utilities.Generator.Extensions;
+
+public enum NameFormats
 {
-    public enum NameFormats
-    {
-        Standard,
-        Inverse,
-        WithPrefix,
-        InverseWithPrefix,
-        WithSuffix,
-        InverseWithSuffix
-    }
+    Standard,
+    Inverse,
+    WithPrefix,
+    InverseWithPrefix,
+    WithSuffix,
+    InverseWithSuffix
 }

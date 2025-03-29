@@ -1,25 +1,26 @@
-﻿// Copyright (c) Stéphane ANDRE. All Right Reserved.
-// See the LICENSE file in the project root for more information.
+﻿// -----------------------------------------------------------------------
+// <copyright file="ResourceLocator.cs" company="Stéphane ANDRE">
+// Copyright (c) Stéphane ANDRE. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
 using MyNet.Utilities.Generator.Extensions.Resources;
 using MyNet.Utilities.Localization;
 
-namespace MyNet.Utilities.Generator.Extensions
+namespace MyNet.Utilities.Generator.Extensions;
+
+public static class ResourceLocator
 {
-    public static class ResourceLocator
+    private static bool _isInitialized;
+
+    public static void Initialize()
     {
-        private static bool _isInitialized;
+        if (_isInitialized) return;
 
-        public static void Initialize()
-        {
-            if (_isInitialized) return;
+        TranslationService.RegisterResources(nameof(NamesResources), NamesResources.ResourceManager);
+        TranslationService.RegisterResources(nameof(InternetResources), InternetResources.ResourceManager);
+        TranslationService.RegisterResources(nameof(AddressResources), AddressResources.ResourceManager);
 
-            TranslationService.RegisterResources(nameof(NamesResources), NamesResources.ResourceManager);
-            TranslationService.RegisterResources(nameof(InternetResources), InternetResources.ResourceManager);
-            TranslationService.RegisterResources(nameof(AddressResources), AddressResources.ResourceManager);
-
-            _isInitialized = true;
-        }
-
+        _isInitialized = true;
     }
 }

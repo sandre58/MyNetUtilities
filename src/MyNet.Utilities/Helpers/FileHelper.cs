@@ -1,36 +1,33 @@
-﻿// Copyright (c) Stéphane ANDRE. All Right Reserved.
-// See the LICENSE file in the project root for more information.
+﻿// -----------------------------------------------------------------------
+// <copyright file="FileHelper.cs" company="Stéphane ANDRE">
+// Copyright (c) Stéphane ANDRE. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
 using System.IO;
 using MyNet.Utilities.Exceptions;
 
-namespace MyNet.Utilities.Helpers
+namespace MyNet.Utilities.Helpers;
+
+public static class FileHelper
 {
-    public static class FileHelper
+    public static void EnsureDirectoryExists(string path)
     {
+        if (File.Exists(path)) File.Delete(path);
+        if (!Directory.Exists(path)) _ = Directory.CreateDirectory(path);
+    }
 
-        public static void EnsureDirectoryExists(string path)
+    public static bool RemoveFile(string filename)
+    {
+        if (!File.Exists(filename)) return false;
+        try
         {
-            if (File.Exists(path)) File.Delete(path);
-            if (!Directory.Exists(path)) _ = Directory.CreateDirectory(path);
+            File.Delete(filename);
+            return true;
         }
-
-        public static bool RemoveFile(string filename)
+        catch (IOException)
         {
-            if (File.Exists(filename))
-            {
-                try
-                {
-                    File.Delete(filename);
-                    return true;
-                }
-                catch (IOException)
-                {
-                    throw new FileAlreadyUsedException(Path.GetFileName(filename));
-                }
-            }
-
-            return false;
+            throw new FileAlreadyUsedException(Path.GetFileName(filename));
         }
     }
 }

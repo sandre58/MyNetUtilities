@@ -1,12 +1,14 @@
-﻿// Copyright (c) Stéphane ANDRE. All Right Reserved.
-// See the LICENSE file in the project root for more information.
+﻿// -----------------------------------------------------------------------
+// <copyright file="IRegistry.cs" company="Stéphane ANDRE">
+// Copyright (c) Stéphane ANDRE. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
-namespace MyNet.Utilities.IO.Registry
+namespace MyNet.Utilities.IO.Registry;
+
+public interface IRegistry
 {
-    public interface IRegistry
-    {
-        string Key { get; }
+    string Key { get; }
 
-        string Parent { get; }
-    }
+    string Parent { get; }
 }

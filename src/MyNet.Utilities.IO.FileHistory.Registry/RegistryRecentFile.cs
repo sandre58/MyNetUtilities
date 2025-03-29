@@ -1,16 +1,18 @@
-﻿// Copyright (c) Stéphane ANDRE. All Right Reserved.
-// See the LICENSE file in the project root for more information.
+﻿// -----------------------------------------------------------------------
+// <copyright file="RegistryRecentFile.cs" company="Stéphane ANDRE">
+// Copyright (c) Stéphane ANDRE. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
 using MyNet.Utilities.IO.Registry.FileManagement;
 
-namespace MyNet.Utilities.IO.FileHistory.Registry
+namespace MyNet.Utilities.IO.FileHistory.Registry;
+
+internal sealed class RegistryRecentFile : RegistryFile
 {
-    internal class RegistryRecentFile : RegistryFile
-    {
-        public string? Name { get; set; }
+    public string? Name { get; set; }
 
-        public bool IsPinned { get; set; }
+    public bool IsPinned { get; set; }
 
-        public bool IsRecoveredFile { get; set; }
-    }
+    public bool IsRecoveredFile { get; set; }
 }

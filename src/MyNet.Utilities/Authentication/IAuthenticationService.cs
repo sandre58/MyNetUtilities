@@ -1,22 +1,24 @@
-﻿// Copyright (c) Stéphane ANDRE. All Right Reserved.
-// See the LICENSE file in the project root for more information.
+﻿// -----------------------------------------------------------------------
+// <copyright file="IAuthenticationService.cs" company="Stéphane ANDRE">
+// Copyright (c) Stéphane ANDRE. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
 using System;
 using System.Security.Principal;
 
-namespace MyNet.Utilities.Authentication
+namespace MyNet.Utilities.Authentication;
+
+public interface IAuthenticationService<out TPrincipal>
+    where TPrincipal : IPrincipal
 {
-    public interface IAuthenticationService<out TPrincipal>
-        where TPrincipal : IPrincipal
-    {
-        void Authenticate();
+    event EventHandler<AuthenticatedEventArgs>? Authenticated;
 
-        void Unauthenticate();
+    bool IsAuthenticated { get; }
 
-        bool IsAuthenticated { get; }
+    TPrincipal CurrentPrincipal { get; }
 
-        TPrincipal CurrentPrincipal { get; }
+    void Authenticate();
 
-        public event EventHandler<AuthenticatedEventArgs>? Authenticated;
-    }
+    void Unauthenticate();
 }

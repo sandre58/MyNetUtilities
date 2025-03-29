@@ -1,14 +1,16 @@
-﻿// Copyright (c) Stéphane ANDRE. All Right Reserved.
-// See the LICENSE file in the project root for more information.
+﻿// -----------------------------------------------------------------------
+// <copyright file="FileSizeUnit.cs" company="Stéphane ANDRE">
+// Copyright (c) Stéphane ANDRE. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
-namespace MyNet.Utilities.Units
+namespace MyNet.Utilities.Units;
+
+public enum FileSizeUnit
 {
-    public enum FileSizeUnit
-    {
-        Byte,
-        Kilobyte,
-        Megabyte,
-        Gigabyte,
-        Terabyte
-    }
+    Byte,
+    Kilobyte,
+    Megabyte,
+    Gigabyte,
+    Terabyte
 }

@@ -1,16 +1,18 @@
-﻿// Copyright (c) Stéphane ANDRE. All Right Reserved.
-// See the LICENSE file in the project root for more information.
+﻿// -----------------------------------------------------------------------
+// <copyright file="EmailAddress.cs" company="Stéphane ANDRE">
+// Copyright (c) Stéphane ANDRE. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
-namespace MyNet.Utilities.Mail.Models
+namespace MyNet.Utilities.Mail.Models;
+
+public class EmailAddress
 {
-    public class EmailAddress
-    {
-        public string Name { get; } = string.Empty;
+    public EmailAddress() { }
 
-        public string Address { get; } = string.Empty;
+    public EmailAddress(string emailAddress, string name = "") => (Name, Address) = (name, emailAddress);
 
-        public EmailAddress() { }
+    public string Name { get; } = string.Empty;
 
-        public EmailAddress(string emailAddress, string name = "") => (Name, Address) = (name, emailAddress);
-    }
+    public string Address { get; } = string.Empty;
 }

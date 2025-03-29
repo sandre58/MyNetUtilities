@@ -1,26 +1,28 @@
-﻿// Copyright (c) Stéphane ANDRE. All Right Reserved.
-// See the LICENSE file in the project root for more information.
+﻿// -----------------------------------------------------------------------
+// <copyright file="DeferScope.cs" company="Stéphane ANDRE">
+// Copyright (c) Stéphane ANDRE. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
 using System;
 
-namespace MyNet.Utilities.Deferring
+namespace MyNet.Utilities.Deferring;
+
+internal sealed class DeferScope : IDisposable
 {
-    internal sealed class DeferScope : IDisposable
+    private readonly Deferrer _deferrerScopeBase;
+
+    public DeferScope(Deferrer sender)
     {
-        private readonly Deferrer _deferrerScopeBase;
+        _deferrerScopeBase = sender;
 
-        public DeferScope(Deferrer sender)
-        {
-            _deferrerScopeBase = sender;
+        _deferrerScopeBase.Push(this);
+    }
 
-            _deferrerScopeBase.Push(this);
-        }
+    public void Dispose()
+    {
+        _deferrerScopeBase.Pop();
 
-        public void Dispose()
-        {
-            _deferrerScopeBase.Pop();
-
-            _deferrerScopeBase.EndDefer();
-        }
+        _deferrerScopeBase.EndDefer();
     }
 }

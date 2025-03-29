@@ -1,12 +1,14 @@
-﻿// Copyright (c) Stéphane ANDRE. All Right Reserved.
-// See the LICENSE file in the project root for more information.
+﻿// -----------------------------------------------------------------------
+// <copyright file="IModifiable.cs" company="Stéphane ANDRE">
+// Copyright (c) Stéphane ANDRE. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
-namespace MyNet.Utilities
+namespace MyNet.Utilities;
+
+public interface IModifiable
 {
-    public interface IModifiable
-    {
-        void ResetIsModified();
+    void ResetIsModified();
 
-        bool IsModified();
-    }
+    bool IsModified();
 }

@@ -2,12 +2,12 @@
 
 <!-- PROJECT INFO -->
 <br />
-<div align="center">
+<div style="text-align: center">
   <a href="https://github.com/sandre58/MyNetUtilities">
-    <img src="images/logo.png" width="256" height="256">
+    <img src="images/logo.png" width="256" height="256" alt="MyNetUtilities">
   </a>
 
-<h1 align="center">My .NET Utilities</h1>
+<h1 style="text-align: center">My .NET Utilities</h1>
 
 [![Downloads][downloads-shield]][downloads-url]
 [![Forks][forks-shield]][forks-url]
@@ -15,7 +15,7 @@
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 
-  <p align="center">
+  <p style="text-align: center">
     <br />
     This collection contains a set of useful tools for .NET development. Whether you're a beginner or experienced developer, we hope you'll find valuable resources here to enhance your workflow and build quality applications.
     <br />
@@ -93,15 +93,14 @@ This library provides developers with powerful tools and utilities for creating,
 
 ## Extensions
 
-Package | Framework | Version |
---- | --- | --- |
-**MyNet.Utilities.Authentication.Windows**<br />An essential tool for integrating robust and secure Windows authentication features into your .NET applications. | [![NET8](https://img.shields.io/badge/.NET-8.0-purple)](https://github.com/sandre58/MyNetUtilities/tree/main/src/MyNet.Utilities.Authentication.Windows)| [![#](https://img.shields.io/nuget/v/MyNet.Utilities.Authentication.Windows)](https://www.nuget.org/packages/MyNet.Utilities.Authentication.Windows)
-**MyNet.Utilities.Generator.Extensions**<br />A powerful class library designed to generate random data for various use cases in .NET applications. | [![NET8](https://img.shields.io/badge/.NET-8.0-purple)](https://github.com/sandre58/MyNetUtilities/tree/main/src/MyNet.Utilities.Generator.Extensions)| [![#](https://img.shields.io/nuget/v/MyNet.Utilities.Generator.Extensions)](https://www.nuget.org/packages/MyNet.Utilities.Generator.Extensions)
-**MyNet.Utilities.Geography.Extensions**<br />A comprehensive tool for accessing detailed information about geopgraphy in .NET applications. | [![NET8](https://img.shields.io/badge/.NET-8.0-purple)](https://github.com/sandre58/MyNetUtilities/tree/main/src/MyNet.Utilities.Geography.Extensions)| [![#](https://img.shields.io/nuget/v/MyNet.Utilities.Geography.Extensions)](https://www.nuget.org/packages/MyNet.Utilities.Geography.Extensions)
-**MyNet.Utilities.Localization.Extensions**<br />Resources used by MyNet.Utilities.Localization. | [![NET8](https://img.shields.io/badge/.NET-8.0-purple)](https://github.com/sandre58/MyNetUtilities/tree/main/src/MyNet.Utilities.Localization.Extensions)| [![#](https://img.shields.io/nuget/v/MyNet.Utilities.Localization.Extensions)](https://www.nuget.org/packages/MyNet.Utilities.Localization.Extensions)
-**MyNet.Utilities.Logging.NLog**<br />A comprehensive class library designed to simplify logging in .NET applications with NLog. | [![NET8](https://img.shields.io/badge/.NET-8.0-purple)](https://github.com/sandre58/MyNetUtilities/tree/main/src/MyNet.Utilities.Logging.NLog)| [![#](https://img.shields.io/nuget/v/MyNet.Utilities.Logging.NLog)](https://www.nuget.org/packages/MyNet.Utilities.Logging.NLog)
-**MyNet.Utilities.Mail.MailKit**<br />A powerful class library designed to simplify the process of sending emails in .NET applications. with MailKit. | [![NET8](https://img.shields.io/badge/.NET-8.0-purple)](https://github.com/sandre58/MyNetUtilities/tree/main/src/MyNet.Utilities.Mail.MailKit)| [![#](https://img.shields.io/nuget/v/MyNet.Utilities.Mail.MailKit)](https://www.nuget.org/packages/MyNet.Utilities.Mail.MailKit)
-
+| Package                                                                                                                                                          | Framework                                                                                                                                                 | Version                                                                                                                                                |
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **MyNet.Utilities.Authentication.Windows**<br />An essential tool for integrating robust and secure Windows authentication features into your .NET applications. | [![NET8](https://img.shields.io/badge/.NET-8.0-purple)](https://github.com/sandre58/MyNetUtilities/tree/main/src/MyNet.Utilities.Authentication.Windows)  | [![#](https://img.shields.io/nuget/v/MyNet.Utilities.Authentication.Windows)](https://www.nuget.org/packages/MyNet.Utilities.Authentication.Windows)   |
+| **MyNet.Utilities.Generator.Extensions**<br />A powerful class library designed to generate random data for various use cases in .NET applications.              | [![NET8](https://img.shields.io/badge/.NET-8.0-purple)](https://github.com/sandre58/MyNetUtilities/tree/main/src/MyNet.Utilities.Generator.Extensions)    | [![#](https://img.shields.io/nuget/v/MyNet.Utilities.Generator.Extensions)](https://www.nuget.org/packages/MyNet.Utilities.Generator.Extensions)       |
+| **MyNet.Utilities.Geography.Extensions**<br />A comprehensive tool for accessing detailed information about geopgraphy in .NET applications.                     | [![NET8](https://img.shields.io/badge/.NET-8.0-purple)](https://github.com/sandre58/MyNetUtilities/tree/main/src/MyNet.Utilities.Geography.Extensions)    | [![#](https://img.shields.io/nuget/v/MyNet.Utilities.Geography.Extensions)](https://www.nuget.org/packages/MyNet.Utilities.Geography.Extensions)       |
+| **MyNet.Utilities.Localization.Extensions**<br />Resources used by MyNet.Utilities.Localization.                                                                 | [![NET8](https://img.shields.io/badge/.NET-8.0-purple)](https://github.com/sandre58/MyNetUtilities/tree/main/src/MyNet.Utilities.Localization.Extensions) | [![#](https://img.shields.io/nuget/v/MyNet.Utilities.Localization.Extensions)](https://www.nuget.org/packages/MyNet.Utilities.Localization.Extensions) |
+| **MyNet.Utilities.Logging.NLog**<br />A comprehensive class library designed to simplify logging in .NET applications with NLog.                                 | [![NET8](https://img.shields.io/badge/.NET-8.0-purple)](https://github.com/sandre58/MyNetUtilities/tree/main/src/MyNet.Utilities.Logging.NLog)            | [![#](https://img.shields.io/nuget/v/MyNet.Utilities.Logging.NLog)](https://www.nuget.org/packages/MyNet.Utilities.Logging.NLog)                       |
+| **MyNet.Utilities.Mail.MailKit**<br />A powerful class library designed to simplify the process of sending emails in .NET applications. with MailKit.            | [![NET8](https://img.shields.io/badge/.NET-8.0-purple)](https://github.com/sandre58/MyNetUtilities/tree/main/src/MyNet.Utilities.Mail.MailKit)            | [![#](https://img.shields.io/nuget/v/MyNet.Utilities.Mail.MailKit)](https://www.nuget.org/packages/MyNet.Utilities.Mail.MailKit)                       |
 
 ## License
 

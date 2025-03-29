@@ -1,12 +1,14 @@
-﻿// Copyright (c) Stéphane ANDRE. All Right Reserved.
-// See the LICENSE file in the project root for more information.
+﻿// -----------------------------------------------------------------------
+// <copyright file="TraceLevel.cs" company="Stéphane ANDRE">
+// Copyright (c) Stéphane ANDRE. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
-namespace MyNet.Utilities.Logging
+namespace MyNet.Utilities.Logging;
+
+public enum TraceLevel
 {
-    public enum TraceLevel
-    {
-        Trace,
-        Debug,
-        Info,
-    }
+    Trace,
+    Debug,
+    Info
 }

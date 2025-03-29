@@ -1,18 +1,20 @@
-﻿// Copyright (c) Stéphane ANDRE. All Right Reserved.
-// See the LICENSE file in the project root for more information.
+﻿// -----------------------------------------------------------------------
+// <copyright file="IDeferrer.cs" company="Stéphane ANDRE">
+// Copyright (c) Stéphane ANDRE. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
 using System;
 
-namespace MyNet.Utilities.Deferring
+namespace MyNet.Utilities.Deferring;
+
+public interface IDeferrer
 {
-    public interface IDeferrer
-    {
-        bool IsDeferred { get; }
+    bool IsDeferred { get; }
 
-        IDisposable Defer();
+    IDisposable Defer();
 
-        void Execute();
+    void Execute();
 
-        void DeferOrExecute();
-    }
+    void DeferOrExecute();
 }

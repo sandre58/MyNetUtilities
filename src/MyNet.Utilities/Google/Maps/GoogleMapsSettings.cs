@@ -1,17 +1,18 @@
-﻿// Copyright (c) Stéphane ANDRE. All Right Reserved.
-// See the LICENSE file in the project root for more information.
+﻿// -----------------------------------------------------------------------
+// <copyright file="GoogleMapsSettings.cs" company="Stéphane ANDRE">
+// Copyright (c) Stéphane ANDRE. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
 using MyNet.Utilities.Geography;
 
-namespace MyNet.Utilities.Google.Maps
+namespace MyNet.Utilities.Google.Maps;
+
+public class GoogleMapsSettings
 {
-    public class GoogleMapsSettings
-    {
-        public Coordinates? Coordinates { get; set; }
+    public Coordinates? Coordinates { get; init; }
 
-        public string Address { get; set; } = string.Empty;
+    public string Address { get; init; } = string.Empty;
 
-        public bool HideLeftPanel { get; set; }
-
-    }
+    public bool HideLeftPanel { get; set; }
 }

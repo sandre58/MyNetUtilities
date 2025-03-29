@@ -1,16 +1,14 @@
-﻿// Copyright (c) Stéphane ANDRE. All Right Reserved.
-// See the LICENSE file in the project root for more information.
+﻿// -----------------------------------------------------------------------
+// <copyright file="RegistryFile.cs" company="Stéphane ANDRE">
+// Copyright (c) Stéphane ANDRE. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
-namespace MyNet.Utilities.IO.Registry.FileManagement
+namespace MyNet.Utilities.IO.Registry.FileManagement;
+
+public class RegistryFile
 {
-    public class RegistryFile
-    {
-        public RegistryFile()
-        {
-        }
+    public string Path { get; set; } = string.Empty;
 
-        public string Path { get; set; } = string.Empty;
-
-        public long LastAccessDate { get; set; }
-    }
+    public long LastAccessDate { get; set; }
 }

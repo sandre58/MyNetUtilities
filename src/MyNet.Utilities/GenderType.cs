@@ -1,11 +1,13 @@
-﻿// Copyright (c) Stéphane ANDRE. All Right Reserved.
-// See the LICENSE file in the project root for more information.
+﻿// -----------------------------------------------------------------------
+// <copyright file="GenderType.cs" company="Stéphane ANDRE">
+// Copyright (c) Stéphane ANDRE. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
-namespace MyNet.Utilities
+namespace MyNet.Utilities;
+
+public enum GenderType
 {
-    public enum GenderType
-    {
-        Male,
-        Female
-    }
+    Male,
+    Female
 }

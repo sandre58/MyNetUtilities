@@ -1,15 +1,17 @@
-﻿// Copyright (c) Stéphane ANDRE. All Right Reserved.
-// See the LICENSE file in the project root for more information.
+﻿// -----------------------------------------------------------------------
+// <copyright file="ISimilar.cs" company="Stéphane ANDRE">
+// Copyright (c) Stéphane ANDRE. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
-namespace MyNet.Utilities
+namespace MyNet.Utilities;
+
+public interface ISimilar
 {
-    public interface ISimilar
-    {
-        bool IsSimilar(object? obj);
-    }
+    bool IsSimilar(object? obj);
+}
 
-    public interface ISimilar<in T>
-    {
-        bool IsSimilar(T? obj);
-    }
+public interface ISimilar<in T>
+{
+    bool IsSimilar(T? obj);
 }

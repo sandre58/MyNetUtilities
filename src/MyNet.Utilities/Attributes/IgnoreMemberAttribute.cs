@@ -1,12 +1,12 @@
-﻿// Copyright (c) Stéphane ANDRE. All Right Reserved.
-// See the LICENSE file in the project root for more information.
+﻿// -----------------------------------------------------------------------
+// <copyright file="IgnoreMemberAttribute.cs" company="Stéphane ANDRE">
+// Copyright (c) Stéphane ANDRE. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
 using System;
 
-namespace MyNet.Utilities.Attributes
-{
-    [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field)]
-    public class IgnoreMemberAttribute : Attribute
-    {
-    }
-}
+namespace MyNet.Utilities.Attributes;
+
+[AttributeUsage(AttributeTargets.Property | AttributeTargets.Field)]
+public sealed class IgnoreMemberAttribute : Attribute;

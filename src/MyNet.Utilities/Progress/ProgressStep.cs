@@ -1,104 +1,99 @@
-﻿// Copyright (c) Stéphane ANDRE. All Right Reserved.
-// See the LICENSE file in the project root for more information.
+﻿// -----------------------------------------------------------------------
+// <copyright file="ProgressStep.cs" company="Stéphane ANDRE">
+// Copyright (c) Stéphane ANDRE. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 
-namespace MyNet.Utilities.Progress
+namespace MyNet.Utilities.Progress;
+
+internal sealed class ProgressStep<T> : IProgressStep<T>
 {
-    internal sealed class ProgressStep<T> : IProgressStep<T>
+    private readonly Progresser<T> _progresser;
+    private readonly IProgressStep? _parent;
+    private readonly List<ProgressStepValue> _children = [];
+
+    internal ProgressStep(Progresser<T> progresser, IProgressStep? parent, T? message, IEnumerable<double> subStepWeightings, Action? cancelAction, bool canCancel)
     {
-        [DebuggerDisplay("Weighting:{Weighting}, Progress:{Progress}")]
-        private sealed class ProgressStepValue(double weighting, double progress)
-        {
-            public double Weighting { get; } = weighting;
+        _progresser = progresser;
+        _parent = parent;
+        CancelAction = cancelAction;
+        CanCancel = canCancel;
 
-            public double Progress { get; set; } = progress;
-        }
+        foreach (var weighting in subStepWeightings)
+            _children.Add(new ProgressStepValue(weighting, 0.0D));
 
-        private readonly Progresser<T> _progresser;
-        private readonly IProgressStep? _parent;
-        private readonly List<ProgressStepValue> _children = [];
+        _progresser.Push(this);
 
-        public double Progress { get; private set; }
+        UpdateProgress(0.0D);
+        UpdateMessage(message);
+    }
 
-        public T? Message { get; private set; }
+    public double Progress { get; private set; }
 
-        public bool CanCancel { get; }
+    public T? Message { get; private set; }
 
-        public Action? CancelAction { get; }
+    public bool CanCancel { get; }
 
-        /// <summary>
-        /// Constructor for a sub Step
-        /// </summary>
-        internal ProgressStep(Progresser<T> progresser, IProgressStep? parent, T? message, IEnumerable<double> subStepWeightings, Action? cancelAction, bool canCancel)
-        {
-            _progresser = progresser;
-            _parent = parent;
-            CancelAction = cancelAction;
-            CanCancel = canCancel;
+    public Action? CancelAction { get; }
 
-            foreach (var weighting in subStepWeightings)
-                _children.Add(new ProgressStepValue(weighting, 0.0D));
+    public void UpdateMessage(T? message)
+    {
+        if (Equals(Message, message)) return;
+        Message = message;
+        _progresser.Report();
+    }
 
-            _progresser.Push(this);
+    public void UpdateProgress(double value)
+    {
+        if (NearlyEqual(Progress, value)) return;
+        var positiveValue = value < 0.0D ? 0.0D : value;
+        Progress = value > 1 ? 1.0D : positiveValue;
 
-            UpdateProgress(0.0D);
-            UpdateMessage(message);
-        }
+        if (_parent is not null)
+            _parent.SetChildProgress(Progress);
+        else
+            _progresser.Report();
+    }
 
-        public void UpdateMessage(T? message)
-        {
-            if (!Equals(Message, message))
-            {
-                Message = message;
-                _progresser.Report();
-            }
-        }
+    public void SetChildProgress(double progress)
+    {
+        var currentChild = _children.Find(x => x.Progress < 1.0D && progress > x.Progress);
+        if (currentChild is null) return;
 
-        public void UpdateProgress(double value)
-        {
-            if (!NearlyEqual(Progress, value))
-            {
-                var positiveValue = value < 0.0D ? 0.0D : value;
-                Progress = value > 1 ? 1.0D : positiveValue;
+        currentChild.Progress = progress;
+        ComputeProgress();
+    }
 
-                if (_parent is not null)
-                    _parent.SetChildProgress(Progress);
-                else
-                    _progresser.Report();
-            }
-        }
+    public void Dispose()
+    {
+        UpdateProgress(1.0D);
+        _progresser.Pop();
+    }
 
-        public void SetChildProgress(double progress)
-        {
-            var currentChild = _children.Find(x => x.Progress < 1.0D && progress > x.Progress);
-            if (currentChild is not ProgressStepValue child) return;
+    private static bool NearlyEqual(double value1, double value2)
+    {
+        var diff = Math.Abs(value1 - value2);
 
-            child.Progress = progress;
-            ComputeProgress();
-        }
+        return diff < double.Epsilon;
+    }
 
-        private void ComputeProgress()
-        {
-            var value = _children.Sum(x => x.Weighting * x.Progress);
+    private void ComputeProgress()
+    {
+        var value = _children.Sum(x => x.Weighting * x.Progress);
 
-            UpdateProgress(value);
-        }
+        UpdateProgress(value);
+    }
 
-        private static bool NearlyEqual(double value1, double value2)
-        {
-            var diff = Math.Abs(value1 - value2);
+    [DebuggerDisplay("Weighting:{Weighting}, Progress:{Progress}")]
+    private sealed class ProgressStepValue(double weighting, double progress)
+    {
+        public double Weighting { get; } = weighting;
 
-            return diff < double.Epsilon;
-        }
-
-        public void Dispose()
-        {
-            UpdateProgress(1.0D);
-            _progresser.Pop();
-        }
+        public double Progress { get; set; } = progress;
     }
 }

@@ -1,20 +1,22 @@
-﻿// Copyright (c) Stéphane ANDRE. All Right Reserved.
-// See the LICENSE file in the project root for more information.
+﻿// -----------------------------------------------------------------------
+// <copyright file="IMailService.cs" company="Stéphane ANDRE">
+// Copyright (c) Stéphane ANDRE. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
-using MyNet.Utilities.Mail.Models;
 using System.Threading;
 using System.Threading.Tasks;
+using MyNet.Utilities.Mail.Models;
 
-namespace MyNet.Utilities.Mail
+namespace MyNet.Utilities.Mail;
+
+public interface IMailService
 {
-    public interface IMailService
-    {
-        SendResponse Send(IEmail email, CancellationToken? token = null);
+    SendResponse Send(IEmail email, CancellationToken? token = null);
 
-        Task<SendResponse> SendAsync(IEmail email, CancellationToken? token = null);
+    Task<SendResponse> SendAsync(IEmail email, CancellationToken? token = null);
 
-        bool CanConnect();
+    bool CanConnect();
 
-        Task<bool> CanConnectAsync();
-    }
+    Task<bool> CanConnectAsync();
 }

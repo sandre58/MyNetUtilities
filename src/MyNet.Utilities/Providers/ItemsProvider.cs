@@ -1,16 +1,14 @@
-﻿// Copyright (c) Stéphane ANDRE. All Right Reserved.
-// See the LICENSE file in the project root for more information.
+﻿// -----------------------------------------------------------------------
+// <copyright file="ItemsProvider.cs" company="Stéphane ANDRE">
+// Copyright (c) Stéphane ANDRE. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
 using System.Collections.Generic;
 
-namespace MyNet.Utilities.Providers
+namespace MyNet.Utilities.Providers;
+
+public class ItemsProvider<T>(IEnumerable<T> items) : IItemsProvider<T>
 {
-    public class ItemsProvider<T> : IItemsProvider<T>
-    {
-        private readonly IEnumerable<T> _items;
-
-        public ItemsProvider(IEnumerable<T> items) => _items = items;
-
-        public virtual IEnumerable<T> ProvideItems() => _items;
-    }
+    public virtual IEnumerable<T> ProvideItems() => items;
 }

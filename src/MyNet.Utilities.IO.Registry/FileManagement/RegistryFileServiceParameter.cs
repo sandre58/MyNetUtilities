@@ -1,16 +1,16 @@
-﻿// Copyright (c) Stéphane ANDRE. All Right Reserved.
-// See the LICENSE file in the project root for more information.
+﻿// -----------------------------------------------------------------------
+// <copyright file="RegistryFileServiceParameter.cs" company="Stéphane ANDRE">
+// Copyright (c) Stéphane ANDRE. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
-using System.Collections.Generic;
+namespace MyNet.Utilities.IO.Registry.FileManagement;
 
-namespace MyNet.Utilities.IO.Registry.FileManagement
+public class RegistryFileServiceParameter(string baseRegistry) : IRegistryFileServiceParameters
 {
-    public class RegistryFileServiceParameter(string baseRegistry) : IRegistryFileServiceParameters
-    {
-        public int SavedMaxCount { get; set; }
+    public int SavedMaxCount { get; set; }
 
-        public string BaseRegistry { get; set; } = baseRegistry;
+    public string BaseRegistry { get; set; } = baseRegistry;
 
-        public ICollection<string> SupportedTypes { get; set; } = [];
-    }
+    public string[] SupportedTypes { get; set; } = [];
 }

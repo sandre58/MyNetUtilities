@@ -1,22 +1,26 @@
-﻿// Copyright (c) Stéphane ANDRE. All Right Reserved.
-// See the LICENSE file in the project root for more information.
+﻿// -----------------------------------------------------------------------
+// <copyright file="QueryLimitExceededException.cs" company="Stéphane ANDRE">
+// Copyright (c) Stéphane ANDRE. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
 using System;
 
-namespace MyNet.Utilities.Google.Maps
+namespace MyNet.Utilities.Google.Maps;
+
+public class QueryLimitExceededException : System.Net.WebException
 {
-    public class QueryLimitExceededException : System.Net.WebException
+    public QueryLimitExceededException()
     {
-        public QueryLimitExceededException()
-        {
-        }
+    }
 
-        public QueryLimitExceededException(string? message) : base(message)
-        {
-        }
+    public QueryLimitExceededException(string? message)
+        : base(message)
+    {
+    }
 
-        public QueryLimitExceededException(string? message, Exception? innerException) : base(message, innerException)
-        {
-        }
+    public QueryLimitExceededException(string? message, Exception? innerException)
+        : base(message, innerException)
+    {
     }
 }

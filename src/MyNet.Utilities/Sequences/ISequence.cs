@@ -1,12 +1,14 @@
-﻿// Copyright (c) Stéphane ANDRE. All Right Reserved.
-// See the LICENSE file in the project root for more information.
+﻿// -----------------------------------------------------------------------
+// <copyright file="ISequence.cs" company="Stéphane ANDRE">
+// Copyright (c) Stéphane ANDRE. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
-namespace MyNet.Utilities.Sequences
+namespace MyNet.Utilities.Sequences;
+
+public interface ISequence<out T>
 {
-    public interface ISequence<out T>
-    {
-        T NextValue { get; }
+    T NextValue { get; }
 
-        T CurrentValue { get; }
-    }
+    T CurrentValue { get; }
 }

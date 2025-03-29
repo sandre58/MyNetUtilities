@@ -1,7 +1,7 @@
 <Project>
   <!-- Reference: https://docs.microsoft.com/en-us/visualstudio/msbuild/customize-your-build?view=vs-2017 -->
   
-<!-- Informations -->
+  <!-- Informations -->
   <PropertyGroup>
     <Product>My .NET Utilities</Product>
     <Authors>Stéphane ANDRE</Authors>
@@ -16,7 +16,7 @@
     <VersionSuffix>alpha</VersionSuffix>
   </PropertyGroup>
 
-<!-- Configuration -->
+  <!-- Configuration -->
   <PropertyGroup>
     <TargetFrameworks>net8.0;net9.0</TargetFrameworks>
     <BaseOutputPath>bin</BaseOutputPath>
@@ -28,22 +28,22 @@
     <Nullable>enable</Nullable>
     <Deterministic>False</Deterministic>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <CodeAnalysisRuleSet>$(MSBuildThisFileDirectory)MyNetUtilities.ruleset</CodeAnalysisRuleSet>
-    <NoWarn>$(NoWarn);SYSLIB0013;SYSLIB1054;CS1591;CS1574</NoWarn>
-    <SuppressNETCoreSdkPreviewMessage>true</SuppressNETCoreSdkPreviewMessage>
     <IsTestProject>$(MSBuildProjectName.Contains('UnitTests'))</IsTestProject>
-    <GenerateDocumentationFile Condition=" '$(Configuration)' == 'Release' ">true</GenerateDocumentationFile>
-    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <DeterministicSourcePaths Condition="'$(EnableSourceLink)' == ''">false</DeterministicSourcePaths>
   </PropertyGroup>
+  
+  <!-- Code analysis -->
+  <Import Project="$(MSBuildThisFileDirectory)\AnalysisProperties.targets" />  
 
-<!-- Package -->
+  <!-- Package -->
   <PropertyGroup>
+    <IsPackable>"'$(IsTestProject)' != 'true'"</IsPackable>
     <IncludeSymbols>true</IncludeSymbols>
     <IncludeSource>True</IncludeSource>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <GeneratePackageOnBuild Condition=" '$(IsTestProject)' != 'true' And '$(Configuration)'=='Release'">true</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild Condition="'$(IsTestProject)' != 'true' And '$(Configuration)'=='Release'">true</GeneratePackageOnBuild>
     <RepositoryUrl>https://github.com/sandre58/MyNetUtilities</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <RepositoryBranch>main</RepositoryBranch>
@@ -58,14 +58,12 @@
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
-  <PropertyGroup Condition="$(IsTestProject)">
-    <IsPackable>false</IsPackable>
-  </PropertyGroup>
-
+  <!-- Source link -->
   <ItemGroup Condition="'$(IsTestProject)' != 'true'">
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
   </ItemGroup>
 
+  <!-- Embedded files -->
   <ItemGroup Condition="'$(IsTestProject)' != 'true'">
     <None Include="$(MSBuildThisFileDirectory)..\LICENSE" Pack="true" PackagePath="">
       <Link>_package/LICENSE</Link>

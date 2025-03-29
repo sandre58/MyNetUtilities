@@ -1,26 +1,28 @@
-﻿// Copyright (c) Stéphane ANDRE. All Right Reserved.
-// See the LICENSE file in the project root for more information.
+﻿// -----------------------------------------------------------------------
+// <copyright file="Directions.cs" company="Stéphane ANDRE">
+// Copyright (c) Stéphane ANDRE. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
 using System.Collections.Generic;
 
-namespace MyNet.Utilities.Google.Maps
+namespace MyNet.Utilities.Google.Maps;
+
+public class Directions
 {
-    public class Directions
+    public Directions() => Steps = [];
+
+    public enum Status
     {
-        public enum Status
-        {
-            Ok,
-            Failed
-        }
-
-        public Directions() => Steps = [];
-
-        public List<Step> Steps { get; set; }
-
-        public string? Duration { get; set; }
-
-        public string? Distance { get; set; }
-
-        public Status StatusCode { get; set; }
+        Ok,
+        Failed
     }
+
+    public IList<Step> Steps { get; }
+
+    public string? Duration { get; set; }
+
+    public string? Distance { get; set; }
+
+    public Status StatusCode { get; set; }
 }

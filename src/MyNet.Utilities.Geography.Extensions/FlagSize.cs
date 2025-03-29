@@ -1,20 +1,23 @@
-﻿// Copyright (c) Stéphane ANDRE. All Right Reserved.
-// See the LICENSE file in the project root for more information.
+﻿// -----------------------------------------------------------------------
+// <copyright file="FlagSize.cs" company="Stéphane ANDRE">
+// Copyright (c) Stéphane ANDRE. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
-namespace MyNet.Utilities.Geography.Extensions
+namespace MyNet.Utilities.Geography.Extensions;
+
+[System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1008:Enums should have zero value", Justification = "Use as size in pixel.")]
+public enum FlagSize
 {
-    public enum FlagSize
-    {
-        _16 = 16,
+    Pixel16 = 16,
 
-        _24 = 24,
+    Pixel24 = 24,
 
-        _32 = 32,
+    Pixel32 = 32,
 
-        _48 = 48,
+    Pixel48 = 48,
 
-        _64 = 64,
+    Pixel64 = 64,
 
-        _128 = 128
-    }
+    Pixel128 = 128
 }

@@ -1,34 +1,37 @@
-﻿// Copyright (c) Stéphane ANDRE. All Right Reserved.	
-// See the LICENSE file in the project root for more information.	
+﻿// -----------------------------------------------------------------------
+// <copyright file="ObservablePeriodWithOptionalEnd.cs" company="Stéphane ANDRE">
+// Copyright (c) Stéphane ANDRE. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
 using System;
 using System.ComponentModel;
 
-namespace MyNet.Utilities.DateTimes
+namespace MyNet.Utilities.DateTimes;
+
+public class ObservablePeriodWithOptionalEnd : PeriodWithOptionalEnd, INotifyPropertyChanged
 {
-    public class ObservablePeriodWithOptionalEnd : PeriodWithOptionalEnd, INotifyPropertyChanged
+    public ObservablePeriodWithOptionalEnd(DateTime start, DateTime? end = null)
+        : base(start, end) { }
+
+    public event PropertyChangedEventHandler? PropertyChanged
     {
-        public ObservablePeriodWithOptionalEnd(DateTime start, DateTime? end = null) : base(start, end) { }
-
-        public event PropertyChangedEventHandler? PropertyChanged
-        {
-            add => PropertyChangedHandler += value;
-            remove => PropertyChangedHandler -= value;
-        }
-
-        private event PropertyChangedEventHandler? PropertyChangedHandler;
-
-        protected void RaisePropertyChanged(string? propertyName) => PropertyChangedHandler?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-
-        public override void SetInterval(DateTime start, DateTime? end = null)
-        {
-            var oldStart = Start;
-            var oldEnd = End;
-            base.SetInterval(start, end);
-            if (oldStart != Start)
-                RaisePropertyChanged(nameof(Start));
-            if (oldEnd != End)
-                RaisePropertyChanged(nameof(End));
-        }
+        add => PropertyChangedHandler += value;
+        remove => PropertyChangedHandler -= value;
     }
+
+    private event PropertyChangedEventHandler? PropertyChangedHandler;
+
+    public override void SetInterval(DateTime start, DateTime? end = null)
+    {
+        var oldStart = Start;
+        var oldEnd = End;
+        base.SetInterval(start, end);
+        if (oldStart != Start)
+            OnPropertyChanged(nameof(Start));
+        if (oldEnd != End)
+            OnPropertyChanged(nameof(End));
+    }
+
+    protected void OnPropertyChanged(string? propertyName) => PropertyChangedHandler?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }

@@ -1,5 +1,8 @@
-﻿// Copyright (c) Stéphane ANDRE. All Right Reserved.
-// See the LICENSE file in the project root for more information.
+﻿// -----------------------------------------------------------------------
+// <copyright file="PerformanceLogger.cs" company="Stéphane ANDRE">
+// Copyright (c) Stéphane ANDRE. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
 using System;
 using System.Collections.Generic;
@@ -9,114 +12,115 @@ using System.Diagnostics;
 using System.Threading;
 #endif
 
-namespace MyNet.Utilities.Logging
+namespace MyNet.Utilities.Logging;
+
+public sealed class PerformanceLogger : IDisposable
 {
-    public sealed class PerformanceLogger : IDisposable
-    {
-        private static readonly Stack<PerformanceLogger> OperationGroups = new();
+    private static readonly Stack<PerformanceLogger> OperationGroups = new();
 
 #if NET9_0_OR_GREATER
-        private static readonly Lock TimeLocker = new();
-        private static readonly Lock CurrentObject = new();
+    private static readonly Lock TimeLocker = new();
+    private static readonly Lock CurrentObject = new();
 #else
-        private static readonly object TimeLocker = new();
-        private static readonly object CurrentObject = new();
+    private static readonly object TimeLocker = new();
+    private static readonly object CurrentObject = new();
 #endif
 
-        private static readonly Dictionary<TraceLevel, Action<string>> GroupLogAction = new()
+    private static readonly Dictionary<TraceLevel, Action<string>> GroupLogAction = new()
+    {
+        [TraceLevel.Trace] = LogManager.Trace,
+        [TraceLevel.Debug] = LogManager.Debug,
+        [TraceLevel.Info] = LogManager.Info
+    };
+
+    private readonly Dictionary<string, (TraceLevel Level, TimeSpan Time)> _registeredTimes = [];
+
+    private readonly string _title;
+    private readonly TraceLevel _traceLevel;
+    private readonly Stopwatch _stopwatch;
+
+    internal PerformanceLogger(string title, TraceLevel traceLevel = TraceLevel.Debug)
+    {
+        _title = title ?? throw new ArgumentNullException(nameof(title));
+        _traceLevel = traceLevel;
+
+        OperationGroups.Push(this);
+
+        LogManager.Trace($"START - {_title}");
+
+        _stopwatch = new Stopwatch();
+        _stopwatch.Start();
+    }
+
+    internal static PerformanceLogger? Current => OperationGroups.Count == 0 ? null : OperationGroups.Peek();
+
+    private TimeSpan TotalTime => _stopwatch.Elapsed;
+
+    public void Dispose()
+    {
+        lock (CurrentObject)
         {
-            [TraceLevel.Trace] = x => LogManager.Trace(x),
-            [TraceLevel.Debug] = x => LogManager.Debug(x),
-            [TraceLevel.Info] = x => LogManager.Info(x),
-        };
+            Pop();
 
-        private readonly Dictionary<string, (TraceLevel trace, TimeSpan time)> _registeredTimes = [];
+            _stopwatch.Stop();
 
-        private readonly string _title;
-        private readonly TraceLevel _traceLevel;
-        private readonly Stopwatch _stopwatch;
+            LogManager.Trace($"END - {_title} : {_stopwatch.Elapsed}");
 
-        internal PerformanceLogger(string title, TraceLevel traceLevel = TraceLevel.Debug)
-        {
-            _title = title ?? throw new ArgumentNullException(nameof(title));
-            _traceLevel = traceLevel;
-
-            OperationGroups.Push(this);
-
-            LogManager.Trace($"START - {_title}");
-
-            _stopwatch = new Stopwatch();
-            _stopwatch.Start();
-        }
-
-        internal static PerformanceLogger? Current => OperationGroups.Count == 0 ? null : OperationGroups.Peek();
-
-        private TimeSpan TotalTime => _stopwatch.Elapsed;
-
-        internal void AddTime(string key, TimeSpan time, TraceLevel level)
-        {
-            lock (TimeLocker)
+            if (Current == null)
             {
-                _registeredTimes[key] = _registeredTimes.TryGetValue(key, out var value) ? (level, value.time + time) : (level, time);
+                TraceTimes();
+            }
+            else
+            {
+                Current.AddTime(_title, _stopwatch.Elapsed, _traceLevel);
+                Current.AddGroupTime(this);
             }
         }
+    }
 
-        private void AddGroupTime(PerformanceLogger group)
+    internal void AddTime(string key, TimeSpan time, TraceLevel level)
+    {
+        lock (TimeLocker)
         {
-            if (group._registeredTimes.Count == 0) return;
+            _registeredTimes[key] = _registeredTimes.TryGetValue(key, out var value) ? (level, value.Time + time) : (level, time);
+        }
+    }
 
-            KeyValuePair<string, (TraceLevel, TimeSpan)>[] times;
+    private static void Pop()
+    {
+        if (OperationGroups.Count > 0)
+            _ = OperationGroups.Pop();
+    }
 
-            lock (TimeLocker)
-            {
-                times = [.. group._registeredTimes];
-            }
+    private static void DisplayTime(KeyValuePair<string, (TraceLevel Level, TimeSpan Time)> item) =>
+        GroupLogAction[item.Value.Level]($"{item.Key} - {item.Value.Time}");
 
-            foreach (var time in times)
-                AddTime($"{group._title} - {time.Key}", time.Value.Item2, time.Value.Item1);
+    private void AddGroupTime(PerformanceLogger group)
+    {
+        if (group._registeredTimes.Count == 0) return;
+
+        KeyValuePair<string, (TraceLevel, TimeSpan)>[] times;
+
+        lock (TimeLocker)
+        {
+            times = [.. group._registeredTimes];
         }
 
-        private static void Pop()
+        foreach (var time in times)
+            AddTime($"{group._title} - {time.Key}", time.Value.Item2, time.Value.Item1);
+    }
+
+    private void TraceTimes()
+    {
+        var stars = new string('*', 20);
+        GroupLogAction[_traceLevel]($"{stars} {_title} {stars}");
+
+        foreach (var item in _registeredTimes)
         {
-            if (OperationGroups.Count > 0)
-                _ = OperationGroups.Pop();
+            DisplayTime(item);
         }
 
-        public void Dispose()
-        {
-            lock (CurrentObject)
-            {
-                Pop();
-
-                _stopwatch.Stop();
-
-                LogManager.Trace($"END - {_title} : {_stopwatch.Elapsed}");
-
-                if (Current == null)
-                    TraceTimes();
-                else
-                {
-                    Current.AddTime(_title, _stopwatch.Elapsed, _traceLevel);
-                    Current.AddGroupTime(this);
-                }
-            }
-        }
-
-        private void TraceTimes()
-        {
-            var stars = new string('*', 20);
-            GroupLogAction[_traceLevel]($"{stars} {_title} {stars}");
-
-            foreach (var item in _registeredTimes)
-            {
-                DisplayTime(item);
-            }
-
-            GroupLogAction[_traceLevel]($"Total Time : {TotalTime}");
-            GroupLogAction[_traceLevel]($"{stars} {_title} {stars}");
-        }
-
-        private static void DisplayTime(KeyValuePair<string, (TraceLevel, TimeSpan)> item) =>
-            GroupLogAction[item.Value.Item1]($"{item.Key} - {item.Value.Item2}");
+        GroupLogAction[_traceLevel]($"Total Time : {TotalTime}");
+        GroupLogAction[_traceLevel]($"{stars} {_title} {stars}");
     }
 }

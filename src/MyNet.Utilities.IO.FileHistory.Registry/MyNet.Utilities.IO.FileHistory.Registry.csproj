@@ -9,4 +9,9 @@
   <ItemGroup>
     <ProjectReference Include="..\MyNet.Utilities.IO.Registry\MyNet.Utilities.IO.Registry.csproj" />
   </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Update="Microsoft.CodeAnalysis.NetAnalyzers" Version="10.0.0-preview.25081.1" />
+    <PackageReference Update="StyleCop.Analyzers" Version="1.2.0-beta.556" />
+  </ItemGroup>
 </Project>

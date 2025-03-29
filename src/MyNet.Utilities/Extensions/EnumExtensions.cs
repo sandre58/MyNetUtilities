@@ -1,15 +1,19 @@
-﻿// Copyright (c) Stéphane ANDRE. All Right Reserved.
-// See the LICENSE file in the project root for more information.
+﻿// -----------------------------------------------------------------------
+// <copyright file="EnumExtensions.cs" company="Stéphane ANDRE">
+// Copyright (c) Stéphane ANDRE. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
 using System;
 using System.Linq;
 
 #pragma warning disable IDE0130 // Namespace does not match folder structure
-namespace MyNet.Utilities
+namespace MyNet.Utilities;
 #pragma warning restore IDE0130 // Namespace does not match folder structure
+
+public static class EnumExtensions
 {
-    public static class EnumExtensions
-    {
-        public static int CountFlags<T>(this T options) where T : Enum => Enum.GetValues(typeof(T)).Cast<Enum>().Count(options.HasFlag);
-    }
+    public static int CountFlags<T>(this T options)
+        where T : Enum
+        => Enum.GetValues(typeof(T)).Cast<Enum>().Count(options.HasFlag);
 }

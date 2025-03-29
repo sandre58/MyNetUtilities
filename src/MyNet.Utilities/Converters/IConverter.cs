@@ -1,12 +1,14 @@
-﻿// Copyright (c) Stéphane ANDRE. All Right Reserved.
-// See the LICENSE file in the project root for more information.
+﻿// -----------------------------------------------------------------------
+// <copyright file="IConverter.cs" company="Stéphane ANDRE">
+// Copyright (c) Stéphane ANDRE. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
-namespace MyNet.Utilities.Converters
+namespace MyNet.Utilities.Converters;
+
+public interface IConverter<TFrom, TTo>
 {
-    public interface IConverter<TFrom, TTo>
-    {
-        TTo Convert(TFrom item);
+    TTo Convert(TFrom item);
 
-        TFrom ConvertBack(TTo item);
-    }
+    TFrom ConvertBack(TTo item);
 }

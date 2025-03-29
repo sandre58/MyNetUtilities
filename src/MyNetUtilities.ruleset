@@ -19,13 +19,7 @@
     <Rule Id="CA1031" Action="None" />
     <Rule Id="CA1819" Action="None" />
   </Rules>
-  <Rules AnalyzerId="SonarAnalyzer.CSharp" RuleNamespace="SonarAnalyzer.CSharp">
-    <Rule Id="S101" Action="None" />
-    <Rule Id="S1075" Action="None" />
-    <Rule Id="S2094" Action="None" />
-    <Rule Id="S2692" Action="None" />
-    <Rule Id="S3358" Action="None" />
-    <Rule Id="S3904" Action="None" />
-    <Rule Id="S3966" Action="None" />
+  <Rules AnalyzerId="StyleCop.Analyzers" RuleNamespace="StyleCop.Analyzers">
+    <Rule Id="SA1503" Action="None" />
   </Rules>
 </RuleSet>

@@ -1,14 +1,16 @@
-﻿// Copyright (c) Stéphane ANDRE. All Right Reserved.
-// See the LICENSE file in the project root for more information.
+﻿// -----------------------------------------------------------------------
+// <copyright file="IEnumeration.cs" company="Stéphane ANDRE">
+// Copyright (c) Stéphane ANDRE. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
-namespace MyNet.Utilities
+namespace MyNet.Utilities;
+
+public interface IEnumeration
 {
-    public interface IEnumeration
-    {
-        string ResourceKey { get; }
+    string ResourceKey { get; }
 
-        string Name { get; }
+    string Name { get; }
 
-        object Value { get; }
-    }
+    object Value { get; }
 }

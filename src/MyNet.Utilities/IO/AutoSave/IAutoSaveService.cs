@@ -1,30 +1,32 @@
-﻿// Copyright (c) Stéphane ANDRE. All Right Reserved.
-// See the LICENSE file in the project root for more information.
+﻿// -----------------------------------------------------------------------
+// <copyright file="IAutoSaveService.cs" company="Stéphane ANDRE">
+// Copyright (c) Stéphane ANDRE. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
 using System;
 
-namespace MyNet.Utilities.IO.AutoSave
+namespace MyNet.Utilities.IO.AutoSave;
+
+public interface IAutoSaveService
 {
-    public interface IAutoSaveService
-    {
-        bool IsEnabled { get; }
+    bool IsEnabled { get; }
 
-        int Interval { get; }
+    int Interval { get; }
 
-        bool IsSaving { get; }
+    bool IsSaving { get; }
 
-        void SetInterval(int intervalInSeconds);
+    void SetInterval(int intervalInSeconds);
 
-        void Disable();
+    void Disable();
 
-        void Enable();
+    void Enable();
 
-        void Start();
+    void Start();
 
-        void Stop();
+    void Stop();
 
-        void Cancel();
+    void Cancel();
 
-        IDisposable Suspend();
-    }
+    IDisposable Suspend();
 }

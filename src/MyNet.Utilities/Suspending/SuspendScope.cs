@@ -1,24 +1,26 @@
-﻿// Copyright (c) Stéphane ANDRE. All Right Reserved.
-// See the LICENSE file in the project root for more information.
+﻿// -----------------------------------------------------------------------
+// <copyright file="SuspendScope.cs" company="Stéphane ANDRE">
+// Copyright (c) Stéphane ANDRE. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
 using System;
 
-namespace MyNet.Utilities.Suspending
+namespace MyNet.Utilities.Suspending;
+
+internal sealed class SuspendScope : IDisposable
 {
-    internal sealed class SuspendScope : IDisposable
+    private readonly Suspender _suspender;
+
+    public SuspendScope(Suspender sender, bool suspend)
     {
-        private readonly Suspender _suspender;
+        _suspender = sender;
+        IsSuspended = suspend;
 
-        public bool IsSuspended { get; }
-
-        public SuspendScope(Suspender sender, bool suspend)
-        {
-            _suspender = sender;
-            IsSuspended = suspend;
-
-            _suspender.Push(this);
-        }
-
-        public void Dispose() => _suspender.Pop();
+        _suspender.Push(this);
     }
+
+    public bool IsSuspended { get; }
+
+    public void Dispose() => _suspender.Pop();
 }

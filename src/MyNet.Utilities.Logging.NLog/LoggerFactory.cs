@@ -1,12 +1,14 @@
-﻿// Copyright (c) Stéphane ANDRE. All Right Reserved.
-// See the LICENSE file in the project root for more information.
+﻿// -----------------------------------------------------------------------
+// <copyright file="LoggerFactory.cs" company="Stéphane ANDRE">
+// Copyright (c) Stéphane ANDRE. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
-namespace MyNet.Utilities.Logging.NLog
+namespace MyNet.Utilities.Logging.NLog;
+
+public static class LoggerFactory
 {
-    public static class LoggerFactory
-    {
-        public static ILogger CreateLogger(string categoryName) => new Logger(categoryName);
+    public static ILogger CreateLogger(string categoryName) => new Logger(categoryName);
 
-        public static ILogger CreateLogger() => new Logger();
-    }
+    public static ILogger CreateLogger() => new Logger();
 }
