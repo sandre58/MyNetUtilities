@@ -9,11 +9,8 @@ using System.ComponentModel;
 
 namespace MyNet.Utilities.DateTimes;
 
-public class ObservablePeriodWithOptionalEnd : PeriodWithOptionalEnd, INotifyPropertyChanged
+public class ObservablePeriodWithOptionalEnd(DateTime start, DateTime? end = null) : PeriodWithOptionalEnd(start, end), INotifyPropertyChanged
 {
-    public ObservablePeriodWithOptionalEnd(DateTime start, DateTime? end = null)
-        : base(start, end) { }
-
     public event PropertyChangedEventHandler? PropertyChanged
     {
         add => PropertyChangedHandler += value;

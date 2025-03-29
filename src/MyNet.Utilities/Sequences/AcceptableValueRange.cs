@@ -10,18 +10,12 @@ using MyNet.Utilities.Exceptions;
 
 namespace MyNet.Utilities.Sequences;
 
-public class AcceptableValueRange<T>
+public class AcceptableValueRange<T>(T? min, T? max)
     where T : struct, IComparable
 {
-    public AcceptableValueRange(T? min, T? max)
-    {
-        Min = min;
-        Max = max;
-    }
+    public T? Min { get; } = min;
 
-    public T? Min { get; }
-
-    public T? Max { get; }
+    public T? Max { get; } = max;
 
     public T MinOrDefault() => Min ?? default;
 

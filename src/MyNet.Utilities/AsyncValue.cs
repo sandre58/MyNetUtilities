@@ -8,12 +8,9 @@ using System;
 
 namespace MyNet.Utilities;
 
-public class AsyncValue<T>
+public class AsyncValue<T>(Func<T> provideValue)
 {
-    private readonly Func<T> _provideValue;
     private T _value = default!;
 
-    public AsyncValue(Func<T> provideValue) => _provideValue = provideValue;
-
-    public T Value => _value ??= _provideValue();
+    public T Value => _value ??= provideValue();
 }

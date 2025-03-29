@@ -10,7 +10,7 @@ using System.Globalization;
 namespace MyNet.Utilities.Exceptions;
 
 [System.Runtime.InteropServices.ComVisible(true)]
-public class TranslatableException : Exception
+public class TranslatableException(string? message, Exception? innerException, string resourceKey, params object?[] stringFormatParameters) : Exception(string.Format(CultureInfo.CurrentCulture, message.OrEmpty(), stringFormatParameters), innerException)
 {
     public TranslatableException()
         : this(string.Empty) { }
@@ -20,13 +20,6 @@ public class TranslatableException : Exception
 
     public TranslatableException(string message)
         : this(message, null, string.Empty) { }
-
-    public TranslatableException(string? message, Exception? innerException, string resourceKey, params object?[] stringFormatParameters)
-        : base(string.Format(CultureInfo.CurrentCulture, message.OrEmpty(), stringFormatParameters), innerException)
-    {
-        ResourceKey = resourceKey;
-        Parameters = stringFormatParameters;
-    }
 
     public TranslatableException(Exception? innerException, string resourceKey, params object?[] stringFormatParameters)
         : this(null, innerException, resourceKey, stringFormatParameters)
@@ -43,7 +36,7 @@ public class TranslatableException : Exception
     {
     }
 
-    public string ResourceKey { get; }
+    public string ResourceKey { get; } = resourceKey;
 
-    public object?[]? Parameters { get; }
+    public object?[]? Parameters { get; } = stringFormatParameters;
 }

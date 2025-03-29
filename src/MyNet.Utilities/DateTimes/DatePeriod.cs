@@ -11,11 +11,8 @@ using MyNet.Utilities.Sequences;
 
 namespace MyNet.Utilities.DateTimes;
 
-public class DatePeriod : Interval<DateOnly, DatePeriod>
+public class DatePeriod(DateOnly start, DateOnly end) : Interval<DateOnly, DatePeriod>(start, end)
 {
-    public DatePeriod(DateOnly start, DateOnly end)
-        : base(start, end) { }
-
     public TimeSpan Duration => End.At(TimeOnly.MinValue) - Start.At(TimeOnly.MinValue);
 
     public IEnumerable<DateOnly> ToDays() =>
@@ -28,21 +25,15 @@ public class DatePeriod : Interval<DateOnly, DatePeriod>
     protected override DatePeriod CreateInstance(DateOnly start, DateOnly end) => new(start, end);
 }
 
-public class ImmutableDatePeriod : DatePeriod
+public class ImmutableDatePeriod(DateOnly start, DateOnly end) : DatePeriod(start, end)
 {
-    public ImmutableDatePeriod(DateOnly start, DateOnly end)
-        : base(start, end) { }
-
     public override void SetInterval(DateOnly start, DateOnly end) => throw new InvalidOperationException("This period is immutable.");
 
     protected override DatePeriod CreateInstance(DateOnly start, DateOnly end) => new ImmutableDatePeriod(start, end);
 }
 
-public class DatePeriodWithOptionalEnd : IntervalWithOptionalEnd<DateOnly>
+public class DatePeriodWithOptionalEnd(DateOnly start, DateOnly? end = null) : IntervalWithOptionalEnd<DateOnly>(start, end)
 {
-    public DatePeriodWithOptionalEnd(DateOnly start, DateOnly? end = null)
-        : base(start, end) { }
-
     public TimeSpan? NullableDuration => End is null ? null : End.Value.At(TimeOnly.MinValue) - Start.At(TimeOnly.MinValue);
 
     public TimeSpan Duration => End is null ? DateTime.UtcNow - Start.At(TimeOnly.MinValue) : End.Value.At(TimeOnly.MinValue) - Start.At(TimeOnly.MinValue);

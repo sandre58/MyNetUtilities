@@ -11,18 +11,12 @@ namespace MyNet.Utilities.Caching.Policies;
 /// <summary>
 /// The expiration policy.
 /// </summary>
-public abstract class ExpirationPolicy
+/// <remarks>
+/// Initializes a new instance of the <see cref="ExpirationPolicy" /> class.
+/// </remarks>
+/// <param name="canReset">The can reset.</param>
+public abstract class ExpirationPolicy(bool canReset = false)
 {
-    #region Constructors
-
-    /// <summary>
-    /// Initializes a new instance of the <see cref="ExpirationPolicy" /> class.
-    /// </summary>
-    /// <param name="canReset">The can reset.</param>
-    protected ExpirationPolicy(bool canReset = false) => CanReset = canReset;
-
-    #endregion
-
     #region Properties
 
     /// <summary>
@@ -33,7 +27,7 @@ public abstract class ExpirationPolicy
     /// <summary>
     /// Gets a value indicating whether the value with this policy can be reset.
     /// </summary>
-    public virtual bool CanReset { get; }
+    public virtual bool CanReset { get; } = canReset;
 
     /// <summary>
     /// Gets a value indicating whether is resting.

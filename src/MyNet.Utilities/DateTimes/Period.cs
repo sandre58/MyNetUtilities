@@ -13,11 +13,8 @@ using MyNet.Utilities.Sequences;
 
 namespace MyNet.Utilities.DateTimes;
 
-public class Period : Interval<DateTime, Period>
+public class Period(DateTime start, DateTime end) : Interval<DateTime, Period>(start, end)
 {
-    public Period(DateTime start, DateTime end)
-        : base(start, end) { }
-
     public TimeSpan Duration => End - Start;
 
     public IEnumerable<DateTime> ToDates() =>
@@ -60,21 +57,15 @@ public class Period : Interval<DateTime, Period>
     protected override Period CreateInstance(DateTime start, DateTime end) => new(start, end);
 }
 
-public class ImmutablePeriod : Period
+public class ImmutablePeriod(DateTime start, DateTime end) : Period(start, end)
 {
-    public ImmutablePeriod(DateTime start, DateTime end)
-        : base(start, end) { }
-
     public override void SetInterval(DateTime start, DateTime end) => throw new InvalidOperationException("This period is immutable.");
 
     protected override Period CreateInstance(DateTime start, DateTime end) => new ImmutablePeriod(start, end);
 }
 
-public class PeriodWithOptionalEnd : IntervalWithOptionalEnd<DateTime>
+public class PeriodWithOptionalEnd(DateTime start, DateTime? end = null) : IntervalWithOptionalEnd<DateTime>(start, end)
 {
-    public PeriodWithOptionalEnd(DateTime start, DateTime? end = null)
-        : base(start, end) { }
-
     public TimeSpan? NullableDuration => End is null ? null : End.Value.ToUniversalTime() - Start.ToUniversalTime();
 
     public TimeSpan Duration => End is null ? DateTime.UtcNow - Start.ToUniversalTime() : End.Value.ToUniversalTime() - Start.ToUniversalTime();

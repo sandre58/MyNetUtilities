@@ -13,11 +13,11 @@ using Microsoft.Win32;
 
 namespace MyNet.Utilities.IO.Registry;
 
+[SupportedOSPlatform("windows")]
 public class RegistryService : IRegistryService
 {
-    private readonly RegistryKey _registryKey;
+    private readonly RegistryKey _registryKey = Microsoft.Win32.Registry.CurrentUser;
 
-    [SupportedOSPlatform("windows")]
     private readonly Dictionary<Type, Func<RegistryValueKind>> _typeMapping = new()
     {
         [typeof(ushort)] = () => RegistryValueKind.DWord,
@@ -35,13 +35,8 @@ public class RegistryService : IRegistryService
         [typeof(bool)] = x => Convert.ToBoolean(x, CultureInfo.InvariantCulture)
     };
 
-    [SupportedOSPlatform("windows")]
-    public RegistryService() => _registryKey = Microsoft.Win32.Registry.CurrentUser;
-
-    [SupportedOSPlatform("windows")]
     public int Count(string path) => _registryKey.OpenSubKey(path)?.SubKeyCount ?? 0;
 
-    [SupportedOSPlatform("windows")]
     public void Remove(string parentKey, string key)
     {
         using var item = _registryKey.OpenSubKey(parentKey, true);

@@ -9,7 +9,11 @@ namespace MyNet.Utilities.Sequences;
 /// <summary>
 /// A simple sequence generator. Note: it is NOT thread-safe.
 /// </summary>
-public class IntegerSequence : ISequence<uint>
+/// <remarks>
+/// Initializes a new instance of the <see cref="IntegerSequence"/> class.
+/// </remarks>
+/// <param name="seed">The sequence initial value.</param>
+public class IntegerSequence(uint seed) : ISequence<uint>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="IntegerSequence"/> class.
@@ -19,15 +23,9 @@ public class IntegerSequence : ISequence<uint>
         : this(0u) { }
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="IntegerSequence"/> class.
-    /// </summary>
-    /// <param name="seed">The sequence initial value.</param>
-    public IntegerSequence(uint seed) => CurrentValue = seed;
-
-    /// <summary>
     /// Gets this sequence's current value.
     /// </summary>
-    public uint CurrentValue { get; private set; }
+    public uint CurrentValue { get; private set; } = seed;
 
     /// <summary>
     /// Gets computes and retrieves this sequence's next value.
