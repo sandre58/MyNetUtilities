@@ -1,5 +1,16 @@
 # Changelog
 
+## [v7.0.0] - 2025-03-29
+### :boom: BREAKING CHANGES
+- due to [`c74d8a5`](https://github.com/sandre58/MyNetUtilities/commit/c74d8a574ce5c6483a4819e4af7d53e16309b7b2) - Refactor codebase for clarity, documentation, and tests:
+
+  Several methods signatures
+
+
+### :recycle: Refactors
+- [`c74d8a5`](https://github.com/sandre58/MyNetUtilities/commit/c74d8a574ce5c6483a4819e4af7d53e16309b7b2) - Refactor codebase for clarity, documentation, and tests
+
+
 ## [v6.0.1] - 2025-01-14
 ### :sparkles: New Features
 - [`da2681e`](https://github.com/sandre58/MyNetUtilities/commit/da2681ec2e6619ca58e0865e35aafd6f97f6fbf4) - Add ContainsAny and NotContainsAny
@@ -178,3 +189,4 @@
 [v5.3.0]: https://github.com/sandre58/MyNetUtilities/compare/v5.2.0...v5.3.0
 [v6.0.0]: https://github.com/sandre58/MyNetUtilities/compare/v5.3.0...v6.0.0
 [v6.0.1]: https://github.com/sandre58/MyNetUtilities/compare/v6.0.0...v6.0.1
+[v7.0.0]: https://github.com/sandre58/MyNetUtilities/compare/v6.0.1...v7.0.0
