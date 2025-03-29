@@ -4,7 +4,7 @@
 		<AnalysisMode>AllEnabledByDefault</AnalysisMode>
 		<EnableNETAnalyzers>true</EnableNETAnalyzers>
 		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-    <CodeAnalysisRuleSet>$(MSBuildThisFileDirectory)MyNetUtilities.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>$(MSBuildThisFileDirectory)MyNet.ruleset</CodeAnalysisRuleSet>
 	</PropertyGroup>
 
 	<!-- Ignore specific SDK warnings -->
