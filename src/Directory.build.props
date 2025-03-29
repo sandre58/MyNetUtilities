@@ -1,13 +1,13 @@
 <Project>
   <!-- Reference: https://docs.microsoft.com/en-us/visualstudio/msbuild/customize-your-build?view=vs-2017 -->
-  
+
   <!-- Informations -->
   <PropertyGroup>
     <Product>My .NET Utilities</Product>
     <Authors>Stéphane ANDRE</Authors>
     <Owners>Stéphane ANDRE</Owners>
     <Copyright>Copyright © 2016-$([System.DateTime]::Now.ToString(yyyy)) - Stéphane ANDRE. All Rights Reserved.</Copyright>
-    
+
     <!-- Used by main project -->
     <GitVersion>1.0.0-alpha</GitVersion>
 
@@ -33,13 +33,13 @@
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <DeterministicSourcePaths Condition="'$(EnableSourceLink)' == ''">false</DeterministicSourcePaths>
   </PropertyGroup>
-  
+
   <!-- Code analysis -->
-  <Import Project="$(MSBuildThisFileDirectory)\AnalysisProperties.targets" />  
+  <Import Project="$(MSBuildThisFileDirectory)\AnalysisProperties.targets" />
 
   <!-- Package -->
   <PropertyGroup>
-    <IsPackable>"'$(IsTestProject)' != 'true'"</IsPackable>
+    <IsPackable Condition="'$(IsTestProject)' != 'true'">true</IsPackable>
     <IncludeSymbols>true</IncludeSymbols>
     <IncludeSource>True</IncludeSource>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
