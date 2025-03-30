@@ -367,7 +367,7 @@ public class Messenger : IMessenger
     /// recipients are removed from the lists. Since this operation
     /// can take a moment, it is only executed when the application is
     /// idle. For this reason, a user of the Messenger class should use
-    /// <see cref="RequestCleanup"/> instead of forcing one with the
+    /// RequestCleanup instead of forcing one with the
     /// <see cref="Cleanup" /> method.
     /// </summary>
     public void Cleanup()
