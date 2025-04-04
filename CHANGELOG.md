@@ -1,5 +1,11 @@
 # Changelog
 
+## [v7.0.1] - 2025-04-04
+### :recycle: Refactors
+- [`63b1636`](https://github.com/sandre58/MyNetUtilities/commit/63b1636709fe38d0f1dc42e1f588106636ac19cb) - fix editorConfig
+- [`e0198d8`](https://github.com/sandre58/MyNetUtilities/commit/e0198d84082bc3f795fbe8cc9acd6bed10d09168) - fix style
+
+
 ## [v7.0.0] - 2025-03-29
 ### :boom: BREAKING CHANGES
 - due to [`c74d8a5`](https://github.com/sandre58/MyNetUtilities/commit/c74d8a574ce5c6483a4819e4af7d53e16309b7b2) - Refactor codebase for clarity, documentation, and tests:
@@ -190,3 +196,4 @@
 [v6.0.0]: https://github.com/sandre58/MyNetUtilities/compare/v5.3.0...v6.0.0
 [v6.0.1]: https://github.com/sandre58/MyNetUtilities/compare/v6.0.0...v6.0.1
 [v7.0.0]: https://github.com/sandre58/MyNetUtilities/compare/v6.0.1...v7.0.0
+[v7.0.1]: https://github.com/sandre58/MyNetUtilities/compare/v7.0.0...v7.0.1
