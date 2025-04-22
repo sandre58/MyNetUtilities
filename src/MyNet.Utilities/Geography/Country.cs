@@ -36,7 +36,7 @@ public class Country : EnumClass<Country>
     public static readonly Country Belize = new(84, nameof(Belize), "bz", "blz", Continent.NorthAmerica);
     public static readonly Country BritishIndianOceanTerritory = new(86, nameof(BritishIndianOceanTerritory), "io", "iot", Continent.Asia);
     public static readonly Country SolomonIslands = new(90, nameof(SolomonIslands), "sb", "slb", Continent.Oceania);
-    public static readonly Country VirginIslandsUk = new(92, nameof(VirginIslandsUk), "vg", "vgb", Continent.NorthAmerica);
+    public static readonly Country VirginIslandsUK = new(92, nameof(VirginIslandsUK), "vg", "vgb", Continent.NorthAmerica);
     public static readonly Country BruneiDarussalam = new(96, nameof(BruneiDarussalam), "bn", "brn", Continent.Asia);
     public static readonly Country Bulgaria = new(100, nameof(Bulgaria), "bg", "bgr", Continent.Europe);
     public static readonly Country Myanmar = new(104, nameof(Myanmar), "mm", "mmr", Continent.Asia);
@@ -248,7 +248,7 @@ public class Country : EnumClass<Country>
     public static readonly Country IsleOfMan = new(833, nameof(IsleOfMan), "im", "imn", Continent.Europe);
     public static readonly Country Tanzania = new(834, nameof(Tanzania), "tz", "tza", Continent.Africa);
     public static readonly Country UnitedStatesOfAmerica = new(840, nameof(UnitedStatesOfAmerica), "us", "usa", Continent.NorthAmerica);
-    public static readonly Country VirginIslandsUs = new(850, nameof(VirginIslandsUs), "vi", "vir", Continent.NorthAmerica);
+    public static readonly Country VirginIslandsUS = new(850, nameof(VirginIslandsUS), "vi", "vir", Continent.NorthAmerica);
     public static readonly Country BurkinaFaso = new(854, nameof(BurkinaFaso), "bf", "bfa", Continent.Africa);
     public static readonly Country Uruguay = new(855, nameof(Uruguay), "uy", "ury", Continent.SouthAmerica);
     public static readonly Country Uzbekistan = new(860, nameof(Uzbekistan), "uz", "uzb", Continent.Asia);
