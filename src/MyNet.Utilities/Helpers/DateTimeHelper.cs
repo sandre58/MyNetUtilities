@@ -6,6 +6,8 @@
 
 using System;
 using System.Collections.Generic;
+using System.Globalization;
+using MyNet.Utilities.Localization;
 using MyNet.Utilities.Units;
 
 namespace MyNet.Utilities.Helpers;
@@ -99,4 +101,11 @@ public static class DateTimeHelper
     }
 
     public static int NumberOfDaysInWeek() => Enum.GetValues<DayOfWeek>().Length;
+
+    public static string TranslateDatePattern(string key, CultureInfo culture)
+    {
+        var format = culture.DateTimeFormat;
+        var prop = format.GetType().GetProperty(key);
+        return prop != null ? prop.GetValue(format)?.ToString() ?? string.Empty : TranslationService.Get(culture)[key];
+    }
 }
