@@ -1,5 +1,10 @@
 # Changelog
 
+## [v7.0.2] - 2025-04-22
+### :bug: Bug Fixes
+- [`4f9a30f`](https://github.com/sandre58/MyNetUtilities/commit/4f9a30fe3a79f4e1106217393e8855daec58bb95) - Standardize country names
+
+
 ## [v7.0.1] - 2025-04-04
 ### :recycle: Refactors
 - [`63b1636`](https://github.com/sandre58/MyNetUtilities/commit/63b1636709fe38d0f1dc42e1f588106636ac19cb) - fix editorConfig
@@ -197,3 +202,4 @@
 [v6.0.1]: https://github.com/sandre58/MyNetUtilities/compare/v6.0.0...v6.0.1
 [v7.0.0]: https://github.com/sandre58/MyNetUtilities/compare/v6.0.1...v7.0.0
 [v7.0.1]: https://github.com/sandre58/MyNetUtilities/compare/v7.0.0...v7.0.1
+[v7.0.2]: https://github.com/sandre58/MyNetUtilities/compare/v7.0.1...v7.0.2
