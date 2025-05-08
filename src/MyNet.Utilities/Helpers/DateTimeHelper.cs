@@ -7,13 +7,26 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using MyNet.Utilities.Localization;
+using MyNet.Utilities.Sequences;
 using MyNet.Utilities.Units;
 
 namespace MyNet.Utilities.Helpers;
 
 public static class DateTimeHelper
 {
+    public static DateTimeFormatInfo GetCurrentDateTimeFormatInfo()
+    {
+        if (CultureInfo.CurrentCulture.Calendar is GregorianCalendar) return CultureInfo.CurrentCulture.DateTimeFormat;
+        Calendar? calendar =
+            CultureInfo.CurrentCulture.OptionalCalendars.OfType<GregorianCalendar>().FirstOrDefault();
+        var cultureName = calendar is null ? CultureInfo.InvariantCulture.Name : CultureInfo.CurrentCulture.Name;
+        var dt = new CultureInfo(cultureName).DateTimeFormat;
+        dt.Calendar = calendar ?? new GregorianCalendar();
+        return dt;
+    }
+
     public static DateTime Max(DateTime date1, DateTime date2) =>
         date1 > date2
             ? date1
@@ -100,7 +113,23 @@ public static class DateTimeHelper
             yield return i;
     }
 
+    public static Interval<int> GetDecade(int year)
+    {
+        var start = year / 10 * 10;
+        return new(start, start + 10);
+    }
+
+    public static Interval<int> GetCentury(int year)
+    {
+        var start = year / 100 * 100;
+        return new(start, start + 100);
+    }
+
     public static int NumberOfDaysInWeek() => Enum.GetValues<DayOfWeek>().Length;
+
+    public static int MaxNumberOfWeeksPerMonth() => 6;
+
+    public static int MinNumberOfWeeksPerMonth() => 4;
 
     public static string TranslateDatePattern(string key, CultureInfo culture)
     {
