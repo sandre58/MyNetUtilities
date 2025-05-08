@@ -1,5 +1,10 @@
 # Changelog
 
+## [v7.2.0] - 2025-05-08
+### :sparkles: New Features
+- [`8dd36c5`](https://github.com/sandre58/MyNetUtilities/commit/8dd36c5ce7c88119ed84400f07e09087901f6fd6) - Add date and time utility methods to DateTimeHelper
+
+
 ## [v7.1.0] - 2025-04-28
 ### :sparkles: New Features
 - [`a2a23ce`](https://github.com/sandre58/MyNetUtilities/commit/a2a23ce6eec23c0dc08cde4ff903732ea83f763d) - Add localization support in DateTimeHelper
@@ -210,3 +215,4 @@
 [v7.0.2]: https://github.com/sandre58/MyNetUtilities/compare/v7.0.1...v7.0.2
 [v7.1.0]: https://github.com/sandre58/MyNetUtilities/compare/v7.0.2...v7.1.0
 [v7.2.0-pre]: https://github.com/sandre58/MyNetUtilities/compare/v7.1.0...v7.2.0-pre
+[v7.2.0]: https://github.com/sandre58/MyNetUtilities/compare/v7.1.0...v7.2.0
