@@ -1,5 +1,10 @@
 # Changelog
 
+## [v7.1.0] - 2025-04-28
+### :sparkles: New Features
+- [`a2a23ce`](https://github.com/sandre58/MyNetUtilities/commit/a2a23ce6eec23c0dc08cde4ff903732ea83f763d) - Add localization support in DateTimeHelper
+
+
 ## [v7.0.2] - 2025-04-22
 ### :bug: Bug Fixes
 - [`4f9a30f`](https://github.com/sandre58/MyNetUtilities/commit/4f9a30fe3a79f4e1106217393e8855daec58bb95) - Standardize country names
@@ -203,3 +208,4 @@
 [v7.0.0]: https://github.com/sandre58/MyNetUtilities/compare/v6.0.1...v7.0.0
 [v7.0.1]: https://github.com/sandre58/MyNetUtilities/compare/v7.0.0...v7.0.1
 [v7.0.2]: https://github.com/sandre58/MyNetUtilities/compare/v7.0.1...v7.0.2
+[v7.1.0]: https://github.com/sandre58/MyNetUtilities/compare/v7.0.2...v7.1.0
