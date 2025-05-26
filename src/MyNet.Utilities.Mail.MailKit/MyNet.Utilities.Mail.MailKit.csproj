@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Description>A powerful class library designed to simplify the process of sending emails in .NET applications. with MailKit.</Description>
     <PackageTags>My;Utilities;Mail;MailKit</PackageTags>
-    <VersionPrefix>7.0.0</VersionPrefix>
+    <VersionPrefix>8.0.0</VersionPrefix>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MailKit" Version="4.11.0" />
+    <PackageReference Include="MailKit" Version="4.12.1" />
   </ItemGroup>
 
   <ItemGroup>

@@ -106,6 +106,8 @@ public class GoogleLocationService(string apikey, bool useHttps) : ILocationServ
                 case "postal_code":
                     addressPostalCode = longName;
                     break;
+                default:
+                    break;
             }
         }
 
@@ -128,6 +130,8 @@ public class GoogleLocationService(string apikey, bool useHttps) : ILocationServ
                 throw new QueryLimitExceededException("QueryLimit exceeded, check your dashboard");
             case Constants.ApiResponses.RequestDenied:
                 throw new RequestDeniedException("Request denied, it's likely you need to enable the necessary Google maps APIs");
+            default:
+                break;
         }
 
         var els = doc.Descendants("result").Descendants("geometry").Descendants("location").FirstOrDefault();
@@ -158,6 +162,8 @@ public class GoogleLocationService(string apikey, bool useHttps) : ILocationServ
                 throw new QueryLimitExceededException("QueryLimit exceeded, check your dashboard");
             case Constants.ApiResponses.RequestDenied:
                 throw new RequestDeniedException("Request denied, it's likely you need to enable the necessary Google maps APIs");
+            default:
+                break;
         }
 
         var results = doc.Descendants("result").Descendants("formatted_address").ToArray();

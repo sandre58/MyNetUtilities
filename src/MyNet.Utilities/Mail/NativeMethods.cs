@@ -43,7 +43,7 @@ public static partial class NativeMethods
             }
 
             var result = MAPISendMail(IntPtr.Zero, IntPtr.Zero, msg, 0x1 | 0x8, 0);
-            return result <= 1 && result >= 0;
+            return result is <= 1 and >= 0;
         }
         catch
         {

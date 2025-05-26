@@ -30,6 +30,7 @@ public class Period(DateTime start, DateTime end) : Interval<DateTime, Period>(s
     {
         DateTimeKind.Utc => Contains(DateTime.UtcNow),
         DateTimeKind.Local => Contains(DateTime.Now),
+        DateTimeKind.Unspecified => Contains(GlobalizationService.Current.Date),
         _ => Contains(GlobalizationService.Current.Date)
     };
 

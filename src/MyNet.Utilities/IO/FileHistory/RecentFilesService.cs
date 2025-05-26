@@ -41,7 +41,7 @@ public class RecentFilesService(IRecentFileRepository recentFileRepository)
 
     public void Remove(string path)
     {
-        recentFileRepository.Remove(path);
+        _ = recentFileRepository.Remove(path);
         Cache.Clear();
     }
 

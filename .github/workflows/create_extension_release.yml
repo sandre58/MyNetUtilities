@@ -18,11 +18,8 @@ on:
         type: choice
         description: Name of the package
         options: 
-        - MyNet.Utilities.Authentication.Windows
         - MyNet.Utilities.Generator.Extensions
         - MyNet.Utilities.Geography.Extensions
-        - MyNet.Utilities.IO.FileHistory.Registry
-        - MyNet.Utilities.IO.Registry
         - MyNet.Utilities.Localization.Extensions
         - MyNet.Utilities.Logging.NLog
         - MyNet.Utilities.Mail.MailKit

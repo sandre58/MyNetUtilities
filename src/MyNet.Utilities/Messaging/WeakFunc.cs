@@ -66,9 +66,7 @@ public class WeakFunc<TResult>
     {
         get
         {
-            if (_staticFunc == null
-                && Reference == null
-                && LiveReference == null)
+            if (_staticFunc == null && Reference == null && LiveReference == null)
                 return false;
 
             if (_staticFunc != null)

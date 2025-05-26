@@ -17,7 +17,7 @@ public class FileExtensionsTests
     public void Add_AddsSingleExtension()
     {
         var builder = new FileExtensionFilterBuilder();
-        builder.Add(new FileExtensionInfo("Test", [".txt"]));
+        _ = builder.Add(new FileExtensionInfo("Test", [".txt"]));
 
         Assert.Equal(0, builder.IndexOfExtension(".txt"));
     }
@@ -32,7 +32,7 @@ public class FileExtensionsTests
             new("Test2", [".jpg"])
         };
 
-        builder.AddRange(extensions);
+        _ = builder.AddRange(extensions);
 
         Assert.Equal(1, builder.IndexOfExtension(".jpg"));
     }
@@ -41,8 +41,8 @@ public class FileExtensionsTests
     public void AddMerge_AddsExtensionAtFirstPosition()
     {
         var builder = new FileExtensionFilterBuilder();
-        builder.Add(new FileExtensionInfo("Existing", [".txt"]));
-        builder.AddMerge("New", true, new FileExtensionInfo("Test", [".jpg"]));
+        _ = builder.Add(new FileExtensionInfo("Existing", [".txt"]));
+        _ = builder.AddMerge("New", true, new FileExtensionInfo("Test", [".jpg"]));
 
         Assert.Equal(0, builder.IndexOfExtension(".jpg"));
     }
@@ -51,8 +51,8 @@ public class FileExtensionsTests
     public void AddMerge_AddsExtensionAtLastPosition()
     {
         var builder = new FileExtensionFilterBuilder();
-        builder.Add(new FileExtensionInfo("Existing", [".txt"]));
-        builder.AddMerge("New", false, new FileExtensionInfo("Test", [".jpg"]));
+        _ = builder.Add(new FileExtensionInfo("Existing", [".txt"]));
+        _ = builder.AddMerge("New", false, new FileExtensionInfo("Test", [".jpg"]));
 
         Assert.Equal(1, builder.IndexOfExtension(".jpg"));
     }
@@ -61,10 +61,10 @@ public class FileExtensionsTests
     public void AddContentMerge_AddsAllExtensions()
     {
         var builder = new FileExtensionFilterBuilder();
-        builder.Add(new FileExtensionInfo("Existing1", [".txt"]));
-        builder.Add(new FileExtensionInfo("Existing2", [".jpg"]));
+        _ = builder.Add(new FileExtensionInfo("Existing1", [".txt"]));
+        _ = builder.Add(new FileExtensionInfo("Existing2", [".jpg"]));
 
-        builder.AddContentMerge("Merged");
+        _ = builder.AddContentMerge("Merged");
 
         Assert.Equal(1, builder.IndexOfExtension(".jpg"));
         Assert.Equal(0, builder.IndexOfExtension(".txt"));
@@ -74,8 +74,8 @@ public class FileExtensionsTests
     public void GenerateFilters_ReturnsCorrectFilters()
     {
         var builder = new FileExtensionFilterBuilder();
-        builder.Add(new FileExtensionInfo("Test1", [".txt"]));
-        builder.Add(new FileExtensionInfo("Test2", [".jpg"]));
+        _ = builder.Add(new FileExtensionInfo("Test1", [".txt"]));
+        _ = builder.Add(new FileExtensionInfo("Test2", [".jpg"]));
 
         var filters = builder.GenerateFilters();
 
@@ -86,8 +86,8 @@ public class FileExtensionsTests
     public void IndexOfExtension_ReturnsCorrectIndex()
     {
         var builder = new FileExtensionFilterBuilder();
-        builder.Add(new FileExtensionInfo("Test1", [".txt"]));
-        builder.Add(new FileExtensionInfo("Test2", [".jpg"]));
+        _ = builder.Add(new FileExtensionInfo("Test1", [".txt"]));
+        _ = builder.Add(new FileExtensionInfo("Test2", [".jpg"]));
 
         var index = builder.IndexOfExtension(".jpg");
 

@@ -36,15 +36,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{E1FD
 		..\.github\workflows\publish_release.yml = ..\.github\workflows\publish_release.yml
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyNet.Utilities.Authentication.Windows", "MyNet.Utilities.Authentication.Windows\MyNet.Utilities.Authentication.Windows.csproj", "{3DA29E20-ABA4-4A19-A59A-37B9B611561C}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyNet.Utilities.Generator.Extensions", "MyNet.Utilities.Generator.Extensions\MyNet.Utilities.Generator.Extensions.csproj", "{5B268193-6CDD-44C7-8A91-CFF8CF05524B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyNet.Utilities.Geography.Extensions", "MyNet.Utilities.Geography.Extensions\MyNet.Utilities.Geography.Extensions.csproj", "{9181C763-7AF9-44C6-B5F8-76FB4C759088}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyNet.Utilities.IO.FileHistory.Registry", "MyNet.Utilities.IO.FileHistory.Registry\MyNet.Utilities.IO.FileHistory.Registry.csproj", "{04980024-A6AA-4608-89EB-61693ABB01D9}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyNet.Utilities.IO.Registry", "MyNet.Utilities.IO.Registry\MyNet.Utilities.IO.Registry.csproj", "{4DCC24C8-B832-4781-8567-87461DEC182D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyNet.Utilities.Localization.Extensions", "MyNet.Utilities.Localization.Extensions\MyNet.Utilities.Localization.Extensions.csproj", "{4241C5B1-238C-40F4-87D1-51D60E757510}"
 EndProject
@@ -73,12 +67,6 @@ Global
 		{EF412E75-25B5-4ADC-B2A9-15DD0B51A0FD}.Mixed|Any CPU.Build.0 = Debug|Any CPU
 		{EF412E75-25B5-4ADC-B2A9-15DD0B51A0FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF412E75-25B5-4ADC-B2A9-15DD0B51A0FD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3DA29E20-ABA4-4A19-A59A-37B9B611561C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3DA29E20-ABA4-4A19-A59A-37B9B611561C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3DA29E20-ABA4-4A19-A59A-37B9B611561C}.Mixed|Any CPU.ActiveCfg = Debug|Any CPU
-		{3DA29E20-ABA4-4A19-A59A-37B9B611561C}.Mixed|Any CPU.Build.0 = Debug|Any CPU
-		{3DA29E20-ABA4-4A19-A59A-37B9B611561C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3DA29E20-ABA4-4A19-A59A-37B9B611561C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5B268193-6CDD-44C7-8A91-CFF8CF05524B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5B268193-6CDD-44C7-8A91-CFF8CF05524B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B268193-6CDD-44C7-8A91-CFF8CF05524B}.Mixed|Any CPU.ActiveCfg = Debug|Any CPU
@@ -91,18 +79,6 @@ Global
 		{9181C763-7AF9-44C6-B5F8-76FB4C759088}.Mixed|Any CPU.Build.0 = Debug|Any CPU
 		{9181C763-7AF9-44C6-B5F8-76FB4C759088}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9181C763-7AF9-44C6-B5F8-76FB4C759088}.Release|Any CPU.Build.0 = Release|Any CPU
-		{04980024-A6AA-4608-89EB-61693ABB01D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{04980024-A6AA-4608-89EB-61693ABB01D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{04980024-A6AA-4608-89EB-61693ABB01D9}.Mixed|Any CPU.ActiveCfg = Debug|Any CPU
-		{04980024-A6AA-4608-89EB-61693ABB01D9}.Mixed|Any CPU.Build.0 = Debug|Any CPU
-		{04980024-A6AA-4608-89EB-61693ABB01D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{04980024-A6AA-4608-89EB-61693ABB01D9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4DCC24C8-B832-4781-8567-87461DEC182D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4DCC24C8-B832-4781-8567-87461DEC182D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4DCC24C8-B832-4781-8567-87461DEC182D}.Mixed|Any CPU.ActiveCfg = Debug|Any CPU
-		{4DCC24C8-B832-4781-8567-87461DEC182D}.Mixed|Any CPU.Build.0 = Debug|Any CPU
-		{4DCC24C8-B832-4781-8567-87461DEC182D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4DCC24C8-B832-4781-8567-87461DEC182D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4241C5B1-238C-40F4-87D1-51D60E757510}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4241C5B1-238C-40F4-87D1-51D60E757510}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4241C5B1-238C-40F4-87D1-51D60E757510}.Mixed|Any CPU.ActiveCfg = Debug|Any CPU
@@ -129,11 +105,11 @@ Global
 		{EF412E75-25B5-4ADC-B2A9-15DD0B51A0FD} = {309DE078-8349-428D-807B-C923AD7D2828}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		RESX_ConfirmAddLanguageFile = True
-		RESX_AutoCreateNewLanguageFiles = True
-		RESX_NeutralResourcesLanguage = fr-FR
-		SolutionGuid = {4C2A7472-FBCC-4D2C-B21D-0C83E4ADAA1A}
-		RESX_CodeReferences = {"Items":[{"Expression":"\\W($File.$Key)\\W","Extensions":".cs,.xaml,.cshtml","IsCaseSensitive":true,"SingleLineComment":"\/\/"},{"Expression":"\\W($File.$Key)\\W","Extensions":".vbhtml","IsCaseSensitive":false,"SingleLineComment":null},{"Expression":"ResourceManager.GetString\\(\"($Key)\"\\)","Extensions":".cs","IsCaseSensitive":true,"SingleLineComment":"\/\/"},{"Expression":"typeof\\((\\w+\\.)*($File)\\).+\"($Key)\"|\"($Key)\".+typeof\\((\\w+\\.)*($File)\\)","Extensions":".cs","IsCaseSensitive":true,"SingleLineComment":"\/\/"},{"Expression":"\\W($Key)\\W","Extensions":".vb","IsCaseSensitive":false,"SingleLineComment":"'"},{"Expression":"\\W($File::$Key)\\W","Extensions":".cpp,.c,.hxx,.h","IsCaseSensitive":true,"SingleLineComment":"\/\/"},{"Expression":"&lt;%\\$\\s+Resources:\\s*($File)\\s*,\\s*($Key)\\s*%&gt;","Extensions":".aspx,.ascx,.master","IsCaseSensitive":true,"SingleLineComment":null},{"Expression":"StringResourceKey\\.($Key)","Extensions":".cs","IsCaseSensitive":true,"SingleLineComment":"\/\/"},{"Expression":"\\.($Key)","Extensions":".ts,.html","IsCaseSensitive":true,"SingleLineComment":"\/\/"},{"Expression":"typeof\\((\\w+\\.)*($File)\\).+nameof\\(($Key)\\)|nameof\\(($Key)\\).+typeof\\((\\w+\\.)*($File)\\)","Extensions":".cs","IsCaseSensitive":true,"SingleLineComment":"\/\/"},{"Expression":"{me:Resource (Key=)?($Key).*","Extensions":".xaml","IsCaseSensitive":true,"SingleLineComment":"\/\/"},{"Expression":"{me:Translation .*Format=$Key.*","Extensions":".xaml","IsCaseSensitive":true,"SingleLineComment":"\/\/"},{"Expression":"{my:Resource (Key=)?($Key).*","Extensions":".xaml","IsCaseSensitive":true,"SingleLineComment":"\/\/"},{"Expression":"Format=($Key)","Extensions":".xaml","IsCaseSensitive":true,"SingleLineComment":"\/\/"},{"Expression":"{my:ShortcutResource (Key=)?($Key).*","Extensions":".xaml","IsCaseSensitive":true,"SingleLineComment":"\/\/"}]}
 		RESX_ShowErrorsInErrorList = False
+		RESX_CodeReferences = {"Items":[{"Expression":"\\W($File.$Key)\\W","Extensions":".cs,.xaml,.cshtml","IsCaseSensitive":true,"SingleLineComment":"\/\/"},{"Expression":"\\W($File.$Key)\\W","Extensions":".vbhtml","IsCaseSensitive":false,"SingleLineComment":null},{"Expression":"ResourceManager.GetString\\(\"($Key)\"\\)","Extensions":".cs","IsCaseSensitive":true,"SingleLineComment":"\/\/"},{"Expression":"typeof\\((\\w+\\.)*($File)\\).+\"($Key)\"|\"($Key)\".+typeof\\((\\w+\\.)*($File)\\)","Extensions":".cs","IsCaseSensitive":true,"SingleLineComment":"\/\/"},{"Expression":"\\W($Key)\\W","Extensions":".vb","IsCaseSensitive":false,"SingleLineComment":"'"},{"Expression":"\\W($File::$Key)\\W","Extensions":".cpp,.c,.hxx,.h","IsCaseSensitive":true,"SingleLineComment":"\/\/"},{"Expression":"&lt;%\\$\\s+Resources:\\s*($File)\\s*,\\s*($Key)\\s*%&gt;","Extensions":".aspx,.ascx,.master","IsCaseSensitive":true,"SingleLineComment":null},{"Expression":"StringResourceKey\\.($Key)","Extensions":".cs","IsCaseSensitive":true,"SingleLineComment":"\/\/"},{"Expression":"\\.($Key)","Extensions":".ts,.html","IsCaseSensitive":true,"SingleLineComment":"\/\/"},{"Expression":"typeof\\((\\w+\\.)*($File)\\).+nameof\\(($Key)\\)|nameof\\(($Key)\\).+typeof\\((\\w+\\.)*($File)\\)","Extensions":".cs","IsCaseSensitive":true,"SingleLineComment":"\/\/"},{"Expression":"{me:Resource (Key=)?($Key).*","Extensions":".xaml","IsCaseSensitive":true,"SingleLineComment":"\/\/"},{"Expression":"{me:Translation .*Format=$Key.*","Extensions":".xaml","IsCaseSensitive":true,"SingleLineComment":"\/\/"},{"Expression":"{my:Resource (Key=)?($Key).*","Extensions":".xaml","IsCaseSensitive":true,"SingleLineComment":"\/\/"},{"Expression":"Format=($Key)","Extensions":".xaml","IsCaseSensitive":true,"SingleLineComment":"\/\/"},{"Expression":"{my:ShortcutResource (Key=)?($Key).*","Extensions":".xaml","IsCaseSensitive":true,"SingleLineComment":"\/\/"}]}
+		SolutionGuid = {4C2A7472-FBCC-4D2C-B21D-0C83E4ADAA1A}
+		RESX_NeutralResourcesLanguage = fr-FR
+		RESX_AutoCreateNewLanguageFiles = True
+		RESX_ConfirmAddLanguageFile = True
 	EndGlobalSection
 EndGlobal

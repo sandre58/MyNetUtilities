@@ -61,7 +61,7 @@ public class TranslationService
     {
         lock (LockResources)
         {
-            Resources.TryAdd(resourceKey, resourceManager);
+            _ = Resources.TryAdd(resourceKey, resourceManager);
         }
     }
 

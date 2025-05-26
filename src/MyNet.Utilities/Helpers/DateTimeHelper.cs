@@ -94,6 +94,10 @@ public static class DateTimeHelper
             TimeUnit.Week => x => x.AddDays(step * 7),
             TimeUnit.Month => x => x.AddMonths(step),
             TimeUnit.Year => x => x.AddYears(step),
+            TimeUnit.Millisecond => throw new InvalidOperationException(),
+            TimeUnit.Second => throw new InvalidOperationException(),
+            TimeUnit.Minute => throw new InvalidOperationException(),
+            TimeUnit.Hour => throw new InvalidOperationException(),
             _ => x => x.AddDays(step)
         };
         for (var i = min; i <= max; i = increment.Invoke(i))
@@ -107,6 +111,11 @@ public static class DateTimeHelper
             TimeUnit.Millisecond => x => x.Add(step.Milliseconds()),
             TimeUnit.Second => x => x.Add(step.Seconds()),
             TimeUnit.Minute => x => x.AddMinutes(step),
+            TimeUnit.Hour => throw new InvalidOperationException(),
+            TimeUnit.Day => throw new InvalidOperationException(),
+            TimeUnit.Week => throw new InvalidOperationException(),
+            TimeUnit.Month => throw new InvalidOperationException(),
+            TimeUnit.Year => throw new InvalidOperationException(),
             _ => x => x.AddHours(step)
         };
         for (var i = min; i <= max; i = increment.Invoke(i))

@@ -81,6 +81,8 @@ public class GlobalizationService
     public DateTime Convert(DateTime dateTime) => dateTime.Kind switch
     {
         DateTimeKind.Local => TimeZoneInfo.ConvertTime(dateTime, TimeZoneInfo.Local, TimeZone),
+        DateTimeKind.Unspecified => TimeZoneInfo.ConvertTimeFromUtc(dateTime.ToUniversalTime(), TimeZone),
+        DateTimeKind.Utc => TimeZoneInfo.ConvertTimeFromUtc(dateTime.ToUniversalTime(), TimeZone),
         _ => TimeZoneInfo.ConvertTimeFromUtc(dateTime.ToUniversalTime(), TimeZone)
     };
 
@@ -88,6 +90,7 @@ public class GlobalizationService
     {
         DateTimeKind.Unspecified => TimeZoneInfo.ConvertTimeToUtc(dateTime, TimeZone),
         DateTimeKind.Local => dateTime.ToUniversalTime(),
+        DateTimeKind.Utc => dateTime,
         _ => dateTime
     };
 
@@ -95,6 +98,7 @@ public class GlobalizationService
     {
         DateTimeKind.Utc => TimeZoneInfo.ConvertTime(dateTime, TimeZoneInfo.Utc, TimeZone),
         DateTimeKind.Local => TimeZoneInfo.ConvertTime(dateTime, TimeZoneInfo.Local, TimeZone),
+        DateTimeKind.Unspecified => TimeZoneInfo.ConvertTime(dateTime, sourceTimeZone, TimeZone),
         _ => TimeZoneInfo.ConvertTime(dateTime, sourceTimeZone, TimeZone)
     };
 
@@ -102,6 +106,7 @@ public class GlobalizationService
     {
         DateTimeKind.Utc => TimeZoneInfo.ConvertTime(Convert(dateTime), TimeZone, TimeZoneInfo.Utc),
         DateTimeKind.Local => TimeZoneInfo.ConvertTime(Convert(dateTime), TimeZone, TimeZoneInfo.Local),
+        DateTimeKind.Unspecified => TimeZoneInfo.ConvertTime(dateTime, TimeZone, destinationTimeZone),
         _ => TimeZoneInfo.ConvertTime(dateTime, TimeZone, destinationTimeZone)
     };
 

@@ -669,7 +669,7 @@ public class RandomGeneratorTests
         var array = new[] { 1, 2, 3 };
 
         // Act & Assert
-        Assert.Throws<ArgumentOutOfRangeException>(() => RandomGenerator.ArrayElements(array, 4));
+        _ = Assert.Throws<ArgumentOutOfRangeException>(() => RandomGenerator.ArrayElements(array, 4));
     }
 
     [Fact]

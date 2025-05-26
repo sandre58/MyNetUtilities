@@ -136,7 +136,7 @@ public class CacheStorage<TKey, TValue>(Func<ExpirationPolicy>? defaultExpiratio
     public TValue? Get(TKey key)
         => ExecuteInLock(key, () =>
         {
-            _dictionary.TryGetValue(key, out var valueInfo);
+            _ = _dictionary.TryGetValue(key, out var valueInfo);
 
             return valueInfo is not null ? valueInfo.Value : default;
         });
@@ -248,7 +248,7 @@ public class CacheStorage<TKey, TValue>(Func<ExpirationPolicy>? defaultExpiratio
 
             foreach (var keyToRemove in keysToRemove)
             {
-                ExecuteInLock(keyToRemove, () => RemoveItem(keyToRemove, false));
+                _ = ExecuteInLock(keyToRemove, () => RemoveItem(keyToRemove, false));
             }
 
             _checkForExpiredItems = false;
@@ -273,7 +273,7 @@ public class CacheStorage<TKey, TValue>(Func<ExpirationPolicy>? defaultExpiratio
 
                 _expirationTimer ??= new Timer(OnTimerElapsed, null, Timeout.Infinite, Timeout.Infinite);
 
-                _expirationTimer.Change(timeSpan, timeSpan);
+                _ = _expirationTimer.Change(timeSpan, timeSpan);
             }
         }
     }
@@ -426,7 +426,7 @@ public class CacheStorage<TKey, TValue>(Func<ExpirationPolicy>? defaultExpiratio
             return false;
         }
 
-        _dictionary.TryRemove(key, out _);
+        _ = _dictionary.TryRemove(key, out _);
 
         var dispose = DisposeValuesOnRemoval;
         if (raiseEvents)

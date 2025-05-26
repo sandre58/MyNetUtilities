@@ -49,11 +49,12 @@ public class ThreadSafeObservableCollection<T> : OptimizedObservableCollection<T
 
     protected override void OnCollectionChanged(NotifyCollectionChangedEventArgs e)
     {
+        var collectionChanged = CollectionChanged;
+        if (collectionChanged == null) return;
+
         using (BlockReentrancy())
         {
-            var collectionChanged = CollectionChanged;
-            if (collectionChanged != null)
-                NotifyCollectionChanged(e, collectionChanged);
+            NotifyCollectionChanged(e, collectionChanged);
         }
     }
 
@@ -61,10 +62,22 @@ public class ThreadSafeObservableCollection<T> : OptimizedObservableCollection<T
 
     protected void ExecuteThreadSafe(Action action)
     {
+#if NET9_0_OR_GREATER
+        _localLock.Enter();
+        try
+        {
+            action();
+        }
+        finally
+        {
+            _localLock.Exit();
+        }
+#else
         lock (_localLock)
         {
             action();
         }
+#endif
     }
 
     private void NotifyCollectionChanged(NotifyCollectionChangedEventArgs e, NotifyCollectionChangedEventHandler collectionChanged)

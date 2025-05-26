@@ -8,8 +8,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using MyNet.Utilities.Geography;
+
+#if NET9_0_OR_GREATER
+using System.Threading;
+#endif
 
 #pragma warning disable CA5394
 namespace MyNet.Utilities.Generator;
@@ -21,7 +24,11 @@ public static class RandomGenerator
     /// </summary>
     public static readonly Random Seed = new();
 
-    private static readonly Lazy<object> Locker = new(() => new object(), LazyThreadSafetyMode.ExecutionAndPublication);
+#if NET9_0_OR_GREATER
+    private static readonly Lock Locker = new();
+#else
+    private static readonly object Locker = new();
+#endif
 
     /// <summary>
     /// Get an int from min to max.
@@ -31,7 +38,7 @@ public static class RandomGenerator
     public static int Number(int min = 0, int max = 1)
     {
         // lock any seed access, for thread safety.
-        lock (Locker.Value)
+        lock (Locker)
         {
             // Clamp max value, Issue #30.
             max = max == int.MaxValue ? max : max + 1;
@@ -49,12 +56,11 @@ public static class RandomGenerator
     public static DateTime Date(DateTime startDate, DateTime endDate)
     {
         // lock any seed access, for thread safety.
-        lock (Locker.Value)
+        lock (Locker)
         {
             var range = endDate.Ticks - startDate.Ticks;
             var randomTicks = startDate.Ticks + (long)(Seed.NextDouble() * range);
-            var result = new DateTime(randomTicks, startDate.Kind);
-            return result;
+            return new DateTime(randomTicks, startDate.Kind);
         }
     }
 
@@ -83,13 +89,11 @@ public static class RandomGenerator
     public static int Even(int min = 0, int max = 1)
     {
         int result;
-
-        // could do this better by just +1 or -1 if it's not an even/odd number
         do
         {
             result = Number(min, max);
         }
-        while (result % 2 == 1);
+        while ((result & 1) == 1);
         return result;
     }
 
@@ -101,13 +105,11 @@ public static class RandomGenerator
     public static int Odd(int min = 0, int max = 1)
     {
         int result;
-
-        // could do this better by just +1 or -1 if it's not an even/odd number
         do
         {
             result = Number(min, max);
         }
-        while (result % 2 == 0);
+        while ((result & 1) == 0);
         return result;
     }
 
@@ -118,16 +120,9 @@ public static class RandomGenerator
     /// <param name="max">Maximum, default 1.0.</param>
     public static double Double(double min = 0.0d, double max = 1.0d)
     {
-        // lock any seed access, for thread safety.
-        lock (Locker.Value)
+        lock (Locker)
         {
-            if (min.NearlyEqual(0.0d) && max.NearlyEqual(1.0d))
-            {
-                // use default implementation
-                return Seed.NextDouble();
-            }
-
-            return (Seed.NextDouble() * (max - min)) + min;
+            return min == 0.0d && max == 1.0d ? Seed.NextDouble() : (Seed.NextDouble() * (max - min)) + min;
         }
     }
 
@@ -159,7 +154,7 @@ public static class RandomGenerator
     public static byte[] Bytes(int count)
     {
         var arr = new byte[count];
-        lock (Locker.Value)
+        lock (Locker)
         {
             Seed.NextBytes(arr);
         }
@@ -502,7 +497,7 @@ public static class RandomGenerator
             int j;
 
             // lock any seed access, for thread safety.
-            lock (Locker.Value)
+            lock (Locker)
             {
                 j = Seed.Next(i, buffer.Count);
             }
@@ -516,7 +511,7 @@ public static class RandomGenerator
     public static string Color()
     {
         // lock any seed access, for thread safety.
-        lock (Locker.Value)
+        lock (Locker)
         {
             return $"#{Seed.Next(0x1000000):X6}";
         }

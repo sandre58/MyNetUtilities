@@ -88,11 +88,9 @@ public abstract class EnumClass<TEnum, TValue> :
             // multiple enums with same value are allowed but store only one per value
             var dictionary = new Dictionary<TValue, TEnum>();
             foreach (var item in EnumOptions.Value)
-                dictionary.TryAdd(item._value, item);
+                _ = dictionary.TryAdd(item.Value, item);
             return dictionary;
         });
-
-    private readonly TValue _value;
 
     protected EnumClass(string name, TValue value, string? resourceKey = null)
     {
@@ -100,7 +98,7 @@ public abstract class EnumClass<TEnum, TValue> :
         ArgumentNullException.ThrowIfNull(value);
 
         Name = name;
-        _value = value;
+        Value = value;
         ResourceKey = resourceKey ?? Name;
     }
 
@@ -126,12 +124,12 @@ public abstract class EnumClass<TEnum, TValue> :
     /// Gets the value.
     /// </summary>
     /// <value>A <typeparamref name="TValue"/> that is the value of the <see cref="EnumClass{TEnum, TValue}"/>.</value>
-    public TValue Value => _value;
+    public TValue Value { get; }
 
     object IEnumeration.Value => Value;
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static implicit operator TValue(EnumClass<TEnum, TValue> smartEnum) => smartEnum._value;
+    public static implicit operator TValue(EnumClass<TEnum, TValue> smartEnum) => smartEnum.Value;
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static explicit operator EnumClass<TEnum, TValue>(TValue value) => FromTValue(value);
@@ -280,14 +278,14 @@ public abstract class EnumClass<TEnum, TValue> :
 
     public static EnumClass<TEnum, TValue> FromTValue(TValue value) => FromValue(value);
 
-    public TValue ToTValue() => _value;
+    public TValue ToTValue() => Value;
 
     public override string ToString() =>
         Name;
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public override int GetHashCode() =>
-        _value.GetHashCode();
+        Value.GetHashCode();
 
     public override bool Equals(object? obj) =>
         obj is EnumClass<TEnum, TValue> other && Equals(other);
@@ -305,7 +303,7 @@ public abstract class EnumClass<TEnum, TValue> :
 
         // it's not same instance so
         // check if it's not null and is same value
-        return other is not null && _value.Equals(other._value);
+        return other is not null && Value.Equals(other.Value);
     }
 
     /// <summary>
@@ -314,9 +312,9 @@ public abstract class EnumClass<TEnum, TValue> :
     /// <param name="other">An <see cref="EnumClass{TEnum, TValue}"/> value to compare to this instance.</param>
     /// <returns>A signed number indicating the relative values of this instance and <paramref name="other"/>.</returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public virtual int CompareTo(EnumClass<TEnum, TValue>? other) => other is { } enumeration ? _value.CompareTo(enumeration._value) : 1;
+    public virtual int CompareTo(EnumClass<TEnum, TValue>? other) => other is { } enumeration ? Value.CompareTo(enumeration.Value) : 1;
 
-    public int CompareTo(object? obj) => obj is EnumClass<TEnum, TValue> other ? _value.CompareTo(other._value) : 1;
+    public int CompareTo(object? obj) => obj is EnumClass<TEnum, TValue> other ? Value.CompareTo(other.Value) : 1;
 
     public TypeCode GetTypeCode() => Convert.GetTypeCode(Value);
 

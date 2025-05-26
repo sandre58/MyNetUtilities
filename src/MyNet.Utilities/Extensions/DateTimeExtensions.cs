@@ -631,6 +631,7 @@ public static class DateTimeExtensions
     {
         DateTimeKind.Utc => current.SameDay(DateTime.UtcNow),
         DateTimeKind.Local => current.SameDay(DateTime.Now),
+        DateTimeKind.Unspecified => current.SameDay(GlobalizationService.Current.Date),
         _ => current.SameDay(GlobalizationService.Current.Date)
     };
 

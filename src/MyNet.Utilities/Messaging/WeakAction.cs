@@ -63,9 +63,7 @@ public class WeakAction
     {
         get
         {
-            if (_staticAction == null
-                && Reference == null
-                && LiveReference == null)
+            if (_staticAction == null && Reference == null && LiveReference == null)
                 return false;
 
             if (_staticAction != null)
@@ -148,10 +146,7 @@ public class WeakAction
 
         var actionTarget = ActionTarget;
 
-        if (IsAlive && Method != null
-                    && (LiveReference != null
-                        || ActionReference != null)
-                    && actionTarget != null)
+        if (IsAlive && Method != null && (LiveReference != null || ActionReference != null) && actionTarget != null)
             _ = Method.Invoke(actionTarget, null);
     }
 

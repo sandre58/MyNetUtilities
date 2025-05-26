@@ -24,7 +24,7 @@ public static class DictionaryExtensions
     public static TValue GetOrAdd<TKey, TValue>(this IDictionary<TKey, TValue> dictionary, TKey key, TValue newValue)
         where TKey : notnull
     {
-        dictionary.TryAdd(key, newValue);
+        _ = dictionary.TryAdd(key, newValue);
 
         return dictionary[key];
     }
@@ -32,7 +32,7 @@ public static class DictionaryExtensions
     public static void TryRemove<TKey, TValue>(this IDictionary<TKey, TValue> dictionary, TKey key)
         where TKey : notnull
     {
-        if (!dictionary.ContainsKey(key)) dictionary.Remove(key);
+        if (!dictionary.ContainsKey(key)) _ = dictionary.Remove(key);
     }
 
     public static TValue? GetOrDefault<TKey, TValue>(this IDictionary<TKey, TValue> dictionary, TKey key, TValue? defaultValue = default)
