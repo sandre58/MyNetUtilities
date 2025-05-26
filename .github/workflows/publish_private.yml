@@ -50,6 +50,7 @@ jobs:
     needs: [ gitversion ]
     with:
       name: Build all projects
+      dotnet-version: '10.0.100-preview.4.25258.110'
       build-args: '/p:GitVersion=${{ needs.gitversion.outputs.full_version }} /p:VersionSuffix=${{ needs.gitversion.outputs.suffix_label }}'
       dotnet-test-logger: GitHubActions --no-build --no-restore
       solution-path: .\src\MyNetUtilities.sln

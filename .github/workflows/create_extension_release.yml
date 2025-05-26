@@ -65,6 +65,7 @@ jobs:
     needs: [ compute_parameters ]
     uses: avantipoint/workflow-templates/.github/workflows/dotnet-build.yml@master # https://github.com/AvantiPoint/workflow-templates/blob/master/.github/workflows/dotnet-build.yml
     with:
+      dotnet-version: '10.0.100-preview.4.25258.110'
       dotnet-test-logger: GitHubActions --no-build --no-restore
       build-args: ${{ needs.compute_parameters.outputs.buildArgs }}
       name: Build
